@@ -1,8 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 $font_primary:'Open Sans', sans-serif;
 $blue_color:#1754be;
+$text_blue:#32325d;
+$white:#fff;
+$relative:relative;
 body{
 	background:#f5f6f8;
+	font-family: $font_primary;
 	.btn-primary{
 		background: $blue_color;
 		border-radius:2px;
@@ -11,6 +15,9 @@ body{
 		font-weight: 600;
 		text-transform: uppercase;
 		padding: 12px;
+	}
+	.relative_class{
+		position: relative;
 	}
 	.background-login{
 		position:absolute;
@@ -25,7 +32,7 @@ body{
 		.block-login{
 			position: relative;
 		    z-index: 9;
-		    background: #fff;
+		    background: $white;
 		    max-width: 449px;
 		    margin: 149px auto 169px;
 		    padding:53px;
@@ -56,7 +63,7 @@ body{
 							  color: #000;
 							  opacity: 0.38;
 							  font-size: 15px;
-						      &:after {
+						      &:before {
 						        content: '';
 						        position: absolute;
 						        bottom: 0;
@@ -66,6 +73,12 @@ body{
 						        visibility: hidden;
 						        background-color:$blue_color;
 						        transition: 0.2s ease all;
+						      }
+						      &:after{
+						      	    content: '*';
+								    position: absolute;
+								    top: 0;
+								    margin-left: 6px;
 						      }
 					    }
 		    			span{
@@ -79,7 +92,7 @@ body{
 			    				border-bottom:1px solid #e0e0e0;
 			    				border-right:0;
 			    				border-radius: 0;
-			    				color:#32325d;
+			    				color:$text_blue;
 			    				font-family: $font_primary;
 			    				font-size:15px;
 			    				padding:10px 0;
@@ -91,10 +104,27 @@ body{
 			    					 ~ .animated-label {
 							          top: -20px;
 							          opacity: 1;
-							          color: #32325d;
+							          color: $text_blue;
 							          font-size: 12px;
 							          font-weight:600;
-							          &:after {
+							          &:before {
+							            visibility: visible;
+							            width: 100%;
+							            left: 0;
+							          }
+							        }
+			    				}
+			    				&:valid{
+			    					box-shadow:none;
+			    					border-bottom-color: rgba(0,0,0,0.12);
+			    					font-weight: 600;
+			    					 ~ .animated-label {
+							          top: -20px;
+							          opacity: 1;
+							          color: $text_blue;
+							          font-size: 12px;
+							          font-weight:600;
+							          &:before {
 							            visibility: visible;
 							            width: 100%;
 							            left: 0;
@@ -114,21 +144,70 @@ body{
 	    				}
 		    		}
 		    		.username_icon{
-		    			&:before{
-		    				background-image:url(../img/icon_username_grey.png);
-							background-repeat: no-repeat;
+		    			icon{
+		    				background-image: url(../img/icon_username_grey.png);
+						    background-repeat: no-repeat;
+						    position: absolute;
+						    display: block;
+						    width: 16px;
+						    height: 21px;
+						    top: 15px;
+						    left: 0;
 		    			}
+		    			input.form-control{
+		    				&:focus{
+		    					 ~ icon {
+		    					 	    background-image: url(../img/icon_username_blue.png);
+		    				      }
+		    			    }
+		    		    }
 		    		}
 		    		.password_icon{
-		    			&:before{
-		    				background-image:url(../img/icon_privacy_grey.png);
-							background-repeat: no-repeat;
+		    			icon{
+		    				background-image: url(../img/icon_privacy_grey.png);
+						    background-repeat: no-repeat;
+						    position: absolute;
+						    display: block;
+						    width: 16px;
+						    height: 21px;
+						    top: 15px;
+						    left: 0;
 		    			}
+		    			input.form-control{
+		    				&:focus{
+		    					 ~ icon {
+		    					 	    background-image: url(../img/icon_privacy_blue.png);
+		    				      }
+		    			    }
+		    		    }
 		    		}
-		    		}	
+		    	}	
+		    	}
+		    	.message_required_login{
+		    		text-align: center;
+				    width: 100%;
+				    color: #d50000;
+				    font-family: $font_primary;
+				    font-size: 12px;
+				    position: relative;
+				    margin-top: 25px;
+    				margin-bottom: -23px;
+				    &:before{
+				    	content:'';
+				    	width: 17px;
+				    	height:16px;
+				    	background:url(../img/icon_error.png);
+				    	position: absolute;
+					    top: 2px;
+					    display: block;
+					    left: 14%;
+					    text-align: center;
+
+				    }
 		    	}
 		    	.btn-primary{
 		    		width: 100%;
+		    		box-shadow: -5px 2px 43px rgba(0, 0, 0, 0.24);
 		    	}
 		    }
 		}
@@ -155,6 +234,31 @@ body{
 				}
 			}
 		}
+		
 	}
+	.content{
+		position: relative;
+		.section_message{
+			position: absolute;
+		    max-width: 419px;
+		    background: #fff;
+		    box-shadow: -1px 2px 7px rgba(0, 0, 0, 0.24);
+		    padding: 34px 29px 29px;
+		    right: 0;
+		    bottom: 67px;
+		    p{
+		    	font-size: 14px;
+		    	color:$text_blue;
+		    	margin-bottom: 10px;
+		    }
+		    a{
+		    	color:$blue_color;
+		    	font-size: 13px;
+			    font-weight: 600;
+			    text-transform: uppercase;
+			    margin-left: 14px;
+		    }
+		}
+	}
+	
 }
-
