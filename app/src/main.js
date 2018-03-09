@@ -15,7 +15,6 @@ import Vuetify from 'vuetify'
  * ============
  *
  * Import the application styling.
- * Stylus is used for this boilerplate.
  */
 import "./assets/sass/app.scss";
 
@@ -27,9 +26,31 @@ import "./assets/sass/app.scss";
  */
 import 'vuetify/dist/vuetify.min.css'
 
+// Import Helpers for filters
+import { count } from './filters'
+// Import Install and register helper items
+Vue.filter('count', count)
+
 Vue.config.productionTip = false;
 Vue.use(Vuetify)
 Vue.use(Vuelidate)
+
+/* ============
+ * Components
+ * ============
+ *
+ * Register layouts components
+ */
+import DefaultLayout from './layouts/Default';
+Vue.component('o-default-layout', DefaultLayout);
+
+/*
+ * Register components
+ */
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+Vue.component('o-header', Header);
+Vue.component('o-navigation', Navigation);
 
 new Vue({
   /**

@@ -71,7 +71,6 @@
 </template>
 
 <script>
-  import Router from 'vue-router'
   import { validationMixin } from 'vuelidate'
   import { required } from 'vuelidate/lib/validators'
 
@@ -117,3 +116,48 @@
     }
   }
 </script>
+
+<style lang="scss">
+  @import '~@/assets/sass/variables.scss';
+
+  .login-container {
+    .login-background {
+      position: absolute;
+      min-height: 50%;
+      width: 100%;
+      background-image: url(../assets/img/login-background.jpg);
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+
+    .login-logo {
+      margin: auto;
+      display: block;
+    }
+    .login-main {
+      max-width: 410px !important;
+    }
+    .form-content{
+      padding: 25px;
+    }
+    .submit-button-content{
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .alert.error-message{
+      border: none !important;
+      padding: 0 20px 0 0;
+      justify-content: center;
+      div{
+        flex: inherit;
+      }
+    }
+    .notification-message{
+      color: #222222;
+    }
+    .notification-content .snack__content{
+      max-width: 360px;
+    }
+  }
+</style>

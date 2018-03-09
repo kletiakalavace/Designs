@@ -1,5 +1,7 @@
 <template>
-    <h3>Workspace page</h3>
+  <o-default-layout>
+    <h3>content here</h3>
+  </o-default-layout>
 </template>
 
 <script>
@@ -7,3 +9,8 @@
     name: "workspace"
   }
 </script>
+
+<style lang="scss">
+
+</style>
+
