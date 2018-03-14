@@ -1,7 +1,9 @@
 <template>
-  <o-default-layout>
-    <h3>content here</h3>
-  </o-default-layout>
+  <v-container fluid fill-height class="pa-0 login-container">
+    <o-default-layout>
+      <h3>content here</h3>
+    </o-default-layout>
+  </v-container>
 </template>
 
 <script>
