@@ -211,27 +211,8 @@
             }
         }
         .primary{
-            background-color:#1754be !important;
+            background-color:$blue-color;
         }
-
-    }
-    @media only screen and (max-width: 750px) {
-        .login-container {
-            .login-list:before {
-                position: absolute;
-                display: block;
-                content: '...';
-                right: 0;
-                background: #fafafa;
-                padding-left: 6px;
-                z-index: 9;
-            }
-        }
-    }
-    @media only screen and (max-width: 599px) {
-        .login-logo-mobile{
-                display: block;
-            }
     }
 
 </style>

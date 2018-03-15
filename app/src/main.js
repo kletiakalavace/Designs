@@ -17,6 +17,7 @@ import Vuetify from 'vuetify'
  * Import the application styling.
  */
 import "./assets/sass/app.scss";
+import "./assets/sass/responsive.scss";
 
 /* ============
  * Vuetify Styling
