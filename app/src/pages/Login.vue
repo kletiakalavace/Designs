@@ -8,7 +8,8 @@
                     <v-form lazy-validation>
                         <v-layout row>
                             <v-flex align-center>
-                                <img class="login-logo" src="../assets/img/logo.png" alt="logo">
+                                <img class="login-logo hidden-xs-only" src="../assets/img/logo.png" alt="logo">
+                                <img class="login-logo-mobile hidden-lg-only hidden-md-only hidden-sm-only mx-auto " src="../assets/img/logo-mobile.png" alt="logo">
                             </v-flex>
                         </v-layout>
 
@@ -20,7 +21,7 @@
                                     v-model="user.username"
                                     prepend-icon="person"
                                     name="username"
-                                    label="Username"
+                                    label="Username *"
                                     id="username"
                                     type="text">
                             </v-text-field>
@@ -30,7 +31,7 @@
                                     v-model="user.password"
                                     prepend-icon="lock"
                                     name="password"
-                                    label="Password"
+                                    label="Password *"
                                     id="password"
                                     :error="$v.user.password.$invalid && $v.user.password.$dirty"
                                     type="password">
@@ -67,20 +68,18 @@
                 </v-card>
             </v-flex>
             <v-flex xs12>
-                <v-navigation v-model="sideNav">
-                    <v-list class="text-md-center">
-                        <v-list-title
-                                class="ml-3"
+                    <v-list class="text-md-center login-list">
+                        <v-list-tile
+                                class="d-inline-block"
                                 v-for="item in menuItems"
                                 :key="item.title"
                                 router
                                 :to="item.link">
-                            <v-list-content class="login-navigation-bottom">
+                            <v-list-tile-content class="login-navigation-bottom">
                                 {{item.title}}
-                            </v-list-content>
-                        </v-list-title>
+                            </v-list-tile-content>
+                        </v-list-tile>
                     </v-list>
-                </v-navigation>
             </v-flex>
         </v-layout>
 
@@ -88,6 +87,7 @@
 </template>
 
 <script>
+
     import { validationMixin } from 'vuelidate'
     import { required } from 'vuelidate/lib/validators'
 
@@ -116,7 +116,7 @@
                 },
                 sideNav:false,
                 menuItems:[
-                    {title:'Copyright © 2018 Onify AB',},
+                    {title:'Copyright © 2018 Onify AB'},
                     {title:'Terms of use', link: '/terms'},
                     {title:'Privacy & cookies', link: '/privacy'},
                     {title:'Lorem',link: '/lorem'},
@@ -185,10 +185,53 @@
         .notification-content .snack__content{
             max-width: 360px;
         }
-        .login-navigation-bottom{
-            font-size:12px;
-            color:#8898aa;
-            cursor: pointer;
+        .login-list{
+            bottom: 0;
+            position: absolute;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            word-wrap: break-word;
+            width: 80%;
+            .list__tile--link{
+                &:hover{
+                    background: transparent;
+                }
+            }
+            .login-navigation-bottom{
+                font-size:12px;
+                color:#8898aa;
+                cursor: pointer;
+                display: inline-block;
+                float:left;
+            }
+        }
+        .primary{
+            background-color:#1754be !important;
+        }
+
+    }
+    @media only screen and (max-width: 750px) {
+        .login-container {
+            .login-list:before {
+                position: absolute;
+                display: block;
+                content: '...';
+                right: 0;
+                background: #fafafa;
+                padding-left: 6px;
+                z-index: 9;
+            }
         }
     }
+    @media only screen and (max-width: 599px) {
+        .login-logo-mobile{
+                display: block;
+            }
+    }
+
 </style>
