@@ -1,13 +1,16 @@
 @media only screen and (max-width: 750px) {
   .login-container {
-    .login-list:before {
-      position: absolute;
-      display: block;
-      content: '...';
-      right: 0;
-      background: #fafafa;
-      padding-left: 6px;
-      z-index: 9;
+    .login-list{
+      width: 78%;
+        &:before {
+          position: absolute;
+          display: block;
+          content: '...';
+          right: 0;
+          background: #fafafa;
+          padding-left: 6px;
+          z-index: 9;
+        }
     }
   }
 }

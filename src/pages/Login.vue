@@ -206,7 +206,7 @@
             max-width: 360px;
         }
         .login-list{
-            bottom: 0;
+            bottom: 20px;
             position: absolute;
             left: 50%;
             -webkit-transform: translateX(-50%);
@@ -216,8 +216,11 @@
             white-space: nowrap;
             overflow: hidden;
             word-wrap: break-word;
-            width: 80%;
+            width: auto;
             background: $bg-page;
+            .list__tile{
+                height: 19px;
+            }
             .list__tile--link{
                 &:hover{
                     background: transparent;
