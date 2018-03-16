@@ -1,2 +1,2 @@
-build: npm run build
+postinstall: npm run build
 app: node app.js
