@@ -9,7 +9,7 @@
                         <v-layout row>
                             <v-flex align-center>
                                 <img class="login-logo hidden-xs-only" src="../assets/img/logo.png" alt="logo">
-                                <img class="login-logo-mobile hidden-lg-only hidden-md-only hidden-sm-only mx-auto " src="../assets/img/logo-mobile.png" alt="logo">
+                                <img class="login-logo-mobile hidden-lg-only hidden-md-only hidden-sm-only mx-auto " src="../assets/img/logo.png" alt="logo">
                             </v-flex>
                         </v-layout>
 
