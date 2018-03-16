@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -9,17 +8,16 @@ const path = require('path');
 
 const app = express();
 
-// all environments
-app.set('port', process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, '/dist')));
 
 /**
  * other routes will be served by vue.js
  */
-app.get('*', function(req, res) {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/dist/index.html'));
 });
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
+http.createServer(app).listen(port, () => {
+  console.log('Express server listening on port ' + port);
 });
