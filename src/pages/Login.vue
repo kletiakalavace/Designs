@@ -8,8 +8,7 @@
                     <v-form lazy-validation>
                         <v-layout row>
                             <v-flex align-center>
-                                <img class="login-logo hidden-xs-only" src="../assets/img/logo.png" alt="logo">
-                                <img class="login-logo-mobile hidden-lg-only hidden-md-only hidden-sm-only mx-auto " src="../assets/img/logo.png" alt="logo">
+                                <img class="login-logo " src="../assets/img/logo-full.png" alt="logo">
                             </v-flex>
                         </v-layout>
 
@@ -67,7 +66,7 @@
                     </v-snackbar>
                 </v-card>
             </v-flex>
-            <v-flex xs12>
+            <div class="xs12">
                     <v-list class="text-md-center login-list">
                         <v-list-tile
                                 class="d-inline-block"
@@ -80,7 +79,7 @@
                             </v-list-tile-content>
                         </v-list-tile>
                     </v-list>
-            </v-flex>
+            </div>
         </v-layout>
 
     </v-container>
@@ -145,13 +144,16 @@
 
 <style lang="scss">
     @import '~@/assets/sass/variables.scss';
-
+    html{
+        overflow: auto;
+    }
     .login-container {
         .login-background {
             position: absolute;
             min-height: 50%;
             width: 100%;
             background-image: url(../assets/img/login-background.jpg);
+            background-size: cover;
             z-index: 0;
             top: 0;
             left: 0;
@@ -164,8 +166,26 @@
         .login-main {
             max-width: 410px !important;
         }
-        .form-content{
+        .form-content {
             padding: 25px;
+            label{
+                color:$black;
+                opacity:0.38;
+                font-size: 15px;
+            }
+            .input-group__details{
+                &:before{
+                    background-color: #black;
+                    opacity: 0.12;
+                }
+            }
+            .input-group--error{
+                .input-group__details{
+                    &:before{
+                        background-color: $blue-color;
+                    }
+                }
+            }
         }
         .submit-button-content{
             padding-left: 15px;
@@ -197,6 +217,7 @@
             overflow: hidden;
             word-wrap: break-word;
             width: 80%;
+            background: $bg-page;
             .list__tile--link{
                 &:hover{
                     background: transparent;
@@ -212,6 +233,7 @@
         }
         .primary{
             background-color:$blue-color;
+            height: 46px;
         }
     }
 
