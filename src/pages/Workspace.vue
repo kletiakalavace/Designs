@@ -9,9 +9,9 @@
             <v-card lg4 class="pt-5 pb-2 text-md-center border-orange">
               <img src="../assets/img/icon-service.png" alt="service-icon">
               <v-card-title class="pt-2">
-                <div class="pa-2">
-                  <span class="blue--text body-2">My services</span><br>
-                  <span class="grey--text body-1">Your services, tickets, assets,applications, files and more</span>
+                <div>
+                  <span class="blue--text body-2 d-block mb-2">My services</span>
+                  <span class="grey--text body-1 d-block">Your services, tickets, assets,applications, files and more</span>
                 </div>
               </v-card-title>
             </v-card>
@@ -20,9 +20,9 @@
             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-green">
               <img src="../assets/img/icon-support.png" alt="support-icon">
               <v-card-title class="pt-2">
-                <div class="pa-2">
-                  <span class="blue--text body-2">Support</span><br>
-                  <span class="grey--text body-1">Get support/help and request services</span>
+                <div>
+                  <span class="blue--text body-2 d-block mb-2">Support</span>
+                  <span class="grey--text body-1 d-block">Get support/help and request services</span>
                 </div>
               </v-card-title>
             </v-card>
@@ -31,9 +31,9 @@
             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-green">
               <img src="../assets/img/icon-servicedesk.png" alt="servicedesk-icon">
               <v-card-title class="pt-2">
-                <div class="pa-2">
-                  <span class="blue--text body-2">ServiceDesk</span><br>
-                  <span class="grey--text body-1">We provide the best ServiceDesk in the world</span>
+                <div>
+                  <span class="blue--text body-2 d-block mb-2">ServiceDesk</span>
+                  <span class="grey--text body-1 d-block">We provide the best ServiceDesk in the world</span>
                 </div>
               </v-card-title>
             </v-card>
@@ -44,9 +44,9 @@
             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-blue">
               <img src="../assets/img/icon-itam.png" alt="itam-icon">
               <v-card-title class="pt-2">
-                <div class="pa-2">
-                  <span class="blue--text body-2">ITAM</span><br>
-                  <span class="grey--text body-1">Hardware- and Software Life Cycle Management</span>
+                <div>
+                  <span class="blue--text body-2 d-block mb-2">ITAM</span>
+                  <span class="grey--text body-1 d-block">Hardware- and Software Life Cycle Management</span>
                 </div>
               </v-card-title>
             </v-card>
@@ -56,9 +56,9 @@
             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-grey">
               <img src="../assets/img/icon-manager.png" alt="manager-icon">
               <v-card-title class="pt-2">
-                <div class="pa-2">
-                  <span class="blue--text body-2">Manager</span><br>
-                  <span class="grey--text body-1">Manage and control your employees and assets</span>
+                <div>
+                  <span class="blue--text body-2 d-block mb-2">Manager</span>
+                  <span class="grey--text body-1 d-block">Manage and control your employees and assets</span>
                 </div>
               </v-card-title>
             </v-card>
