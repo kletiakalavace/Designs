@@ -4,7 +4,7 @@
     <o-header/>
 
     <v-layout>
-      <v-flex xs12 sm6 md4 class="main-content">
+      <v-flex class="main-content">
         <slot/>
       </v-flex>
     </v-layout>
