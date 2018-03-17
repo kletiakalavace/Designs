@@ -2,9 +2,9 @@
   <v-container fluid fill-height class="pa-0 workspace-container">
     <o-default-layout>
       <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-workspace">
-       <h2>Workspaces</h2>
-        <p>Welcome Aleksander Vero! Choose the workspace that best fits your current needs.</p>
-        <v-layout row class="pt-4">
+       <h2 class="title blue--text mt-4">Workspaces</h2>
+        <p class="grey--text pt-1">Welcome Aleksander Vero! Choose the workspace that best fits your current needs.</p>
+        <v-layout row class="pt-2">
           <v-flex xs12 sm6 lg4 class="mr-4">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-orange">
               <img src="../assets/img/icon-service.png" alt="service-icon">
@@ -80,9 +80,19 @@
 
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
+  html{
+    overflow: auto;
+  }
   .workspace-container{
       .content-workspace{
         max-width: 791px;
+        h2.title{
+          font-size: 22px !important;
+        }
+        p{
+          font-size: 15px;
+          font-weight: 300;
+        }
       }
       .border-orange {
         border-top:5px solid $border-orange;
