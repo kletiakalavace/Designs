@@ -1,4 +1,4 @@
-@media only screen and (max-width: 750px) {
+@media only screen and (max-width: 750px){
   .login-container {
     .login-list{
       width: 78%;
@@ -17,10 +17,5 @@
 @media only screen and (max-width: 599px) {
   .login-logo-mobile{
     display: block;
-  }
-}
-@media screen and (max-width: 1100px), (orientation: landscape){
-  .login-main{
-    margin-bottom: 70px;
   }
 }
