@@ -145,7 +145,7 @@
 <style lang="scss">
     @import '~@/assets/sass/variables.scss';
     html{
-        overflow: auto;
+        overflow: auto !important;
     }
     .login-container {
         .login-background {
