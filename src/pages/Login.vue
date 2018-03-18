@@ -8,7 +8,7 @@
                     <v-form lazy-validation>
                         <v-layout row>
                             <v-flex align-center>
-                                <img class="login-logo " src="../assets/img/logo.png" alt="logo">
+                                <img class="login-logo " src="../assets/img/logo-full.png" alt="logo">
                             </v-flex>
                         </v-layout>
 
