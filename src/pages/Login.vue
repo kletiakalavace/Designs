@@ -157,6 +157,7 @@
             z-index: 0;
             top: 0;
             left: 0;
+            z-index: 1;
         }
 
         .login-logo {
@@ -165,6 +166,7 @@
         }
         .login-main {
             max-width: 410px !important;
+            z-index: 99;
         }
         .form-content {
             padding: 25px;
