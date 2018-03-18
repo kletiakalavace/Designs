@@ -70,6 +70,7 @@
           .list__tile__content{
             color:#fff;
           }
+
         }
       }
     }
