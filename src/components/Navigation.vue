@@ -38,11 +38,11 @@
             return {
                 drawer: true,
                 items: [
-                    { title: 'Home', icon: 'dashboard' },
-                    { title: 'About', icon: 'question_answer' },
-                    { title: 'About', icon: 'question_answer' },
-                    { title: 'About', icon: 'question_answer' },
-                    { title: 'About', icon: 'question_answer' }
+                    { title: 'Administration', icon: 'dashboard' },
+                    { title: 'Workspaces', icon: 'question_answer' },
+                    { title: 'Processes', icon: 'question_answer' },
+                    { title: 'Shortcut', icon: 'question_answer' },
+                    { title: 'Bookmarks', icon: 'question_answer' }
                 ],
                 mini: true,
                 right: null
@@ -52,9 +52,26 @@
 </script>
 
 <style lang="scss">
+  @import '~@/assets/sass/variables.scss';
   .application--wrap{
     .navigation-drawer{
       background-color: #232b3a !important;
+      .icon{
+        color:#5c6270;
+      }
+      .list__tile__content{
+        color:#5c6270;
+      }
+      .list__tile{
+        &:hover{
+          .icon{
+            color:#fff;
+          }
+          .list__tile__content{
+            color:#fff;
+          }
+        }
+      }
     }
   }
 </style>
