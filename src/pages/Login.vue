@@ -20,7 +20,7 @@
                                     v-model="user.username"
                                     prepend-icon="person"
                                     name="username"
-                                    label="Username *"
+                                    label="Username"
                                     id="username"
                                     type="text">
                             </v-text-field>
@@ -30,7 +30,7 @@
                                     v-model="user.password"
                                     prepend-icon="lock"
                                     name="password"
-                                    label="Password *"
+                                    label="Password"
                                     id="password"
                                     :error="$v.user.password.$invalid && $v.user.password.$dirty"
                                     type="password">
