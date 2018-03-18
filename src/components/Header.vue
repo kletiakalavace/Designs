@@ -56,11 +56,11 @@
         name: "header-onify",
         data: () => {
             let srcs = {
-                1: '/img/icon-service.a848273.png',
-                2: '/img/icon-support.f1d192e.png',
-                3: '/img/icon-servicedesk.58054c1.png',
-                4: '/img/icon-itam.d7888fd.png',
-                5: '/img/icon-manager.a0cebf5.png'
+                1: '/img/icon-service.png',
+                2: '/img/icon-support.png',
+                3: '/img/icon-servicedesk.png',
+                4: '/img/icon-itam.png',
+                5: '/img/icon-manager.png'
             }
 
             return {

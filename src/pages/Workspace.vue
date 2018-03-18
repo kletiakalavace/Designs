@@ -7,7 +7,7 @@
         <v-layout row class="pt-2">
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-orange">
-              <!--<img src="../assets/img/icon-service.png" alt="service-icon">-->
+              <img src="../assets/img/icon-service.png" alt="service-icon">
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">My services</span>
@@ -25,7 +25,7 @@
           </v-flex>
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-green">
-              <!--<img src="../assets/img/icon-support.png" alt="support-icon">-->
+              <img src="../assets/img/icon-support.png" alt="support-icon">
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">Support</span>
@@ -43,7 +43,7 @@
           </v-flex>
           <v-flex xs12 sm6 lg4 class="block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-green">
-              <!--<img src="../assets/img/icon-servicedesk.png" alt="servicedesk-icon">-->
+              <img src="../assets/img/icon-servicedesk.png" alt="servicedesk-icon">
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">ServiceDesk</span>
@@ -64,7 +64,7 @@
         <v-layout row class="pt-4">
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-blue">
-              <!--<img src="../assets/img/icon-itam.png" alt="itam-icon">-->
+              <img src="../assets/img/icon-itam.png" alt="itam-icon">
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">ITAM</span>
@@ -84,7 +84,7 @@
 
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-grey">
-              <!--<img src="../assets/img/icon-manager.png" alt="manager-icon">-->
+              <img src="../assets/img/icon-manager.png" alt="manager-icon">
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">Manager</span>
