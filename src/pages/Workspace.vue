@@ -7,7 +7,9 @@
         <v-layout row class="pt-2">
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-orange">
-              <img src="../assets/img/icon-service.png" alt="service-icon">
+              <span class="thumb-workspace bg-orange mx-auto d-block">
+                M
+              </span>
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">My services</span>
@@ -25,7 +27,9 @@
           </v-flex>
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-green">
-              <img src="../assets/img/icon-support.png" alt="support-icon">
+               <span class="thumb-workspace bg-light-green mx-auto d-block">
+                S
+              </span>
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">Support</span>
@@ -43,7 +47,9 @@
           </v-flex>
           <v-flex xs12 sm6 lg4 class="block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-green">
-              <img src="../assets/img/icon-servicedesk.png" alt="servicedesk-icon">
+              <span class="thumb-workspace bg-dark-green mx-auto d-block">
+                S
+              </span>
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">ServiceDesk</span>
@@ -61,10 +67,12 @@
             </v-card>
           </v-flex>
         </v-layout>
-        <v-layout row class="pt-4">
+        <v-layout row class="pt-5 mb-5">
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-blue">
-              <img src="../assets/img/icon-itam.png" alt="itam-icon">
+              <span class="thumb-workspace bg-light-blue mx-auto d-block">
+                I
+              </span>
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">ITAM</span>
@@ -84,7 +92,9 @@
 
           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace">
             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-grey">
-              <img src="../assets/img/icon-manager.png" alt="manager-icon">
+              <span class="thumb-workspace bg-dark-grey mx-auto d-block">
+                M
+              </span>
               <v-card-title class="pt-2">
                 <div>
                   <span class="blue--text body-2 d-block mb-2">Manager</span>
@@ -138,18 +148,41 @@
               font-weight: 400;
           }
         }
+        .thumb-workspace{
+          height:72px;
+          width:72px;
+          font-size: 32px;
+          color:#fff;
+          border-radius: 50%;
+          line-height: 72px;
+        }
+      }
+      .bg-orange{
+        background-color: $bg-orange;
       }
       .border-orange {
         border-top:5px solid $border-orange;
       }
+      .bg-light-green{
+        background-color: $bg-light-green;
+      }
       .border-light-green {
         border-top:5px solid $border-light-green;
+      }
+      .bg-dark-green{
+        background-color: $bg-dark-green;
       }
       .border-dark-green {
         border-top:5px solid $border-dark-green;
       }
+      .bg-light-blue{
+        background-color: $bg-light-blue;
+      }
       .border-light-blue{
         border-top:5px solid $border-light-blue;
+      }
+      .bg-dark-grey{
+        background-color: $bg-dark-grey;
       }
       .border-dark-grey{
         border-top:5px solid $border-dark-grey;
@@ -179,14 +212,14 @@
   .block-workspace{
     position: relative;
       div{
-        transition: max-height 0.05s ease-out;
-        -webkit-transition:max-height 0.05s ease-out;
-        -moz-transition:max-height 0.05s ease-out;
-        -o-transition: max-height 0.05s ease-out;
-        transition: top 0.05s ease-out;
-        -webkit-transition:top 0.05s ease-out;
-        -moz-transition:top 0.05s ease-out;
-        -o-transition: top 0.05s ease-out;
+        transition: max-height 0.15s ease-out;
+        -webkit-transition:max-height 0.15s ease-out;
+        -moz-transition:max-height 0.15s ease-out;
+        -o-transition: max-height 0.15s ease-out;
+        transition: top 0.15s ease-out;
+        -webkit-transition:top 0.15s ease-out;
+        -moz-transition:top 0.15s ease-out;
+        -o-transition: top 0.15s ease-out;
         max-height: 232px;
         top:0;
       }
@@ -196,7 +229,7 @@
         top:-20px;
         position: absolute;
         width: 100%;
-        z-index: 999;
+        z-index: 9;
       }
       /*
       position: relative;*/

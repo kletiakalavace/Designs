@@ -5,13 +5,14 @@
           :mini-variant.sync="mini"
           v-model="drawer"
           dark
+          class="primary-navigation"
   >
     <v-toolbar flat class="transparent">
       <v-list class="pa-0">
         <v-list-tile avatar>
           <v-list-tile-action>
             <v-btn icon @click.native.stop="mini = !mini">
-              <v-icon>chevron_left</v-icon>
+              <v-icon>arrow_back</v-icon>
             </v-btn>
           </v-list-tile-action>
         </v-list-tile>
@@ -21,7 +22,7 @@
       <v-divider></v-divider>
       <v-list-tile v-for="item in items" :key="item.title">
         <v-list-tile-action>
-          <v-icon>{{ item.icon }}</v-icon>
+          <v-icon >{{ item.icon }}</v-icon>
         </v-list-tile-action>
         <v-list-tile-content>
           <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -38,24 +39,38 @@
             return {
                 drawer: true,
                 items: [
-                    { title: 'Administration', icon: 'dashboard' },
-                    { title: 'Workspaces', icon: 'question_answer' },
+                    { title: 'Administration', icon: 'find_in_page' },
+                    { title: 'Workspaces', icon: 'group_work' },
                     { title: 'Processes', icon: 'question_answer' },
-                    { title: 'Shortcut', icon: 'question_answer' },
-                    { title: 'Bookmarks', icon: 'question_answer' }
+                    { title: 'Shortcut', icon: 'screen_share' },
+                    { title: 'Bookmarks', icon: 'collections_bookmark' }
                 ],
                 mini: true,
                 right: null
             }
-        }
+        },
+        /*   methods: {
+               updateDrawerState(state) {
+                   if (!state) { this.closeDrawer(); }
+                   else { this.openDrawer(); }
+                   console.log(state)
+               },
+               openDrawer() { this.$store.dispatch('navDrawer','open') },
+               closeDrawer() { this.$store.dispatch('navDrawer','close') }
+           },
+           updateDrawerState(state) {
+               if (state) {
+                   this.closeDrawer();
+               }
+           }*/
+
     }
 </script>
 
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
   .application--wrap{
-    .navigation-drawer{
-      background-color: #232b3a !important;
+    .primary-navigation{
       .icon{
         color:#5c6270;
       }
@@ -63,16 +78,25 @@
         color:#5c6270;
       }
       .list__tile{
+        height:65px;
         &:hover{
           .icon{
             color:#fff;
           }
           .list__tile__content{
             color:#fff;
+
           }
 
         }
       }
     }
+    .primary-navigation.navigation-drawer--open{
+      background-color: $bg-navigation-mini;
+    }
+    .primary-navigation.navigation-drawer--mini-variant{
+      background-color: $bg-navigation-open;
+    }
+
   }
 </style>

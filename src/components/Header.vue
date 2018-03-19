@@ -1,4 +1,4 @@
-<template class="header-onify">
+<template class="header">
     <v-toolbar color="white" class="header-toolbar" height="74" fixed app>
         <v-toolbar-title>
             <img src="../assets/img/logo.png">
@@ -53,7 +53,7 @@
 
 <script>
     export default {
-        name: "header-onify",
+        name: "header",
         data: () => {
             let srcs = {
                 1: '/img/icon-service.a848273.png',
@@ -80,7 +80,7 @@
 <style lang="scss">
     @import '~@/assets/sass/variables.scss';
     .header-toolbar{
-        z-index: 9;
+        z-index: 99;
         .text-grey{
             color:#9ba9bb;
         }
