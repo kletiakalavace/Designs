@@ -5,14 +5,14 @@
         </v-toolbar-title>
         <v-flex xs12 sm6 lg7 offset-sm2 class="mx-auto content-general-search">
             <v-layout row bg-search>
-                <v-flex lg9>
+                <v-flex lg8>
                     <v-text-field
                             name="input-1-3"
                             label="Search Workspaces"
                             prepend-icon="search"
                     ></v-text-field>
                 </v-flex>
-                <v-flex lg3>
+                <v-flex lg4>
                     <v-select
                             label="Workspace"
                             :items="people"
@@ -22,19 +22,23 @@
                             max-height="auto"
                     >
                         <template slot="selection" slot-scope="data">
-                            <v-avatar>
-                                <img :src="data.item.avatar">
-                            </v-avatar>
+                            <span
+                                :class="data.item.class"
+                                 class="thumb-workspace-header text-md-center mx-auto d-block">
+                                  {{ data.item.letter }}
+                             </span>
                             {{ data.item.name }}
                         </template>
-                        <template slot="item" slot-scope="data">
+                      <template slot="item" slot-scope="data">
                             <template v-if="typeof data.item !== 'object'">
                                 <v-list-tile-content v-text="data.item"></v-list-tile-content>
                             </template>
                             <template v-else>
-                                <v-list-tile-avatar>
-                                    <img :src="data.item.avatar">
-                                </v-list-tile-avatar>
+                                    <span
+                                        :class="data.item.class"
+                                        class="thumb-workspace-header text-md-center mx-auto d-block">
+                                       {{ data.item.letter }}
+                                    </span>
                                 <v-list-tile-content>
                                     <v-list-tile-title v-html="data.item.name"></v-list-tile-title>
                                 </v-list-tile-content>
@@ -55,22 +59,14 @@
     export default {
         name: "header",
         data: () => {
-            let srcs = {
-                1: '/img/icon-service.a848273.png',
-                2: '/img/icon-support.f1d192e.png',
-                3: '/img/icon-servicedesk.58054c1.png',
-                4: '/img/icon-itam.d7888fd.png',
-                5: '/img/icon-manager.a0cebf5.png'
-            }
-
             return {
                 e11: [],
                 people: [
-                    { name: 'My services', avatar: srcs[1] },
-                    { name: 'Support', avatar: srcs[2] },
-                    { name: 'ServiceDesk', avatar: srcs[3] },
-                    { name: 'ITAM', avatar: srcs[4] },
-                    { name: 'Manager', avatar: srcs[5] },
+                    { name: 'My services', letter: 'M',class:'bg-orange' },
+                    { name: 'Support', letter: 'S',class:'bg-dark-green'},
+                    { name: 'ServiceDesk', letter: 'S',class:'bg-light-green'},
+                    { name: 'ITAM', letter: 'I',class:'bg-light-blue' },
+                    { name: 'Manager', letter: 'M',class:'bg-dark-grey' },
                 ]
             }
         }
@@ -79,6 +75,67 @@
 
 <style lang="scss">
     @import '~@/assets/sass/variables.scss';
+    .thumb-workspace-header{
+        height:23px;
+        width:23px;
+        font-size: 12px;
+        color:#fff;
+        border-radius: 50%;
+        line-height: 23px;
+        margin-right: 14px !important;
+        margin-left: 3px !important;
+    }
+    .menu__content.menu__content--select.menuable__content__active{
+        top:0px !important;
+        .list{
+            padding-top:0 !important;
+            & > div{
+                &:nth-child(1){
+                    height: 49px;
+                    border-bottom: 1px solid #eee;
+                    margin-bottom: 10px!important;
+                    .list__tile.list__tile--link{
+                        height: 48px !important;
+                    }
+                    a{
+                        height: 100%;
+                    }
+
+                }
+            }
+            & >div{
+                height: 35px;
+            }
+
+        }
+    }
+
+    .list__tile.list__tile--link{
+        position: relative;
+        height: 35px;
+        &:hover{
+            background: #eeeeee !important;
+        }
+        .list__tile__content{
+            height: 24px !important;
+        }
+    }
+
+    .bg-orange{
+        background-color: $bg-orange;
+    }
+    .bg-dark-green{
+        background-color: $bg-dark-green;
+    }
+    .bg-light-green{
+        background-color: $bg-light-green;
+    }
+    .bg-light-blue{
+        background-color: $bg-light-blue;
+    }
+    .bg-dark-grey{
+        background-color: $bg-dark-grey;
+    }
     .header-toolbar{
         z-index: 99;
         .text-grey{
