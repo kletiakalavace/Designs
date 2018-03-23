@@ -20,6 +20,7 @@
                             item-text="name"
                             item-value="name"
                             max-height="auto"
+                            class="select-workspace"
                     >
                         <template slot="selection" slot-scope="data">
                             <span
@@ -49,27 +50,85 @@
             </v-layout>
         </v-flex>
         <v-icon class="text-grey mr-4">fa fa-bookmark</v-icon>
-        <v-btn fab dark small class="icon-profile mr-4">
+
+
+        <v-menu bottom center>
+          <v-btn
+            fab
+            dark
+            small
+            slot="activator"
+            class="icon-profile mr-4">
             AV
-        </v-btn>
+          </v-btn>
+          <v-list
+            class="header-account-list">
+            <span class="title-account mb-4 d-block pl-4 ml-1">My Account</span>
+              <span class="name-account pl-3 pr-3">
+                 <v-btn
+                   fab
+                   dark
+                   smallK K class="icon-profile mr-3 mb-4">KK</v-btn>
+                Kletia Kalavace
+              </span>
+
+            <v-btn color="transparent" class="user-link" @click.native.stop="dialog = true"><v-icon>settings</v-icon>User Settings</v-btn>
+            <v-dialog v-model="dialog" max-width="290">
+              <v-card>
+                <v-card-title class="headline">User Settings</v-card-title>
+                <v-card-text>
+                  <v-container grid-list-md>
+                    <v-layout wrap>
+
+                  <v-flex xs12 sm6>
+                    <v-select
+                      label="Language"
+                      class="select-language"
+                      :items="['English', 'French', 'German', 'Swedish','Albanian']"
+                    ></v-select>
+                  </v-flex>
+                    </v-layout>
+                  </v-container>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
+                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Agree</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+
+            <v-list-tile
+              v-for="(item, i) in items"
+              :key="i"
+              @click="">
+              <v-list-tile-title>
+                <v-icon >{{ item.icon }}</v-icon>
+                {{ item.title }}
+              </v-list-tile-title>
+            </v-list-tile>
+          </v-list>
+
+        </v-menu>
     </v-toolbar>
 </template>
 
 <script>
     export default {
         name: "header",
-        data: () => {
-            return {
-                e11: [],
-                people: [
-                    { name: 'My services', letter: 'M',class:'bg-orange' },
-                    { name: 'Support', letter: 'S',class:'bg-dark-green'},
-                    { name: 'ServiceDesk', letter: 'S',class:'bg-light-green'},
-                    { name: 'ITAM', letter: 'I',class:'bg-light-blue' },
-                    { name: 'Manager', letter: 'M',class:'bg-dark-grey' },
-                ]
-            }
-        }
+        data:() => ({
+            people: [
+              { name: 'My services', letter: 'M',class:'bg-orange' },
+              { name: 'Support', letter: 'S',class:'bg-dark-green'},
+              { name: 'ServiceDesk', letter: 'S',class:'bg-light-green'},
+              { name: 'ITAM', letter: 'I',class:'bg-light-blue' },
+              { name: 'Manager', letter: 'M',class:'bg-dark-grey' },
+            ],
+            items: [
+              { title: 'Logout',icon:'power_settings_new' },
+            ],
+      dialog: false,
+        }),
     }
 </script>
 
@@ -85,30 +144,35 @@
         margin-right: 14px !important;
         margin-left: 3px !important;
     }
-    .menu__content.menu__content--select.menuable__content__active{
-        top:0px !important;
+    .menu__content.menu__content--select{
+      top: 13px !important;}
+    .select-workspace{
+      .menu__content.menu__content--select{
+        top: 13px !important;
         .list{
-            padding-top:0 !important;
-            & > div{
-                &:nth-child(1){
-                    height: 49px;
-                    border-bottom: 1px solid #eee;
-                    margin-bottom: 10px!important;
-                    .list__tile.list__tile--link{
-                        height: 48px !important;
-                    }
-                    a{
-                        height: 100%;
-                    }
+          padding-top:0 !important;
+          & > div{
+            &:nth-child(1){
+              height: 49px;
+              border-bottom: 1px solid #eee;
+              margin-bottom: 10px!important;
+              .list__tile.list__tile--link{
+                height: 48px !important;
+              }
+              a{
+                height: 100%;
+              }
 
-                }
             }
-            & >div{
-                height: 35px;
-            }
+          }
+          & >div{
+            height: 35px;
+          }
 
         }
+      }
     }
+
 
     .list__tile.list__tile--link{
         position: relative;
@@ -213,6 +277,51 @@
             }
         }
     }
+  .header-account-list{
+    padding:20px 0;
+    color:$blue--text;
+    .title-account{
+      font-size: 20px;
+      font-weight: 500;
+      color:$blue--text;
+    }
+    .name-account{
+      font-size: 18px;
+      display: block;
+      .btn--floating{
+        width: 48px;
+        height:48px;
+        background-color: $bg-navigation-open;
+      }
+    }
+    .user-link{
+      font-size: 15px;
+      font-weight: 500;
+      padding-left: 15px;
+      color:$blue--text;
+      box-shadow: none;
+      text-transform: none;
+      width: 100%;
+      margin-left: 0;
+      .icon{
+        color:$text-search;
+        margin-right: 37px;
+        margin-left: -32px;
+      }
+    }
+    .list__tile--link{
+      margin-bottom: 12px;
+    }
+    .list__tile__title{
+      font-size: 15px;
+      font-weight: 500;
+      padding-left:15px;
+      .icon{
+        color:$text-search;
+        margin-right: 34px;
+      }
+    }
+  }
 
 
 </style>
