@@ -73,18 +73,28 @@
               </span>
 
             <v-btn color="transparent" class="user-link" @click.native.stop="dialog = true"><v-icon>settings</v-icon>User Settings</v-btn>
-            <v-dialog v-model="dialog" max-width="290">
+            <v-dialog
+              v-model="dialog"
+              max-width="290"
+              class="dialog-user-settings">
               <v-card>
                 <v-card-title class="headline">User Settings</v-card-title>
                 <v-card-text>
                   <v-container grid-list-md>
                     <v-layout wrap>
 
-                  <v-flex xs12 sm6>
+                  <v-flex xs12 sm12>
                     <v-select
                       label="Language"
                       class="select-language"
                       :items="['English', 'French', 'German', 'Swedish','Albanian']"
+                    ></v-select>
+                  </v-flex>
+                  <v-flex xs12 sm12>
+                    <v-select
+                      label="Start Page"
+                      class="select-language"
+                      :items="['Last Workspace', 'Workspace', 'Bookmark', 'All Workspaces']"
                     ></v-select>
                   </v-flex>
                     </v-layout>
@@ -92,8 +102,8 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Disagree</v-btn>
-                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Agree</v-btn>
+                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn>
+                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Save</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
