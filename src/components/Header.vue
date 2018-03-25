@@ -1,7 +1,7 @@
 <template class="header">
     <v-toolbar color="white" class="header-toolbar" height="74" fixed app>
         <v-toolbar-title>
-            <img src="../assets/img/logo.png">
+            <img src="../assets/img/logo_horizontal.svg">
         </v-toolbar-title>
         <v-flex xs12 sm6 lg7 offset-sm2 class="mx-auto content-general-search">
             <v-layout row bg-search>
@@ -222,6 +222,11 @@
         .bg-search{
             background-color:$bg-search;
         }
+      .toolbar__title{
+        width: 161px;
+        margin-top: 9px;
+        display: block;
+      }
     }
     .content-general-search{
         max-width: 729px !important;

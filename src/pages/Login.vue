@@ -8,7 +8,7 @@
                     <v-form lazy-validation>
                         <v-layout row>
                             <v-flex align-center>
-                                <img class="login-logo " src="../assets/img/logo-full.png" alt="logo">
+                                <img class="login-logo " src="../assets/img/logo-full.svg" alt="logo">
                             </v-flex>
                         </v-layout>
 
@@ -161,8 +161,9 @@
         }
 
         .login-logo {
-            margin: auto;
-            display: block;
+          margin: auto;
+          display: block;
+          width:111px;
         }
         .login-main {
             max-width: 410px !important;
