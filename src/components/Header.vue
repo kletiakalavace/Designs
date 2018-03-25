@@ -21,6 +21,8 @@
                             item-value="name"
                             max-height="auto"
                             class="select-workspace"
+                            content-class="select-workspaces"
+
                     >
                         <template slot="selection" slot-scope="data">
                             <span
@@ -76,7 +78,8 @@
             <v-dialog
               v-model="dialog"
               max-width="290"
-              class="dialog-user-settings">
+              content-class="dialog-user-settings"
+              z-index="8">
               <v-card>
                 <v-btn class="close-dialog" @click.native="dialog = false"><i class="material-icons">close</i></v-btn>
                 <v-card-title class="headline">User Settings</v-card-title>
@@ -155,15 +158,15 @@
         margin-right: 14px !important;
         margin-left: 3px !important;
     }
-    .menu__content.menu__content--select{
-      top: 13px !important;}
-    .select-workspace{
-      .menu__content.menu__content--select{
+    .menu__content.menu__content--select.select-workspaces{
+      top: 13px !important;
+    }
+    .select-workspaces.menu__content.menu__content--select{
         top: 13px !important;
         .list{
           padding-top:0 !important;
           & > div{
-            &:nth-child(1){
+            &:first-child{
               height: 49px;
               border-bottom: 1px solid #eee;
               margin-bottom: 10px!important;
@@ -182,7 +185,6 @@
 
         }
       }
-    }
 
 
     .list__tile.list__tile--link{
@@ -339,77 +341,78 @@
     }
   }
   .dialog__content{
-    .dialog--active{
+    .dialog-user-settings{
       max-width:364px !important;
       height:364px;
-      .card{
-        height:100% !important;
-        width: 100% !important;
-        .close-dialog{
-          position: absolute;
-          right: 21px;
-          top: 19px;
-          background: transparent;
-          box-shadow: none;
-          color:#b4b4b4 !important;
-          width: 20px !important;
-          min-width: 20px;
-          margin:0;
-          .btn__content{
-            width:20px;
-            padding:0;
-            &:before{
-              content:none;
-            }
+      .close-dialog{
+        position: absolute;
+        right: 21px;
+        top: 19px;
+        background: transparent !important;
+        box-shadow: none;
+        color:#b4b4b4 !important;
+        width: 20px !important;
+        min-width: 20px;
+        margin:0;
+        .btn__content{
+          width:20px;
+          padding:0;
+          &:before{
+            content:none;
           }
         }
       }
-    }
-    .select-border{
-      label{
-        top:-17px;
-        font-size: 12px;
-        color:$blue--text;
+      .card{
+        height:100% !important;
+        width: 100% !important;
       }
-      .input-group__input{
-        border-bottom: 1px solid #f1f1f1;
-        border-top: 1px solid #f1f1f1;
-        height: 47px;
-        line-height: 47px;
-        .input-group__selections__comma{
-          padding-left: 25px;
-          font-size: 15px;
+      .select-border{
+        label{
+          top:-17px;
+          font-size: 12px;
           color:$blue--text;
-          font-weight: 500;
+        }
+        .input-group__input{
+          border-bottom: 1px solid #f1f1f1;
+          border-top: 1px solid #f1f1f1;
+          height: 47px;
+          line-height: 47px;
+          .input-group__selections__comma{
+            padding-left: 25px;
+            font-size: 15px;
+            color:$blue--text;
+            font-weight: 500;
+          }
+        }
+        .input-group__details{
+          display: none;
         }
       }
-      .input-group__details{
-        display: none;
-      }
-    }
-    .select-border.input-group--focused, .select-border.input-group--dirty{
-      label{
-        transform: none !important;
-      }
-    }
-    .select-language{
-      margin-bottom:44px;
-    }
-    .color-orange--text{
-      color:$color-orange;
-      font-size: 14px;
-      font-weight: 400;
-      .btn__content{
-        &:before{
-          left: 14px;
-          width: 60px !important;
-          padding:0 !important;
+      .select-border.input-group--focused, .select-border.input-group--dirty{
+        label{
+          transform: none !important;
         }
       }
+      .select-language{
+        margin-bottom:44px;
+      }
+      .color-orange--text{
+        color:$color-orange;
+        font-size: 14px;
+        font-weight: 400;
+        .btn__content{
+          &:before{
+            left: 14px;
+            width: 60px !important;
+            padding:0 !important;
+          }
+        }
+      }
+      .color-orange--text.distance{
+        margin-right: -23px;
+      }
     }
-    .color-orange--text.distance{
-      margin-right: -23px;
-    }
+
   }
 
 </style>
