@@ -1,4 +1,4 @@
-<template>
+<template class="workspace">
   <v-container fluid fill-height class="pa-0 workspace-container">
     <o-default-layout>
       <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-workspace">
@@ -117,8 +117,8 @@
 
 <script>
     export default {
+      name: "workspace",
         data () {
-
             }
     }
 </script>
