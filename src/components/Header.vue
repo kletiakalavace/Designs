@@ -6,16 +6,38 @@
         <v-flex xs12 sm6 lg7 offset-sm2 class="mx-auto content-general-search">
             <v-layout row bg-search>
                 <v-flex lg8>
-                    <v-text-field
-                            name="input-1-3"
-                            label="Search Workspaces"
-                            prepend-icon="search"
-                    ></v-text-field>
+                  <v-select
+                    label="Search Workspaces"
+                    :items="searches"
+                    v-model="a1"
+                    item-text="name"
+                    item-value="name"
+                    chips
+                    max-height="auto"
+                    autocomplete
+                    class="search-primary"
+                    content-class="select-searches"
+                  >
+                    <template slot="selection" slot-scope="data">
+                      {{ data.item.name }}
+                    </template>
+                    <template slot="item" slot-scope="data">
+                      <template >
+                        <v-list-tile-content>
+                           <span class="thumb-workspace-header text-md-center mx-auto d-inline-block bg-orange">
+                                       {{ data.item.letter }}
+                           </span>
+                          <v-list-tile-title class="d-inline-block" v-html="data.item.name"></v-list-tile-title>
+                          <span>{{ data.item.version }}</span>
+                        </v-list-tile-content>
+                      </template>
+                    </template>
+                  </v-select>
                 </v-flex>
                 <v-flex lg4>
                     <v-select
                             label="Workspace"
-                            :items="people"
+                            :items="workspace"
                             v-model="select"
                             item-text="name"
                             item-value="name"
@@ -26,8 +48,7 @@
                     >
                         <template slot="selection" slot-scope="data">
                             <span
-                                :class="data.item.class"
-                                 class="thumb-workspace-header text-md-center mx-auto d-block">
+                                 class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
                                   {{ data.item.letter }}
                              </span>
                             {{ data.item.name }}
@@ -131,12 +152,17 @@
     export default {
         name: "header",
         data:() => ({
-            people: [
+            workspace: [
               { name: 'My services', letter: 'M',class:'bg-orange' },
               { name: 'Support', letter: 'S',class:'bg-dark-green'},
               { name: 'ServiceDesk', letter: 'S',class:'bg-light-green'},
               { name: 'ITAM', letter: 'I',class:'bg-light-blue' },
               { name: 'Manager', letter: 'M',class:'bg-dark-grey' },
+            ],
+            searches: [
+              {name:'Adobe Acrovat Pro',letter:'A',version:'Software Asset Desktop '},
+              {name:'Adobe Creative Cloud',letter:'A',version:'Software Asset Desktop '},
+              {name:'Fireworks',letter:'F',version:'Software Asset Desktop mobile'},
             ],
             items: [
               { title: 'Logout',icon:'power_settings_new' },
@@ -413,6 +439,21 @@
       }
     }
 
+  }
+    .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
+      width: 729px;
+      top: 62px !important;
+      .list__tile.list__tile--link{
+        height:70px;
+      }
+      .list__tile.list__tile--link .list__tile__content{
+        height:inherit !important;
+      }
+    }
+  .search-primary{
+    i{
+      display: none;
+    }
   }
 
 </style>

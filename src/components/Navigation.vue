@@ -18,6 +18,7 @@
         </v-list-tile>
       </v-list>
     </v-toolbar>
+
     <v-list class="pt-0" dense>
       <v-divider></v-divider>
       <v-list-tile v-for="item in items" :key="item.title">
@@ -30,6 +31,7 @@
       </v-list-tile>
     </v-list>
   </v-navigation-drawer>
+
 </template>
 
 <script>
@@ -49,20 +51,6 @@
                 right: null
             }
         },
-        /*   methods: {
-               updateDrawerState(state) {
-                   if (!state) { this.closeDrawer(); }
-                   else { this.openDrawer(); }
-                   console.log(state)
-               },
-               openDrawer() { this.$store.dispatch('navDrawer','open') },
-               closeDrawer() { this.$store.dispatch('navDrawer','close') }
-           },
-           updateDrawerState(state) {
-               if (state) {
-                   this.closeDrawer();
-               }
-           }*/
 
     }
 </script>
