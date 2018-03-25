@@ -78,6 +78,7 @@
               max-width="290"
               class="dialog-user-settings">
               <v-card>
+                <v-btn class="close-dialog" @click.native="dialog = false"><i class="material-icons">close</i></v-btn>
                 <v-card-title class="headline">User Settings</v-card-title>
                 <v-card-text>
                   <v-container grid-list-md>
@@ -86,14 +87,14 @@
                   <v-flex xs12 sm12>
                     <v-select
                       label="Language"
-                      class="select-language"
+                      class="select-border select-language"
                       :items="['English', 'French', 'German', 'Swedish','Albanian']"
                     ></v-select>
                   </v-flex>
                   <v-flex xs12 sm12>
                     <v-select
                       label="Start Page"
-                      class="select-language"
+                      class="select-border"
                       :items="['Last Workspace', 'Workspace', 'Bookmark', 'All Workspaces']"
                     ></v-select>
                   </v-flex>
@@ -102,8 +103,8 @@
                 </v-card-text>
                 <v-card-actions>
                   <v-spacer></v-spacer>
-                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Cancel</v-btn>
-                  <v-btn color="green darken-1" flat="flat" @click.native="dialog = false">Save</v-btn>
+                  <v-btn color="color-orange darken-1" class="distance" flat="flat" @click.native="dialog = false">Cancel</v-btn>
+                  <v-btn color="color-orange darken-1" flat="flat" @click.native="dialog = false">Save</v-btn>
                 </v-card-actions>
               </v-card>
             </v-dialog>
@@ -337,6 +338,78 @@
       }
     }
   }
-
+  .dialog__content{
+    .dialog--active{
+      max-width:364px !important;
+      height:364px;
+      .card{
+        height:100% !important;
+        width: 100% !important;
+        .close-dialog{
+          position: absolute;
+          right: 21px;
+          top: 19px;
+          background: transparent;
+          box-shadow: none;
+          color:#b4b4b4 !important;
+          width: 20px !important;
+          min-width: 20px;
+          margin:0;
+          .btn__content{
+            width:20px;
+            padding:0;
+            &:before{
+              content:none;
+            }
+          }
+        }
+      }
+    }
+    .select-border{
+      label{
+        top:-17px;
+        font-size: 12px;
+        color:$blue--text;
+      }
+      .input-group__input{
+        border-bottom: 1px solid #f1f1f1;
+        border-top: 1px solid #f1f1f1;
+        height: 47px;
+        line-height: 47px;
+        .input-group__selections__comma{
+          padding-left: 25px;
+          font-size: 15px;
+          color:$blue--text;
+          font-weight: 500;
+        }
+      }
+      .input-group__details{
+        display: none;
+      }
+    }
+    .select-border.input-group--focused, .select-border.input-group--dirty{
+      label{
+        transform: none !important;
+      }
+    }
+    .select-language{
+      margin-bottom:44px;
+    }
+    .color-orange--text{
+      color:$color-orange;
+      font-size: 14px;
+      font-weight: 400;
+      .btn__content{
+        &:before{
+          left: 14px;
+          width: 60px !important;
+          padding:0 !important;
+        }
+      }
+    }
+    .color-orange--text.distance{
+      margin-right: -23px;
+    }
+  }
 
 </style>
