@@ -128,65 +128,6 @@
   html{
     overflow: auto;
   }
-  .bg-orange{
-    background-color: $bg-orange;
-  }
-  .border-orange {
-    border-top:5px solid $border-orange;
-  }
-  .bg-light-green{
-    background-color: $bg-light-green;
-  }
-  .border-light-green {
-    border-top:5px solid $border-light-green;
-  }
-  .bg-dark-green{
-    background-color: $bg-dark-green;
-  }
-  .border-dark-green {
-    border-top:5px solid $border-dark-green;
-  }
-  .bg-light-blue{
-    background-color: $bg-light-blue;
-  }
-  .border-light-blue{
-    border-top:5px solid $border-light-blue;
-  }
-  .bg-dark-grey{
-    background-color: $bg-dark-grey;
-  }
-  .border-dark-grey{
-    border-top:5px solid $border-dark-grey;
-  }
-  .color-orange {
-    color:$color-orange;
-  }
-  .color-light-green {
-    color:$color-light-green;
-  }
-  .color-dark-green {
-    color:$color-dark-green;
-  }
-  .color-light-blue{
-    color:$color-light-blue;
-  }
-  .color-dark-grey{
-    color: $color-dark-grey;
-  }
-  .grey--text{
-    color:$grey--text;
-  }
-  .blue--text{
-    color:$blue--text;
-  }
-
-  .content-items{
-    flex-wrap: wrap;
-    display: flex;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
   .workspace-container {
     .content-workspace {
       max-width: 791px;
@@ -247,6 +188,66 @@
       }
     }
   }
+  .bg-orange{
+    background-color: $bg-orange;
+  }
+  .border-orange {
+    border-top:5px solid $border-orange;
+  }
+  .bg-light-green{
+    background-color: $bg-light-green;
+  }
+  .border-light-green {
+    border-top:5px solid $border-light-green;
+  }
+  .bg-dark-green{
+    background-color: $bg-dark-green;
+  }
+  .border-dark-green {
+    border-top:5px solid $border-dark-green;
+  }
+  .bg-light-blue{
+    background-color: $bg-light-blue;
+  }
+  .border-light-blue{
+    border-top:5px solid $border-light-blue;
+  }
+  .bg-dark-grey{
+    background-color: $bg-dark-grey;
+  }
+  .border-dark-grey{
+    border-top:5px solid $border-dark-grey;
+  }
+  .color-orange {
+    color:$color-orange;
+  }
+  .color-light-green {
+    color:$color-light-green;
+  }
+  .color-dark-green {
+    color:$color-dark-green;
+  }
+  .color-light-blue{
+    color:$color-light-blue;
+  }
+  .color-dark-grey{
+    color: $color-dark-grey;
+  }
+  .grey--text{
+    color:$grey--text;
+  }
+  .blue--text{
+    color:$blue--text;
+  }
+
+  .content-items{
+    flex-wrap: wrap;
+    display: flex;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
 
 </style>
 
