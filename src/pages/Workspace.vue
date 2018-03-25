@@ -129,8 +129,14 @@
     overflow: auto;
   }
   .workspace-container {
+    .grey--text{
+      color:$grey--text;
+    }
+    .blue--text{
+      color:$blue--text;
+    }
     .content-workspace {
-      max-width: 791px;
+      max-width: 791px !important;
       h2.title {
         font-size: 22px !important;
       }
@@ -140,7 +146,7 @@
       }
     }
     .content-workspace-items {
-      max-width: 791px;
+      max-width: 791px !important;
       h2.title {
         font-size: 22px !important;
       }
@@ -159,7 +165,7 @@
         width: 72px;
         font-size: 32px;
         color: #fff;
-        border-radius: 50%;
+        border-radius: 50% !important;
         line-height: 72px;
       }
     }
@@ -233,12 +239,7 @@
   .color-dark-grey{
     color: $color-dark-grey;
   }
-  .grey--text{
-    color:$grey--text;
-  }
-  .blue--text{
-    color:$blue--text;
-  }
+
 
   .content-items{
     flex-wrap: wrap;
