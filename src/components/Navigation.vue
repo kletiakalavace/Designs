@@ -19,8 +19,7 @@
       </v-list>
     </v-toolbar>
 
-    <v-list class="pt-0" dense>
-      <v-divider></v-divider>
+    <v-list class="pt-0 list-navigation" dense>
       <v-list-tile v-for="item in items" :key="item.title">
         <v-list-tile-action>
           <v-icon >{{ item.icon }}</v-icon>
@@ -67,6 +66,7 @@
       }
       .list__tile{
         height:65px;
+        padding:0 !important;
         &:hover{
           .icon{
             color:#fff;
@@ -77,6 +77,18 @@
           }
 
         }
+        .list__tile__action{
+          justify-content: center !important;
+          min-width: 80px !important;
+        }
+        .list__tile__title{
+          font-size: 16px;
+          color: $grey--text;
+          &:hover{
+            color:$white;
+          }
+        }
+
       }
     }
     .primary-navigation.navigation-drawer--open{
@@ -85,6 +97,12 @@
     .primary-navigation.navigation-drawer--mini-variant{
       background-color: $bg-navigation-open;
     }
-
+    .list-navigation{
+      .list__tile{
+        .icon{
+          font-size: 31px;
+        }
+      }
+    }
   }
 </style>

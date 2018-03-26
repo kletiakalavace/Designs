@@ -1,9 +1,9 @@
 <template class="workspace">
   <v-container fluid fill-height class="pa-0 workspace-container">
-    <o-default-layout>
+    <o-default-layout class="bg-workspaces">
       <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-workspace">
-       <h2 class="title blue--text mt-4">Workspaces</h2>
-        <p class="grey--text pt-1">Welcome Aleksander Vero! Choose the workspace that best fits your current needs.</p>
+       <h2 class="title blue--text mt-5">Workspaces</h2>
+        <p class="grey--text pt-1 mb-5">Welcome Aleksander Vero! Choose the workspace that best fits your current needs.</p>
       </v-flex>
       <v-flex xs12 sm6 lg9 offset-sm2 class="mx-auto content-workspace-items">
          <div class="content-items">
@@ -137,8 +137,9 @@
     }
     .content-workspace {
       max-width: 791px !important;
-      h2.title {
+      h2.title.mt-5 {
         font-size: 22px !important;
+        margin-top: 62px !important;
       }
       p {
         font-size: 15px;
@@ -175,19 +176,21 @@
       .card {
         height: 100% !important;
         margin-right: 8%;
-      }
-      div {
-        transition: top 0.15s ease-out;
-        -webkit-transition: top 0.15s ease-out;
-        -moz-transition: top 0.15s ease-out;
-        -o-transition: top 0.15s ease-out;
-        top: 0;
+        transition-duration: 0.2s;
+        &:hover{
+          transform: scaleY(1.1);
+          -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+          box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+          .thumb-workspace{
+           transform: scaleY(.9090);
+            margin-bottom: 8px;
+          }
+          .card__title{
+            transform: scaleY(.9090);
+          }
+        }
       }
       &:hover {
-        .card {
-          top: -10px;
-          z-index: 9;
-        }
         .card__actions.hidden-lg-only {
           display: block !important;
         }
@@ -248,7 +251,9 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-
+  .bg-workspaces >.layout{
+      background-color: $bg-page;
+    }
 
 </style>
 

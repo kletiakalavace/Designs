@@ -3,7 +3,7 @@
         <v-toolbar-title>
             <img src="../assets/img/logo_horizontal.svg">
         </v-toolbar-title>
-        <v-flex xs12 sm6 lg7 offset-sm2 class="mx-auto content-general-search">
+        <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-general-search">
             <v-layout row bg-search>
                 <v-flex lg8>
                   <v-select
@@ -75,7 +75,9 @@
         <v-icon class="text-grey mr-4">fa fa-bookmark</v-icon>
 
 
-        <v-menu bottom center>
+        <v-menu bottom
+                center
+                content-class="menu-user">
           <v-btn
             fab
             dark
@@ -87,11 +89,12 @@
           <v-list
             class="header-account-list">
             <span class="title-account mb-4 d-block pl-4 ml-1">My Account</span>
-              <span class="name-account pl-3 pr-3">
-                 <v-btn
-                   fab
-                   dark
-                   smallK K class="icon-profile mr-3 mb-4">KK</v-btn>
+            <v-btn
+              fab
+              dark
+              smallK K class="icon-profile mr-3 mb-4 ml-4 d-inline-block">KK</v-btn>
+
+              <span class="name-account pl-3 pr-3 d-inline-block">
                 Kletia Kalavace
               </span>
 
@@ -180,7 +183,7 @@
         font-size: 12px;
         color:#fff;
         border-radius: 50%;
-        line-height: 23px;
+        line-height: 24px;
         margin-right: 14px !important;
         margin-left: 3px !important;
     }
@@ -245,20 +248,22 @@
             color:#9ba9bb;
         }
         .icon-profile{
-            height:46px;
-            width:46px;
+          height:46px;
+          width:46px;
+          box-shadow: none;
+          font-size: 18px;
         }
         .bg-search{
             background-color:$bg-search;
         }
       .toolbar__title{
-        width: 161px;
+        width: 120px;
         margin-top: 9px;
         display: block;
       }
     }
     .content-general-search{
-        max-width: 729px !important;
+        max-width: 722px !important;
         .input-group.input-group--text-field{
             padding: 9px 15px;
             label{
@@ -336,12 +341,14 @@
         width: 48px;
         height:48px;
         background-color: $bg-navigation-open;
+        font-size: 18px;
+        box-shadow: none;
       }
     }
     .user-link{
       font-size: 15px;
       font-weight: 500;
-      padding-left: 15px;
+      padding-left: 25px;
       color:$blue--text;
       box-shadow: none;
       text-transform: none;
@@ -350,7 +357,7 @@
       .icon{
         color:$text-search;
         margin-right: 37px;
-        margin-left: -32px;
+        margin-left: -76px;
       }
     }
     .list__tile--link{
@@ -359,7 +366,7 @@
     .list__tile__title{
       font-size: 15px;
       font-weight: 500;
-      padding-left:15px;
+      padding-left:20px;
       .icon{
         color:$text-search;
         margin-right: 34px;
@@ -453,6 +460,15 @@
   .search-primary{
     i{
       display: none;
+    }
+  }
+  .menu-user{
+    width:273px;
+    .icon-profile{
+      height:46px;
+      width:46px;
+      box-shadow: none;
+      font-size: 18px;
     }
   }
 
