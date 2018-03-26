@@ -17,6 +17,7 @@
                     autocomplete
                     class="search-primary"
                     content-class="select-searches"
+                    prepend-icon="search"
                   >
                     <template slot="selection" slot-scope="data">
                       {{ data.item.name }}
@@ -24,11 +25,16 @@
                     <template slot="item" slot-scope="data">
                       <template >
                         <v-list-tile-content>
-                           <span class="thumb-workspace-header text-md-center mx-auto d-inline-block bg-orange">
+                          <div>
+                            <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
                                        {{ data.item.letter }}
                            </span>
-                          <v-list-tile-title class="d-inline-block" v-html="data.item.name"></v-list-tile-title>
-                          <span>{{ data.item.version }}</span>
+                            <span class="d-inline-block">
+                               <span class="name-search d-block">{{data.item.name}}</span>
+                              <span class="version-search d-block">{{ data.item.version }}</span>
+                            </span>
+                            <v-icon>more_vert</v-icon>
+                          </div>
                         </v-list-tile-content>
                       </template>
                     </template>
@@ -264,6 +270,13 @@
     }
     .content-general-search{
         max-width: 722px !important;
+        .search-primary{
+          label{
+            font-size: 15px;
+            color:$grey--text;
+
+          }
+        }
         .input-group.input-group--text-field{
             padding: 9px 15px;
             label{
@@ -292,6 +305,13 @@
                     margin-right:10px;
                 }
             }
+        }
+        .input-group.input-group--text-field.input-group--select.search-primary{
+          label{
+            color:$grey--text;
+            font-weight: 400;
+            font-family: "Open Sans", sans-serif;
+          }
         }
         .input-group--dirty{
             label{
@@ -448,7 +468,7 @@
 
   }
     .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
-      width: 729px;
+      width: 722px;
       top: 62px !important;
       .list__tile.list__tile--link{
         height:70px;
@@ -469,6 +489,30 @@
       width:46px;
       box-shadow: none;
       font-size: 18px;
+    }
+  }
+  .select-searches{
+    .medium-letter-circle{
+      width: 43px;
+      height: 43px;
+      font-size: 16px;
+      color: $white;
+      border-radius: 50%;
+      line-height: 40px;
+      margin-right: 14px !important;
+      font-weight: 500;
+      float: left;
+    }
+    .name-search{
+      opacity: 0.87;
+      color:#000000;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .version-search{
+      font-size: 14px;
+      color: #000000;
+      opacity: 0.54;
     }
   }
 
