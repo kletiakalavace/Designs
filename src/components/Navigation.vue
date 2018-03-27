@@ -35,6 +35,12 @@
 
       <div class="sub-items-content" v-if="subItems">
         <div  v-if="item.selected" v-for="item in items" :key="item.title">
+          <v-list-tile class="item-header">
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+
           <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
             <v-list-tile-action>
               <v-icon >{{ item.icon }}</v-icon>
@@ -96,9 +102,11 @@
     },
     methods: {
       handleItemClick: function(item) {
+        this.items.map((i) => {
+          i.selected = false;
+        });
         item.selected = true;
         this.subItems = (item.subItems && item.subItems.length > 0);
-        console.log(item);
       }
     }
   }
