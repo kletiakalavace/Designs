@@ -145,7 +145,7 @@
             <v-list-tile
               v-for="(item, i) in items"
               :key="i"
-              @click="">
+            >
               <v-list-tile-title>
                 <v-icon >{{ item.icon }}</v-icon>
                 {{ item.title }}
