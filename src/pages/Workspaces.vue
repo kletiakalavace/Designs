@@ -116,11 +116,12 @@
 </template>
 
 <script>
-    export default {
-      name: "workspace",
-        data () {
-            }
+  export default {
+    name: "workspaces",
+    data() {
+      return {};
     }
+  }
 </script>
 
 <style lang="scss">

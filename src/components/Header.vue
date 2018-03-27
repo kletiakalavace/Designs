@@ -9,7 +9,6 @@
                   <v-select
                     label="Search Workspaces"
                     :items="searches"
-                    v-model="a1"
                     item-text="name"
                     item-value="name"
                     chips
@@ -44,7 +43,6 @@
                     <v-select
                             label="Workspace"
                             :items="workspace"
-                            v-model="select"
                             item-text="name"
                             item-value="name"
                             max-height="auto"
@@ -159,7 +157,7 @@
 
 <script>
     export default {
-        name: "header",
+        name: "o-header",
         data:() => ({
             workspace: [
               { name: 'My services', letter: 'M',class:'bg-orange' },
@@ -176,7 +174,7 @@
             items: [
               { title: 'Logout',icon:'power_settings_new' },
             ],
-      dialog: false,
+            dialog: false,
         }),
     }
 </script>

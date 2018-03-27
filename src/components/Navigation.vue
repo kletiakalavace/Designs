@@ -1,57 +1,107 @@
 <template class="navigation-primary">
   <v-navigation-drawer
+          v-bind:class="{ 'sub-items': subItems }"
           stateless
           hide-overlay
-          :mini-variant.sync="mini"
+          :mini-variant="mini"
           v-model="drawer"
           dark
           class="primary-navigation"
   >
-    <v-toolbar flat class="transparent">
-      <v-list class="pa-0">
-        <v-list-tile avatar>
-          <v-list-tile-action>
-            <v-btn icon @click.native.stop="mini = !mini">
-              <v-icon>arrow_back</v-icon>
-            </v-btn>
-          </v-list-tile-action>
-        </v-list-tile>
-      </v-list>
-    </v-toolbar>
-
     <v-list class="pt-0 list-navigation" dense>
-      <v-list-tile v-for="item in items" :key="item.title">
-        <v-list-tile-action>
-          <v-icon >{{ item.icon }}</v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
+      <div class="items-content">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-action>
+              <v-btn icon @click.native.stop="mini = !mini">
+                <v-icon v-if="!mini">arrow_back</v-icon>
+                <v-icon v-if="mini">arrow_forward</v-icon>
+              </v-btn>
+            </v-list-tile-action>
+          </v-list-tile>
+        </v-list>
+
+        <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
+          <v-list-tile>
+            <v-list-tile-action @click='handleItemClick(item)'>
+              <v-icon >{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </div>
+      </div>
+
+      <div class="sub-items-content" v-if="subItems">
+        <div  v-if="item.selected" v-for="item in items" :key="item.title">
+          <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
+            <v-list-tile-action>
+              <v-icon >{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </div>
+      </div>
     </v-list>
   </v-navigation-drawer>
 
 </template>
 
 <script>
-    export default {
-        name: "navigation-primary",
-        data () {
-            return {
-                drawer: true,
-                items: [
-                    { title: 'Administration', icon: 'find_in_page' },
-                    { title: 'Workspaces', icon: 'group_work' },
-                    { title: 'Processes', icon: 'question_answer' },
-                    { title: 'Shortcut', icon: 'screen_share' },
-                    { title: 'Bookmarks', icon: 'collections_bookmark' }
-                ],
-                mini: true,
-                right: null
-            }
-        },
-
+  export default {
+    name: "navigation-primary",
+    data() {
+      return {
+        drawer: true,
+        subItems: false,
+        items: [
+          {
+            title: 'Administration',
+            icon: 'find_in_page'
+          },
+          {
+            title: 'Workspaces',
+            icon: 'group_work',
+            subItems: [{
+              title: 'My service'
+            }, {
+              title: 'Support'
+            }, {
+              title: 'ServiceDesk'
+            }, {
+              title: 'ITAM'
+            }, {
+              title: 'Manager'
+            }]
+          },
+          {
+            title: 'Processes',
+            icon: 'question_answer'
+          },
+          {
+            title: 'Shortcut',
+            icon: 'screen_share'
+          },
+          {
+            title: 'Bookmarks',
+            icon: 'collections_bookmark'
+          }
+        ],
+        mini: true,
+        right: null
+      }
+    },
+    methods: {
+      handleItemClick: function(item) {
+        item.selected = true;
+        this.subItems = (item.subItems && item.subItems.length > 0);
+        console.log(item);
+      }
     }
+  }
 </script>
 
 <style lang="scss">
@@ -89,6 +139,14 @@
           }
         }
 
+      }
+      &.sub-items .items-content{
+        width: 80px;
+        float: left;
+      }
+      &.sub-items .sub-items-content{
+        width: calc(100% - 80px);
+        float: left;
       }
     }
     .primary-navigation.navigation-drawer--open{
