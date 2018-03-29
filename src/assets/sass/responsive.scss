@@ -3,7 +3,7 @@
   .login-container {
     .login-list{
       width: 78% !important;
-      position:absolute !important;
+      position:absolute;
       margin-top:0;
         &:before {
           position: absolute;
@@ -27,7 +27,8 @@
   }
 }
 
-@media (min-width: 320px) and (orientation: landscape) {
+
+@media (max-width: 650px) and (orientation: landscape) {
   .login-list{
     position: relative !important;
     margin-top: 49px !important;
