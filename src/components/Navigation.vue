@@ -45,7 +45,8 @@
             <v-list-tile-action>
             <!--  <v-icon >{{ item.icon }}</v-icon>-->
               <span
-                class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                :class="subItem.class"
+                class="thumb-workspace-navigation text-md-center mx-auto d-block">
                                   {{subItem.letter }}
                              </span>
             </v-list-tile-action>
@@ -70,27 +71,36 @@
         items: [
           {
             title: 'Administration',
-            icon: 'find_in_page'
+            icon: 'find_in_page',
           },
           {
             title: 'Workspaces',
-            icon: 'group_work',
+            icon: 'widgets',
             subItems: [{
               title: 'My service',
-              letter: 'B'
+              letter: 'M',
+              class:'bg-orange'
             }, {
-              title: 'Support'
+              title: 'Support',
+              letter: 'S',
+              class:'bg-dark-green'
             }, {
-              title: 'ServiceDesk'
+              title: 'ServiceDesk',
+              letter: 'S',
+              class:'bg-light-green'
             }, {
-              title: 'ITAM'
+              title: 'ITAM',
+              letter: 'I',
+              class:'bg-light-blue'
             }, {
-              title: 'Manager'
+              title: 'Manager',
+              letter: 'M',
+              class:'bg-dark-grey'
             }]
           },
           {
             title: 'Processes',
-            icon: 'question_answer'
+            icon: 'group_work'
           },
           {
             title: 'Shortcut',
@@ -138,7 +148,6 @@
             color:#fff;
 
           }
-
         }
         .list__tile__action{
           justify-content: center !important;
@@ -160,10 +169,46 @@
       &.sub-items .sub-items-content{
         width: calc(100% - 80px);
         float: left;
+        background:$bg-navigation-mini;
+        .list__tile__content{
+          color: $grey--text;
+        }
       }
     }
-    .primary-navigation.navigation-drawer--open{
-      background-color: $bg-navigation-mini;
+    .navigation-drawer--open{
+      background:$bg-navigation-open;
+    }
+    .primary-navigation.navigation-drawer--open.sub-items{
+      .items-content{
+        background:$bg-navigation-open;
+        .active{
+          background-color: $bg-navigation-mini;
+          .icon{
+            color:$white;
+          }
+        }
+      }
+      .sub-items-content{
+        background-color: $bg-navigation-mini;
+        height:100%;
+        position: absolute;
+        right:0;
+        .item-header{
+          .list__tile{
+            .list__tile__title{
+              font-size:18px;
+              color:$white;
+              margin-left: 33px;
+            }
+          }
+
+        }
+        .list__tile{
+          .list__tile__title{
+            font-size: 14px;
+          }
+        }
+      }
     }
     .primary-navigation.navigation-drawer--mini-variant{
       background-color: $bg-navigation-open;
@@ -171,8 +216,17 @@
     .list-navigation{
       .list__tile{
         .icon{
-          font-size: 28px;
+          font-size: 26px;
         }
+      }
+      .thumb-workspace-navigation{
+        width:34px;
+        height:34px;
+        font-size: 18px;
+        color:#fff;
+        border-radius: 50%;
+        line-height: 35px;
+        margin-right: 13px !important;
       }
     }
   }
