@@ -1,13 +1,16 @@
+@import '~@/assets/sass/variables.scss';
 @media only screen and (max-width: 750px){
   .login-container {
     .login-list{
       width: 78% !important;
+      position:absolute !important;
+      margin-top:0;
         &:before {
           position: absolute;
           display: block;
           content: '...';
           right: 0;
-          background: #fafafa;
+          background: $bg-page;
           padding-left: 6px;
           z-index: 9;
         }
@@ -17,5 +20,16 @@
 @media only screen and (max-width: 599px) {
   .login-logo-mobile{
     display: block;
+  }
+  .login-list{
+    position:absolute !important;
+    margin-top:0 !important;
+  }
+}
+
+@media (min-width: 320px) and (orientation: landscape) {
+  .login-list{
+    position: relative !important;
+    margin-top: 49px !important;
   }
 }

@@ -62,7 +62,17 @@
                             :color="notificationColor"
                             class="notification-content"
                     >
-                        <span class="notification-message">{{ notificationText }}</span>
+                      <v-btn
+                        class="close-notification"
+                        @click.native="showNotification = false"
+                      >
+                        <v-icon>close</v-icon>
+                      </v-btn>
+                       <div>
+                         <span class="notification-message">{{ notificationText }}</span>
+                         <a href="#" class="notification-link">{{ notificationLink }}</a>
+                       </div>
+
                     </v-snackbar>
                 </v-card>
             </v-flex>
@@ -106,9 +116,11 @@
                 notificationColor: 'white',
                 timeout: 10000,
                 showNotification: true,
-                notificationText: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+                notificationText: 'Mesagge lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
+                notificationLink:'Link button',
                 errorMessage: '',
                 loading: false,
+                mode: '',
                 user: {
                     username: '',
                     password: '',
@@ -148,6 +160,35 @@
         overflow: auto !important;
     }
     .login-container {
+         background: #f5f6f8;
+        .alert.error-message{
+          color:$error-message;
+          font-size: 12px;
+          font-family: 'Open Sans', sans-serif;
+        }
+        .notification-link{
+          display: block;
+          color: #1754be !important;
+          text-transform: uppercase;
+          font-size: 13px;
+          font-weight: 600;
+          float: left;
+          text-decoration: none;
+          font-family: 'Open Sans', sans-serif;
+          margin-top: 10px;
+        }
+        .close-notification{
+          color:$grey--text;
+          top: 9px;
+          position: absolute;
+          right: 9px;
+          box-shadow: none;
+          background: $white;
+          .icon{
+            font-size: 19px;
+            font-weight: 600;
+          }
+        }
         .login-background {
             position: absolute;
             min-height: 50%;
@@ -203,15 +244,23 @@
             }
         }
         .notification-message{
-            color: #222222;
+            color: $blue--text;
+            font-size: 14px;
+            font-family: 'Open Sans', sans-serif;
+            display: block;
+            float: left;
+            width: 100%;
+
         }
         .notification-content .snack__content{
-            max-width: 360px;
+          max-width: 415px;
+          padding: 34px 29px 27px 29px;
         }
         .login-list{
             bottom: 20px;
             position: absolute;
             left: 50%;
+            margin-top:0;
             -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
             overflow: hidden;
