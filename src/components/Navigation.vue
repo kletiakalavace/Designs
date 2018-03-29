@@ -43,7 +43,11 @@
 
           <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
             <v-list-tile-action>
-              <v-icon >{{ item.icon }}</v-icon>
+            <!--  <v-icon >{{ item.icon }}</v-icon>-->
+              <span
+                class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                                  {{subItem.letter }}
+                             </span>
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
@@ -72,7 +76,8 @@
             title: 'Workspaces',
             icon: 'group_work',
             subItems: [{
-              title: 'My service'
+              title: 'My service',
+              letter: 'B'
             }, {
               title: 'Support'
             }, {
@@ -166,7 +171,7 @@
     .list-navigation{
       .list__tile{
         .icon{
-          font-size: 31px;
+          font-size: 28px;
         }
       }
     }
