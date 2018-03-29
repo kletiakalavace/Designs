@@ -165,6 +165,8 @@
           color:$error-message;
           font-size: 12px;
           font-family: 'Open Sans', sans-serif;
+          background:transparent
+          ;
         }
         .notification-link{
           display: block;
@@ -182,7 +184,7 @@
           top: 9px;
           position: absolute;
           right: 9px;
-          box-shadow: none;
+          box-shadow: none !important;
           background: $white;
           .icon{
             font-size: 19px;
