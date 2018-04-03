@@ -24,7 +24,7 @@
                     <template slot="item" slot-scope="data">
                       <template >
                         <v-list-tile-content>
-                          <div>
+                          <div class="list-content-search">
                             <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
                                        {{ data.item.letter }}
                            </span>
@@ -32,7 +32,10 @@
                                <span class="name-search d-block">{{data.item.name}}</span>
                               <span class="version-search d-block">{{ data.item.version }}</span>
                             </span>
-                            <v-icon>more_vert</v-icon>
+                            <v-tooltip right light>
+                                <v-icon slot="activator">more_vert</v-icon>
+                                <span>Right <br>tooltip</span>
+                            </v-tooltip>
                           </div>
                         </v-list-tile-content>
                       </template>
@@ -190,6 +193,13 @@
         line-height: 24px;
         margin-right: 14px !important;
         margin-left: 3px !important;
+    }
+    .list-content-search{
+        width:100%;
+        .tooltip{
+           float: right;
+           margin-top: 5px;
+        }
     }
     .menu__content.menu__content--select.select-workspaces{
       top: 13px !important;

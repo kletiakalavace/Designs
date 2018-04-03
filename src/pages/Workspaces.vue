@@ -1,6 +1,20 @@
 <template class="workspace">
   <v-container fluid fill-height class="pa-0 workspace-container">
     <o-default-layout class="bg-workspaces">
+        <template>
+          <div class="breadcrumbs-pages">
+             <v-breadcrumbs>
+                  <v-icon slot="divider">play_arrow</v-icon>
+                  <v-breadcrumbs-item
+                    v-for="item in items"
+                    :key="item.text"
+                    :disabled="item.disabled"
+                  >
+                    {{ item.text }}
+                  </v-breadcrumbs-item>
+                </v-breadcrumbs>
+          </div>
+        </template>
       <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-workspace">
        <h2 class="title blue--text mt-5">Workspaces</h2>
         <p class="grey--text pt-1 mb-5">Welcome Aleksander Vero! Choose the workspace that best fits your current needs.</p>
@@ -118,9 +132,22 @@
 <script>
   export default {
     name: "workspaces",
-    data() {
-      return {};
-    }
+     data: () => ({
+          items: [
+            {
+              text: 'Home',
+              disabled: false
+            },
+            {
+              text: 'Workspace',
+              disabled: false
+            },
+            {
+              text: 'Support',
+              disabled: true
+            }
+          ]
+        })
   }
 </script>
 
@@ -128,6 +155,24 @@
   @import '~@/assets/sass/variables.scss';
   html{
     overflow: auto;
+  }
+  .breadcrumbs-pages{
+    .breadcrumbs{
+        .breadcrumbs__item{
+            text-transform:uppercase;
+            color:$grey--text;
+            font-size:12px;
+        }
+        .breadcrumbs__divider{
+            .icon{
+             color:$grey--text;
+             font-size:12px;
+            }
+        }
+        .breadcrumbs__item--disabled{
+            color:$blue--text;
+        }
+    }
   }
   .workspace-container {
     .grey--text{
