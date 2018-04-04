@@ -241,6 +241,7 @@
     .form-content {
       padding: 25px;
       width:100%;
+      max-width: 410px;
       label {
         color: $black;
         opacity: 0.38;
