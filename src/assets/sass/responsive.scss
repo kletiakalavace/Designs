@@ -8,15 +8,14 @@
 }
 @media only screen and (max-width:650px) {
   .login-container{
-    .footer-loginPage{
-      width:81%;
-    }
     .login-list{
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
       word-wrap: break-word;
       position: relative;
+      width:81%;
+      margin:auto;
       &:before {
         position: absolute;
         display: block;

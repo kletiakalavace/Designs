@@ -184,6 +184,7 @@
       align-self: flex-end;
       width: 100%;
       max-width: 100%;
+      text-align: center;
 
     }
     .alert.error-message {
