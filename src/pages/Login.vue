@@ -234,7 +234,7 @@
           width:111px;
         }
         .login-main {
-            max-width: 410px !important;
+            min-width: 410px;
             z-index: 99;
             flex:1;
         }
@@ -316,7 +316,7 @@
         }
         .primary{
             background-color:$blue-color;
-            height: 46px;
+            height: 44px;
         }
     }
 

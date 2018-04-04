@@ -26,7 +26,12 @@
     margin-top:0 !important;
   }
 }
-
+@media only screen and (max-width: 435px) {
+  .login-container .login-main {
+    max-width: 410px !important;
+    min-width: inherit !important;
+  }
+}
 @media only screen and (max-width: 330px) {
   .login-container .login-main{
     transform: scale(0.8);
