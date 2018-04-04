@@ -364,7 +364,8 @@
     }
     .name-account{
       font-size: 18px;
-      display: block;
+      float: left;
+       margin-top: 14px;
       .btn--floating{
         width: 48px;
         height:48px;
@@ -497,6 +498,7 @@
       width:46px;
       box-shadow: none;
       font-size: 18px;
+      float:left;
     }
   }
   .select-searches{
