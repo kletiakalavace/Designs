@@ -76,7 +76,7 @@
                     </v-snackbar>
                 </v-card>
             </v-flex>
-            <div class="xs12">
+            <div class="xs12 footer-loginPage">
                     <v-list class="text-md-center login-list">
                         <v-list-tile
                                 class="d-inline-block"
@@ -159,7 +159,32 @@
     html{
         overflow: auto !important;
     }
+    .footer-loginPage{
+        display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+            align-self: flex-end;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+    }
     .login-container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        min-height: 100vh;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
          background: #f5f6f8;
         .alert.error-message{
           color:$error-message;
@@ -211,6 +236,7 @@
         .login-main {
             max-width: 410px !important;
             z-index: 99;
+            flex:1;
         }
         .form-content {
             padding: 25px;
