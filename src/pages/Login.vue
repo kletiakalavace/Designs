@@ -237,6 +237,9 @@
       display: flex;
       margin: 0;
       padding: 0;
+      align-self: flex-end;
+      width: 100%;
+      max-width: 100%;
     }
     .form-content {
       padding: 25px;
