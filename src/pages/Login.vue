@@ -181,6 +181,9 @@
 
     .footer-loginPage {
       margin-top: 20px;
+      align-self: flex-end;
+      width: 100%;
+      max-width: 100%;
 
     }
     .alert.error-message {
