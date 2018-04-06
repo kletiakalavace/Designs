@@ -185,7 +185,7 @@
       max-width: 791px !important;
       h2.title.mt-5 {
         font-size: 22px !important;
-        margin-top: 62px !important;
+        margin-top: 30px !important;
       }
       p {
         font-size: 15px;

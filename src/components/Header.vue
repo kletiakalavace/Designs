@@ -282,6 +282,7 @@
           label{
             font-size: 15px;
             color:$grey--text;
+            line-height: 27px
 
           }
         }
@@ -307,6 +308,7 @@
                 color:$text-select;
                 font-size: 15px;
                 font-weight: 500;
+                padding-left: 17px;
                 .avatar{
                     width:22px !important;
                     height:22px !important;
@@ -319,6 +321,7 @@
             color:$grey--text;
             font-weight: 400;
             font-family: "Open Sans", sans-serif;
+            padding-left: 17px;
           }
         }
         .input-group--dirty{
