@@ -200,6 +200,10 @@
            float: right;
            margin-top: 5px;
         }
+        .medium-letter-circle{
+            line-height:43px !important;
+            font-weight:600 !important;
+        }
     }
     .menu__content.menu__content--select.select-workspaces{
       top: 13px !important;
