@@ -299,6 +299,8 @@
   }
   .bg-workspaces >.layout{
       background-color: $bg-page;
+      position:relative;
+      z-index:1;
     }
 
 </style>

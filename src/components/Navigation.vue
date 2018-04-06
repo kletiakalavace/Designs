@@ -130,6 +130,30 @@
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
   .application--wrap{
+      .primary-navigation.navigation-drawer--mini-variant{
+          .items-content{
+             .list__tile{
+                    height:65px;
+                    padding:0 !important;
+                    &:hover{
+                      .icon{
+                        color:#fff;
+                      }
+                      .list__tile__content{
+                        color:#fff;
+                        position:absolute;
+                        opacity:1;
+                        z-index:9999;
+                        background:$bg-navigation-mini;
+                        left: 79px;
+                        padding: 0 50px 0 24px;
+                      }
+                    }
+              }
+          }
+      }
+   }
+  .application--wrap{
     .primary-navigation{
       .icon{
         color:#5c6270;
@@ -144,9 +168,8 @@
           .icon{
             color:#fff;
           }
-          .list__tile__content{
-            color:#fff;
-
+          .list__tile__content,.list__tile__action{
+            background:$bg-navigation-mini;
           }
         }
         .list__tile__action{
@@ -212,6 +235,7 @@
     }
     .primary-navigation.navigation-drawer--mini-variant{
       background-color: $bg-navigation-open;
+      overflow: inherit;
     }
     .list-navigation{
       .list__tile{
@@ -230,4 +254,30 @@
       }
     }
   }
+  .primary-navigation.navigation-drawer.navigation-drawer--open{
+    .sub-items-content{
+        .list__tile{
+            .list__tile__action{
+               opacity:1;
+            }
+        }
+
+      }
+  }
+  .primary-navigation.navigation-drawer.navigation-drawer--open.navigation-drawer--mini-variant{
+      .sub-items-content{
+              .list__tile{
+                  &:hover{
+                      .list__tile__content{
+                          opacity:0
+                      }
+                  }
+                  .list__tile__action{
+                     opacity:0;
+                  }
+              }
+
+            }
+  }
+
 </style>
