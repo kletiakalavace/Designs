@@ -22,7 +22,7 @@
                       {{ data.item.name }}
                     </template>
                     <template slot="item" slot-scope="data">
-                      <template >
+                      <template>
                         <v-list-tile-content>
                           <div class="list-content-search">
                             <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
@@ -32,12 +32,18 @@
                                <span class="name-search d-block">{{data.item.name}}</span>
                               <span class="version-search d-block">{{ data.item.version }}</span>
                             </span>
-                            <v-tooltip right light>
-                                <v-icon slot="activator">more_vert</v-icon>
-                                <span>Right <br>tooltip</span>
-                            </v-tooltip>
                           </div>
                         </v-list-tile-content>
+                        <v-list-tile-action >
+                            <v-menu transition="slide-x-transition" v-model="menu">
+                                 <v-btn dark color="primary" slot="activator" @click="fav = !fav">Slide X Transition</v-btn>
+                                 <v-list>
+                                   <v-list-tile v-for="n in 5" :key="n" @click="">
+                                     <v-list-tile-title v-text="'Item ' + n"></v-list-tile-title>
+                                   </v-list-tile>
+                                 </v-list>
+                            </v-menu>
+                        </v-list-tile-action>
                       </template>
                     </template>
                   </v-select>
