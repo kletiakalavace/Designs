@@ -35,11 +35,14 @@
                             </div>
                         </v-list-tile-content>
                         <v-list-action>
-                            <v-tooltip right close-delay = 5000>
+                            <v-tooltip
+                                right
+                                close-delay = 5000
+                                 content-class="tooltip-searches">
                                 <v-btn icon slot="activator">
                                     <v-icon>more_vert</v-icon>
                                 </v-btn>
-                                <a href="#test">Request</a> <br>
+                                <a href="#test">Request</a>
                                 <a href="#">Deploy</a>
                             </v-tooltip>
                         </v-list-action>
@@ -546,11 +549,25 @@
            position: absolute;
            text-transform: initial;
            transition: 0.5s;
-           width: 300px;
+           width: 200px;
            font-size:18px;
           }
            &[class*="-active"] {
              pointer-events: none;
            }
+        }
+        .tooltip-searches{
+            padding:5px 0 0 0;
+            a{
+               color:$black;
+               text-decoration:none;
+               line-height:40px;
+               width:100%;
+               display:block;
+               padding:0 20px;
+               &:hover{
+                    background: #eeeeee !important;
+               }
+              }
         }
 </style>
