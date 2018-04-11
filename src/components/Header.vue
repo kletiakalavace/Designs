@@ -37,9 +37,9 @@
                         <v-list-action>
                             <v-tooltip
                                 right
-                                close-delay = 5000
+                                close-delay = 3000
                                  content-class="tooltip-searches">
-                                <v-btn icon slot="activator">
+                                <v-btn icon slot="activator" class="btn-info-search">
                                     <v-icon>more_vert</v-icon>
                                 </v-btn>
                                 <a href="#test">Request</a>
@@ -207,7 +207,7 @@
            margin-top: 5px;
         }
         .medium-letter-circle{
-            line-height:43px !important;
+            line-height:39px !important;
             font-weight:600 !important;
         }
     }
@@ -514,13 +514,13 @@
     }
   }
   .select-searches{
+    font-family: "Open Sans", sans-serif;
     .medium-letter-circle{
-      width: 43px;
-      height: 43px;
+      width: 40px;
+      height: 40px;
       font-size: 16px;
       color: $white;
       border-radius: 50%;
-      line-height: 40px;
       margin-right: 14px !important;
       font-weight: 500;
       float: left;
@@ -529,12 +529,25 @@
       opacity: 0.87;
       color:#000000;
       font-size: 16px;
-      font-weight: 500;
+      font-weight: 600;
     }
     .version-search{
       font-size: 14px;
       color: #000000;
       opacity: 0.54;
+      font-weight: 400;
+    }
+    .btn-info-search{
+      &:hover{
+        .btn__content{
+          &:before{
+            background: transparent;
+          }
+        }
+      }
+      .icon.material-icons{
+          color:$icons-select;
+      }
     }
   }
    .tooltip{
@@ -549,7 +562,8 @@
            position: absolute;
            text-transform: initial;
            transition: 0.5s;
-           width: 200px;
+           width: 133px;
+           opacity:1 !important;
            font-size:18px;
           }
            &[class*="-active"] {
@@ -557,14 +571,17 @@
            }
         }
         .tooltip-searches{
-            padding:5px 0 0 0;
+            padding:8px 0 8px 0;
             a{
-               color:$black;
+               color:$text-select;
                text-decoration:none;
-               line-height:40px;
+               line-height:33px;
                width:100%;
                display:block;
-               padding:0 20px;
+               padding:0 25px;
+               font-size: 15px;
+               font-family: "Open Sans", sans-serif;
+               font-weight:600;
                &:hover{
                     background: #eeeeee !important;
                }
