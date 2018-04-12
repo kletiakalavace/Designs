@@ -214,6 +214,7 @@
         color: #fff;
         border-radius: 50% !important;
         line-height: 72px;
+        text-align:center;
       }
     }
 
@@ -235,7 +236,14 @@
             transform: scaleY(.9090);
           }
         }
-      }
+        .card__title{
+            text-align:center;
+            margin:0 auto;
+            div{
+                text-align: center;
+                margin: 0 auto;}
+            }
+        }
       &:hover {
         .card__actions.hidden-lg-only {
           display: block !important;

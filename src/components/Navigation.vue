@@ -135,6 +135,7 @@
              .list__tile{
                     height:65px;
                     padding:0 !important;
+                    text-align:center;
                     &:hover{
                       .icon{
                         color:#fff;

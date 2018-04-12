@@ -557,7 +557,7 @@
            }
         }
         .tooltip-searches{
-            padding:5px 0 0 0;
+            padding:5px 0 5px 0;
             a{
                color:$black;
                text-decoration:none;
