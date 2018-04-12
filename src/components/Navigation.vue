@@ -141,13 +141,15 @@
                         color:#fff;
                       }
                       .list__tile__content{
-                        color:#fff;
                         position:absolute;
                         opacity:1;
                         z-index:9999;
                         background:$bg-navigation-mini;
                         left: 79px;
-                        padding: 0 50px 0 24px;
+                        padding: 0px 40px 0 6px;
+                        .list__tile__title{
+                          color:$color-navigation-hover;
+                        }
                       }
                     }
               }
