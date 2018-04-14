@@ -203,6 +203,7 @@
     }
     .navigation-drawer--open{
       background:$bg-navigation-open;
+      min-width: 300px;
     }
     .primary-navigation.navigation-drawer--open.sub-items{
       .items-content{
@@ -239,6 +240,7 @@
     .primary-navigation.navigation-drawer--mini-variant{
       background-color: $bg-navigation-open;
       overflow: inherit;
+      min-width:80px;
     }
     .list-navigation{
       .list__tile{
@@ -254,6 +256,7 @@
         border-radius: 50%;
         line-height: 35px;
         margin-right: 13px !important;
+        text-align: center;
       }
     }
   }

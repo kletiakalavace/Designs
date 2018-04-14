@@ -1,7 +1,8 @@
 <template class="header">
     <v-toolbar color="white" class="header-toolbar" height="74" fixed app>
         <v-toolbar-title>
-            <img src="../assets/img/logo_horizontal.svg">
+            <img class="logo-desktop" src="../assets/img/logo_horizontal.svg">
+            <img class="logo-mobile" src="../assets/img/logo_mobile.png">
         </v-toolbar-title>
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-general-search">
             <v-layout row bg-search>
@@ -199,6 +200,9 @@
         line-height: 24px;
         margin-right: 14px !important;
         margin-left: 3px !important;
+    }
+    .logo-mobile{
+      display:none;
     }
     .list-content-search{
         width:100%;

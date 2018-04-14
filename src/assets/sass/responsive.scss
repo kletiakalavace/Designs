@@ -10,11 +10,11 @@
       padding: 0 24px;
     }
   }
-  aside.primary-navigation.navigation-drawer.navigation-drawer--is-mobile.navigation-drawer--open.theme--dark{
-    position: absolute;
-    top: 0;
-    z-index: 9999;
-  }
+ ///* aside.primary-navigation.navigation-drawer.navigation-drawer--is-mobile.navigation-drawer--open.theme--dark{
+ //   position: absolute;
+ //   top: 0;
+ //   z-index: 9999;
+ // }*/
 
 }
 @media only screen and (max-width: 750px){
@@ -56,7 +56,19 @@
   .login-logo-mobile{
     display: block;
   }
+  .workspace-container{
+    .card{
+      margin-right: 0 !important;
+    }
+  }
+  .logo-mobile{
+    display:block !important;
+  }
+  .logo-desktop{
+    display:none;
+  }
 }
+
 @media only screen and (max-width: 435px) {
   .login-container .login-main {
     max-width: 410px !important;
