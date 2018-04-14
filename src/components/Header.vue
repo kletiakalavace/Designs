@@ -5,7 +5,10 @@
             <img class="logo-mobile" src="../assets/img/logo_mobile.png">
         </v-toolbar-title>
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-general-search">
-            <v-layout row bg-search>
+          <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
+            <v-icon>search</v-icon>
+          </v-btn>
+            <v-layout row bg-search v-if="!seen">
                 <v-flex lg8>
                   <v-select
                     label="Search Workspaces"
@@ -169,6 +172,7 @@
     export default {
         name: "o-header",
         data:() => ({
+        seen: true,
             workspace: [
               { name: 'My services', letter: 'M',class:'bg-orange' },
               { name: 'Support', letter: 'S',class:'bg-dark-green'},
@@ -191,6 +195,13 @@
 
 <style lang="scss">
     @import '~@/assets/sass/variables.scss';
+    .search-mobile{
+      display:none;
+      color:$text-search;
+      i{
+        font-size: 27px;
+      }
+    }
     .thumb-workspace-header{
         height:23px;
         width:23px;
