@@ -8,7 +8,7 @@
           <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
             <v-icon>search</v-icon>
           </v-btn>
-            <v-layout row bg-search v-if="!seen">
+            <v-layout row bg-search v-if="!seen && $mq.above(550)">
                 <v-flex lg8>
                   <v-select
                     label="Search Workspaces"

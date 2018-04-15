@@ -21,7 +21,7 @@
           </v-list-tile>
         </v-list>
 
-        <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
+          <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
           <v-list-tile>
             <v-list-tile-action @click='handleItemClick(item)'>
               <v-icon >{{ item.icon }}</v-icon>

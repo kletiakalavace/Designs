@@ -5,6 +5,7 @@
  * Will initialize the application.
  */
 import Vue from 'vue'
+import VueMq from 'vue-mq'
 import Vuelidate from 'vuelidate'
 import App from './App'
 import router from './router'
@@ -36,6 +37,14 @@ Vue.filter('count', count)
 Vue.config.productionTip = false;
 Vue.use(Vuetify)
 Vue.use(Vuelidate)
+Vue.use(VueMq, {
+  breakpoints: {
+    mobile: 599,
+    tablet: 900,
+    laptop: 1250,
+    desktop: Infinity,
+  }
+})
 
 /* ============
  * Components
