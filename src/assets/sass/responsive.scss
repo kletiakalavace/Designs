@@ -70,11 +70,9 @@
   .search-mobile{
     display:block !important;
   }
-  /*.content-general-search{
-    .bg-search{
+  .bg-search.search-mob{
       display:none;
-    }
-  }*/
+  }
 }
 
 @media only screen and (max-width: 435px) {

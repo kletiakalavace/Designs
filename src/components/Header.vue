@@ -8,7 +8,7 @@
           <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
             <v-icon>search</v-icon>
           </v-btn>
-            <v-layout row bg-search v-if="!seen && $mq.above(550)">
+          <v-layout row bg-search v-if="!seen" >
                 <v-flex lg8>
                   <v-select
                     label="Search Workspaces"
@@ -90,6 +90,88 @@
                     </v-select>
                 </v-flex>
             </v-layout>
+          <v-layout row bg-search v-else class="search-mob">
+            <v-flex lg8>
+              <v-select
+                label="Search Workspaces"
+                :items="searches"
+                item-text="name"
+                item-value="name"
+                chips
+                max-height="auto"
+                autocomplete
+                class="search-primary"
+                content-class="select-searches"
+                prepend-icon="search"
+              >
+                <template slot="selection" slot-scope="data">
+                  {{ data.item.name }}
+                </template>
+                <template slot="item" slot-scope="data">
+                  <template >
+                    <v-list-tile-content>
+                      <div class="list-content-search">
+                                <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
+                                           {{ data.item.letter }}
+                                </span>
+                        <span class="d-inline-block">
+                                   <span class="name-search d-block">{{data.item.name}}</span>
+                                  <span class="version-search d-block">{{ data.item.version }}</span>
+                                </span>
+                      </div>
+                    </v-list-tile-content>
+                    <v-list-action>
+                      <v-tooltip
+                        right
+                        close-delay = 3000
+                        content-class="tooltip-searches">
+                        <v-btn icon slot="activator" class="btn-info-search">
+                          <v-icon>more_vert</v-icon>
+                        </v-btn>
+                        <a href="#test">Request</a>
+                        <a href="#">Deploy</a>
+                      </v-tooltip>
+                    </v-list-action>
+                  </template>
+                </template>
+              </v-select>
+            </v-flex>
+            <v-flex lg4>
+              <v-select
+                label="Workspace"
+                :items="workspace"
+                item-text="name"
+                item-value="name"
+                max-height="auto"
+                class="select-workspace"
+                content-class="select-workspaces"
+
+              >
+                <template slot="selection" slot-scope="data">
+                            <span
+                              class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                                  {{ data.item.letter }}
+                             </span>
+                  {{ data.item.name }}
+                </template>
+                <template slot="item" slot-scope="data">
+                  <template v-if="typeof data.item !== 'object'">
+                    <v-list-tile-content v-text="data.item"></v-list-tile-content>
+                  </template>
+                  <template v-else>
+                                    <span
+                                      :class="data.item.class"
+                                      class="thumb-workspace-header text-md-center mx-auto d-block">
+                                       {{ data.item.letter }}
+                                    </span>
+                    <v-list-tile-content>
+                      <v-list-tile-title v-html="data.item.name"></v-list-tile-title>
+                    </v-list-tile-content>
+                  </template>
+                </template>
+              </v-select>
+            </v-flex>
+          </v-layout>
         </v-flex>
         <v-icon class="text-grey mr-4">fa fa-bookmark</v-icon>
         <v-menu bottom
