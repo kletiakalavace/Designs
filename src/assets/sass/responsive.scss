@@ -62,7 +62,10 @@
     }
   }
   .logo-mobile{
-    display:block !important;
+    display: block !important;
+    top: 13px;
+    z-index: 999;
+    position: absolute;
   }
   .logo-desktop{
     display:none;
@@ -72,6 +75,37 @@
   }
   .bg-search.search-mob{
       display:none;
+  }
+  .absolute-seach{
+    position: absolute;
+    z-index: 9999;
+    top: 13px;
+    left: 9px;
+    right: 9px;
+    height: 51px !important;
+    .input-group__selections{
+
+    }
+  }
+  .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
+    width: 100%;
+    top: 62px !important;
+    max-width: 97%;
+  }
+  .content-general-search{
+    .input-group.input-group--text-field{
+      label{
+        top: 13px !important;
+      }
+
+    }
+  }
+  .thumb-workspace-header{
+    margin-left:0;
+    margin-right:0;
+  }
+  .items-selected-search{
+    display:none;
   }
 }
 

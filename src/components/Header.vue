@@ -8,7 +8,7 @@
           <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
             <v-icon>search</v-icon>
           </v-btn>
-          <v-layout row bg-search v-if="!seen" >
+          <v-layout row bg-search v-if="!seen" class="absolute-seach" >
                 <v-flex lg8>
                   <v-select
                     label="Search Workspaces"
@@ -70,7 +70,7 @@
                                  class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
                                   {{ data.item.letter }}
                              </span>
-                            {{ data.item.name }}
+                            <div class="items-selected-search">{{ data.item.name }}</div>
                         </template>
                       <template slot="item" slot-scope="data">
                             <template v-if="typeof data.item !== 'object'">
@@ -293,6 +293,7 @@
         line-height: 24px;
         margin-right: 14px !important;
         margin-left: 3px !important;
+        text-align: center;
     }
     .logo-mobile{
       display:none;
