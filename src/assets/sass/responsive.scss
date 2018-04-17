@@ -107,6 +107,11 @@
   .items-selected-search{
     display:none;
   }
+  .select-workspace.input-group{
+    min-width: 81px;
+    width: 80px;
+    float: right;
+  }
 }
 
 @media only screen and (max-width: 435px) {
