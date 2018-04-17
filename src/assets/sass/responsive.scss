@@ -53,6 +53,17 @@
 
 }
 @media only screen and (max-width: 599px) {
+  .mobile-menu{
+    display: block !important;
+    .primary-navigation.navigation-drawer{
+        position: fixed;
+    }
+    .list__tile.list__tile--avatar{
+      .list__tile__title{
+        font-size: 12px !important;
+      }
+    }
+  }
   .login-logo-mobile{
     display: block;
   }
@@ -66,11 +77,12 @@
     top: 13px;
     z-index: 999;
     position: absolute;
+    left: 52px;
   }
   .logo-desktop{
     display:none;
   }
-  .search-mobile{
+  .search-mobile,.mobile-navigation{
     display:block !important;
   }
   .bg-search.search-mob{
@@ -83,9 +95,14 @@
     left: 9px;
     right: 9px;
     height: 51px !important;
-    .input-group__selections{
-
-    }
+  }
+  .desktop-navigation{
+    position: absolute;
+    z-index: 9999;
+    top: 13px;
+    left: 9px;
+    right: 9px;
+    height: 51px !important;
   }
   .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
     width: 100%;
@@ -132,6 +149,7 @@
     left:0;
     z-index: 9999 !important;
   }
+
 }
 
 @media only screen and (max-width: 435px) {
