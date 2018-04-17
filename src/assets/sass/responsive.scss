@@ -107,10 +107,30 @@
   .items-selected-search{
     display:none;
   }
-  .select-workspace.input-group{
-    min-width: 81px;
-    width: 80px;
-    float: right;
+  .content-general-search .bg-search .flex.lg4 {
+    max-width: 82px;
+    min-width: 82px !important;
+    width: 82px;
+  }
+  .select-workspace.input-group.input-group--append-icon.input-group--text-field.input-group--select.primary--text{
+      label{
+        display: none;
+      }
+  }
+  .select-workspace.input-group.input-group--focused.input-group--dirty.input-group--append-icon.input-group--text-field.input-group--select.primary--text {
+    padding: 9px 0;
+    label{
+      display:none;
+    }
+    .thumb-workspace-header{
+      margin-right: 0 !important;
+    }
+  }
+  .primary-navigation{
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 9999 !important;
   }
 }
 

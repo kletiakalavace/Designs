@@ -6,7 +6,7 @@
         </v-toolbar-title>
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-general-search">
           <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
-            <v-icon>search</v-icon>
+             <v-icon>search</v-icon>
           </v-btn>
           <v-layout row bg-search v-if="!seen" class="absolute-seach" >
                 <v-flex lg8>
@@ -627,6 +627,7 @@
       margin-right: 14px !important;
       font-weight: 500;
       float: left;
+      text-align:center;
     }
     .name-search{
       opacity: 0.87;
