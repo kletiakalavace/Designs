@@ -26,7 +26,7 @@
           <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
             <v-list-tile>
               <v-list-tile-action @click='handleItemClick(item)'>
-                <v-icon >{{ item.icon }}</v-icon>
+                <v-icon @click.native.stop="mini = !mini">{{ item.icon }}</v-icon>
               </v-list-tile-action>
               <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
                 <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -196,7 +196,7 @@
         this.items.map((i) => {
           i.selected = false;
         });
-        this.mini = false;
+        this.mini = !this.mini;
         item.selected = true;
         this.subItems = (item.subItems && item.subItems.length > 0);
       }
