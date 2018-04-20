@@ -100,7 +100,7 @@
             </div>
 
             <div class="sub-items-content" v-if="subItems">
-              <div  v-if="item.selected" v-for="item in items" :key="item.title">
+              <div v-if="item.selected" v-for="item in items" :key="item.title">
                 <v-list-tile class="item-header">
                   <v-list-tile-content>
                     <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -207,10 +207,10 @@
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
   .menu-toggle{
-    position: fixed;
     top: 15px;
     left: 0px;
     z-index: 999;
+    position:fixed;
   }
   .application--wrap{
       .primary-navigation.navigation-drawer--mini-variant{

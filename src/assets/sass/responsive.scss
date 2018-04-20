@@ -10,12 +10,6 @@
       padding: 0 24px;
     }
   }
- ///* aside.primary-navigation.navigation-drawer.navigation-drawer--is-mobile.navigation-drawer--open.theme--dark{
- //   position: absolute;
- //   top: 0;
- //   z-index: 9999;
- // }*/
-
 }
 @media only screen and (max-width: 750px){
   .login-container {
@@ -53,6 +47,12 @@
 
 }
 @media only screen and (max-width: 599px) {
+  .menu__content.menu__content--select.select-workspaces,.menu__content.menu-user{
+    position:fixed;
+  }
+  .menu__content.menu-user{
+    top: 13px !important;
+  }
   .mobile-menu{
     display: block !important;
     .primary-navigation.navigation-drawer{
@@ -98,7 +98,7 @@
   }
   .desktop-navigation{
     position: absolute;
-    z-index: 9999;
+    z-index: 99;
     top: 13px;
     left: 9px;
     right: 9px;
@@ -108,6 +108,7 @@
     width: 100%;
     top: 62px !important;
     max-width: 97%;
+    position: fixed;
   }
   .content-general-search{
     .input-group.input-group--text-field{
