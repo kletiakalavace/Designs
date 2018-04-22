@@ -1,4 +1,14 @@
 @import '~@/assets/sass/variables.scss';
+@media only screen and (max-width: 1263px){
+  .select-searches.menu__content--select{
+    flex-basis: 50%;
+    -webkit-box-flex: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    max-width: 50%;
+    position: fixed;
+  }
+}
 @media only screen and (max-width: 930px){
   .workspace-container{
     .content-workspace-items{
@@ -10,12 +20,11 @@
       padding: 0 24px;
     }
   }
- ///* aside.primary-navigation.navigation-drawer.navigation-drawer--is-mobile.navigation-drawer--open.theme--dark{
- //   position: absolute;
- //   top: 0;
- //   z-index: 9999;
- // }*/
-
+}
+@media only screen and (max-width: 700px){
+  .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active .list__tile.list__tile--link {
+    height: 90px !important;
+  }
 }
 @media only screen and (max-width: 750px){
   .login-container {
@@ -53,10 +62,16 @@
 
 }
 @media only screen and (max-width: 599px) {
+  .menu__content.menu__content--select.select-workspaces,.menu__content.menu-user{
+    position:fixed;
+  }
+  .menu__content.menu-user{
+    top: 13px !important;
+  }
   .mobile-menu{
     display: block !important;
     .primary-navigation.navigation-drawer{
-        position: fixed;
+      position: fixed;
     }
     .list__tile.list__tile--avatar{
       .list__tile__title{
@@ -86,7 +101,7 @@
     display:block !important;
   }
   .bg-search.search-mob{
-      display:none;
+    display:none;
   }
   .absolute-seach{
     position: absolute;
@@ -98,7 +113,7 @@
   }
   .desktop-navigation{
     position: absolute;
-    z-index: 9999;
+    z-index: 99;
     top: 13px;
     left: 9px;
     right: 9px;
@@ -108,6 +123,7 @@
     width: 100%;
     top: 62px !important;
     max-width: 97%;
+    position: fixed;
   }
   .content-general-search{
     .input-group.input-group--text-field{
@@ -130,9 +146,9 @@
     width: 82px;
   }
   .select-workspace.input-group.input-group--append-icon.input-group--text-field.input-group--select.primary--text{
-      label{
-        display: none;
-      }
+    label{
+      display: none;
+    }
   }
   .select-workspace.input-group.input-group--focused.input-group--dirty.input-group--append-icon.input-group--text-field.input-group--select.primary--text {
     padding: 9px 0;

@@ -1,128 +1,127 @@
-
 <template class="navigation-primary">
-    <v-navigation-drawer
-      v-bind:class="{ 'sub-items': subItems }"
-      stateless
-      hide-overlay
-      :mini-variant="mini"
-      v-model="drawer"
-      dark
-      class="primary-navigation desktop-navigation"
-      v-if="!mobile"
-    >
-      <v-list class="pt-0 list-navigation" dense>
-        <div class="items-content">
-          <v-list class="pa-0">
-            <v-list-tile avatar>
-              <v-list-tile-action>
-                <v-btn icon @click.native.stop="mini = !mini">
-                  <v-icon v-if="!mini">arrow_back</v-icon>
-                  <v-icon v-if="mini">arrow_forward</v-icon>
-                </v-btn>
-              </v-list-tile-action>
-            </v-list-tile>
-          </v-list>
+  <v-navigation-drawer
+    v-bind:class="{ 'sub-items': subItems }"
+    stateless
+    hide-overlay
+    :mini-variant="mini"
+    v-model="drawer"
+    dark
+    class="primary-navigation desktop-navigation"
+    v-if="!mobile"
+  >
+    <v-list class="pt-0 list-navigation" dense>
+      <div class="items-content">
+        <v-list class="pa-0">
+          <v-list-tile avatar>
+            <v-list-tile-action>
+              <v-btn icon @click.native.stop="mini = !mini">
+                <v-icon v-if="!mini">arrow_back</v-icon>
+                <v-icon v-if="mini">arrow_forward</v-icon>
+              </v-btn>
+            </v-list-tile-action>
+          </v-list-tile>
+        </v-list>
 
-          <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
-            <v-list-tile>
-              <v-list-tile-action @click='handleItemClick(item)'>
-                <v-icon >{{ item.icon }}</v-icon>
-              </v-list-tile-action>
-              <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </div>
+        <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
+          <v-list-tile>
+            <v-list-tile-action @click='handleItemClick(item)'>
+              <v-icon @click.native.stop="mini = !mini">{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
         </div>
+      </div>
 
-        <div class="sub-items-content" v-if="subItems">
-          <div  v-if="item.selected" v-for="item in items" :key="item.title">
-            <v-list-tile class="item-header">
-              <v-list-tile-content>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+      <div class="sub-items-content" v-if="subItems">
+        <div  v-if="item.selected" v-for="item in items" :key="item.title">
+          <v-list-tile class="item-header">
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
 
-            <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
-              <v-list-tile-action>
-                <!--  <v-icon >{{ item.icon }}</v-icon>-->
-                <span
-                  :class="subItem.class"
-                  class="thumb-workspace-navigation text-md-center mx-auto d-block">
+          <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
+            <v-list-tile-action>
+              <!--  <v-icon >{{ item.icon }}</v-icon>-->
+              <span
+                :class="subItem.class"
+                class="thumb-workspace-navigation text-md-center mx-auto d-block">
                                   {{subItem.letter }}
                              </span>
-              </v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-          </div>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
         </div>
-      </v-list>
-    </v-navigation-drawer>
+      </div>
+    </v-list>
+  </v-navigation-drawer>
   <div v-else="mobile" class="mobile-navigation">
 
     <v-layout  wrap class="mobile-menu" style="height: 200px;">
-          <v-btn icon @click.stop="drawer1 = !drawer1" class="menu-toggle">
-            <i class="material-icons">menu</i>
-          </v-btn>
-        <v-navigation-drawer
-          v-bind:class="{ 'sub-items': subItems }"
-          temporary
-          v-model="drawer1"
-          absolute
-          class="primary-navigation"
-        >
-          <v-list class="pt-0 list-navigation" dense>
-            <div class="items-content">
-              <v-list class="pa-0">
-                <v-list-tile avatar>
-                  <v-list-tile-action>
-                    <v-btn icon @click.native.stop="drawer1 = !drawer1">
-                      <v-icon>arrow_back</v-icon>
-                    </v-btn>
-                  </v-list-tile-action>
-                  <v-list-tile-title>CLOSE</v-list-tile-title>
+      <v-btn icon @click.stop="drawer1 = !drawer1" class="menu-toggle">
+        <i class="material-icons">menu</i>
+      </v-btn>
+      <v-navigation-drawer
+        v-bind:class="{ 'sub-items': subItems }"
+        temporary
+        v-model="drawer1"
+        absolute
+        class="primary-navigation"
+      >
+        <v-list class="pt-0 list-navigation" dense>
+          <div class="items-content">
+            <v-list class="pa-0">
+              <v-list-tile avatar>
+                <v-list-tile-action>
+                  <v-btn icon @click.native.stop="drawer1 = !drawer1">
+                    <v-icon>arrow_back</v-icon>
+                  </v-btn>
+                </v-list-tile-action>
+                <v-list-tile-title>CLOSE</v-list-tile-title>
 
-                </v-list-tile>
-              </v-list>
+              </v-list-tile>
+            </v-list>
 
-              <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
-                <v-list-tile>
-                  <v-list-tile-action @click='handleItemClick(item)'>
-                    <v-icon >{{ item.icon }}</v-icon>
-                  </v-list-tile-action>
-                  <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
-                    <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </div>
+            <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
+              <v-list-tile>
+                <v-list-tile-action @click='handleItemClick(item)'>
+                  <v-icon >{{ item.icon }}</v-icon>
+                </v-list-tile-action>
+                <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
+                  <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
             </div>
+          </div>
 
-            <div class="sub-items-content" v-if="subItems">
-              <div  v-if="item.selected" v-for="item in items" :key="item.title">
-                <v-list-tile class="item-header">
-                  <v-list-tile-content>
-                    <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
+          <div class="sub-items-content" v-if="subItems">
+            <div v-if="item.selected" v-for="item in items" :key="item.title">
+              <v-list-tile class="item-header">
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
 
-                <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
-                  <v-list-tile-action>
-                    <!--  <v-icon >{{ item.icon }}</v-icon>-->
-                    <span
-                      :class="subItem.class"
-                      class="thumb-workspace-navigation text-md-center mx-auto d-block">
+              <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
+                <v-list-tile-action>
+                  <!--  <v-icon >{{ item.icon }}</v-icon>-->
+                  <span
+                    :class="subItem.class"
+                    class="thumb-workspace-navigation text-md-center mx-auto d-block">
                                   {{subItem.letter }}
                              </span>
-                  </v-list-tile-action>
-                  <v-list-tile-content>
-                    <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-              </div>
+                </v-list-tile-action>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
             </div>
-          </v-list>
+          </div>
+        </v-list>
       </v-navigation-drawer>
     </v-layout>
   </div>
@@ -195,7 +194,8 @@
       handleItemClick: function(item) {
         this.items.map((i) => {
           i.selected = false;
-        });
+      });
+        this.mini = !this.mini;
         item.selected = true;
         this.subItems = (item.subItems && item.subItems.length > 0);
       }
@@ -206,38 +206,42 @@
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
   .menu-toggle{
-    position: fixed;
     top: 15px;
     left: 0px;
     z-index: 999;
+    position:fixed;
+    i{
+      color: $text-search;
+      font-size: 32px;
+    }
   }
   .application--wrap{
-      .primary-navigation.navigation-drawer--mini-variant{
-          .items-content{
-             .list__tile{
-                    height:65px;
-                    padding:0 !important;
-                    text-align:center;
-                    &:hover{
-                      .icon{
-                        color:#fff;
-                      }
-                      .list__tile__content{
-                        position:absolute;
-                        opacity:1;
-                        z-index:9999;
-                        background:$bg-navigation-mini;
-                        left: 79px;
-                        padding: 0px 40px 0 6px;
-                        .list__tile__title{
-                          color:$color-navigation-hover;
-                        }
-                      }
-                    }
+    .primary-navigation.navigation-drawer--mini-variant{
+      .items-content{
+        .list__tile{
+          height:65px;
+          padding:0 !important;
+          text-align:center;
+          &:hover{
+            .icon{
+              color:#fff;
+            }
+            .list__tile__content{
+              position:absolute;
+              opacity:1;
+              z-index:9999;
+              background:$bg-navigation-mini;
+              left: 79px;
+              padding: 0px 40px 0 6px;
+              .list__tile__title{
+                color:$color-navigation-hover;
               }
+            }
           }
+        }
       }
-   }
+    }
+  }
   .application--wrap{
     .primary-navigation{
       .icon{
@@ -344,28 +348,28 @@
   }
   .primary-navigation.navigation-drawer.navigation-drawer--open{
     .sub-items-content{
-        .list__tile{
-            .list__tile__action{
-               opacity:1;
-            }
+      .list__tile{
+        .list__tile__action{
+          opacity:1;
         }
-
       }
+
+    }
   }
   .primary-navigation.navigation-drawer.navigation-drawer--open.navigation-drawer--mini-variant{
-      .sub-items-content{
-              .list__tile{
-                  &:hover{
-                      .list__tile__content{
-                          opacity:0
-                      }
-                  }
-                  .list__tile__action{
-                     opacity:0;
-                  }
-              }
+    .sub-items-content{
+      .list__tile{
+        &:hover{
+          .list__tile__content{
+            opacity:0
+          }
+        }
+        .list__tile__action{
+          opacity:0;
+        }
+      }
 
-            }
+    }
   }
 
 </style>
