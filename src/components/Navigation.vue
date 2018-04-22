@@ -212,7 +212,7 @@
     position:fixed;
     i{
       color: $text-search;
-      font-size: 32px;
+      font-size: 25px;
     }
   }
   .application--wrap{
