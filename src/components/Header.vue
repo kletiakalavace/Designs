@@ -387,7 +387,7 @@
   .content-general-search{
     .bg-search{
       .flex.lg4{
-        min-width:173px;
+        min-width:207px;
       }
     }
     max-width: 722px !important;
