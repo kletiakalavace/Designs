@@ -1,5 +1,5 @@
 <template class="header">
-  <v-toolbar color="white" class="header-toolbar" height="74" fixed app>
+  <v-toolbar color="white"  class="header-toolbar" v-bind:class="{ active: !seen }"  height="74" fixed app>
     <v-toolbar-title>
       <img class="logo-desktop" src="../assets/img/logo_horizontal.svg">
       <img class="logo-mobile" src="../assets/img/logo_mobile.png">
