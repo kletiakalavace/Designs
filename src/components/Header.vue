@@ -69,10 +69,10 @@
 
           >
             <template slot="selection" slot-scope="data">
-                            <span
-                              class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
-                                  {{ data.item.letter }}
-                             </span>
+                <span
+                  class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                      {{ data.item.letter }}
+                 </span>
               <div class="items-selected-search">{{ data.item.name }}</div>
             </template>
             <template slot="item" slot-scope="data">
@@ -282,6 +282,9 @@
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
   .absolute-seach.bg-search{
+    .input-group--select__autocomplete{
+         padding-left: 35px;
+    }
       .input-group__prepend-icon{
         display:none;
       }
