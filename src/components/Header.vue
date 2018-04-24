@@ -29,13 +29,13 @@
               <template >
                 <v-list-tile-content>
                   <div class="list-content-search">
-                                <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
-                                           {{ data.item.letter }}
-                                </span>
+                        <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
+                                   {{ data.item.letter }}
+                        </span>
                     <span class="d-inline-block">
-                                   <span class="name-search d-block">{{data.item.name}}</span>
-                                  <span class="version-search d-block">{{ data.item.version }}</span>
-                                </span>
+                       <span class="name-search d-block">{{data.item.name}}</span>
+                       <span class="version-search d-block">{{ data.item.version }}</span>
+                     </span>
                   </div>
                 </v-list-tile-content>
                 <v-list-action>
@@ -55,6 +55,9 @@
           </v-select>
         </v-flex>
         <v-flex lg4>
+        <v-btn icon slot="activator" v-on:click="seen = !seen" class="left back-search">
+           <v-icon>arrow_back</v-icon>
+         </v-btn>
           <v-select
             label="Workspace"
             :items="workspace"
@@ -91,6 +94,7 @@
         </v-flex>
       </v-layout>
       <v-layout row bg-search v-else class="search-mob">
+
         <v-flex lg8>
           <v-select
             label="Search Workspaces"
@@ -277,6 +281,18 @@
 
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
+  .absolute-seach.bg-search{
+      .input-group__prepend-icon{
+        display:none;
+      }
+    .back-search{
+        position: absolute;
+        left: 0;
+        color: #9ba9bb;
+        top:2px;
+     }
+
+  }
   .search-mobile{
     display:none;
     color:$text-search;
