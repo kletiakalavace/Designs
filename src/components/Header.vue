@@ -409,7 +409,7 @@
         min-width:207px;
       }
     }
-    max-width: 782px !important;
+    max-width: 722px !important;
     .search-primary{
       label{
         font-size: 15px;

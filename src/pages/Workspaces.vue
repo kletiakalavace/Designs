@@ -193,7 +193,7 @@
       }
     }
     .content-workspace-items {
-      max-width: 850x !important;
+      max-width: 791px !important;
       h2.title {
         font-size: 22px !important;
       }
