@@ -263,7 +263,7 @@
         }
         .list__tile__action{
           justify-content: center !important;
-          min-width: 80px !important;
+          min-width: 88px !important;
         }
         .list__tile__title{
           font-size: 16px;
