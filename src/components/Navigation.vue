@@ -326,12 +326,12 @@
     .primary-navigation.navigation-drawer--mini-variant{
       background-color: $bg-navigation-open;
       overflow: inherit;
-      min-width:80px;
+      min-width:88px;
     }
     .list-navigation{
       .list__tile{
         .icon{
-          font-size: 26px;
+          font-size: 24px;
         }
       }
       .thumb-workspace-navigation{

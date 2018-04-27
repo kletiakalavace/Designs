@@ -398,7 +398,7 @@
       background-color:$bg-search;
     }
     .toolbar__title{
-      width: 120px;
+      width: 130px;
       margin-top: 9px;
       display: block;
     }
