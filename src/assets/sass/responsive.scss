@@ -1,4 +1,8 @@
 @import '~@/assets/sass/variables.scss';
+.application--wrap{
+  font-family: 'Open Sans', sans-serif !important;
+}
+
 @media only screen and (max-width: 1263px){
   .select-searches.menu__content--select{
     flex-basis: 50%;
