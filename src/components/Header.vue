@@ -59,7 +59,7 @@
            <v-icon>arrow_back</v-icon>
          </v-btn>
           <v-select
-            label="Workspace"
+            label="My services"
             :items="workspace"
             item-text="name"
             item-value="name"
@@ -142,7 +142,7 @@
         </v-flex>
         <v-flex lg4>
           <v-select
-            label="Workspace"
+            label= "My services"
             :items="workspace"
             item-text="name"
             item-value="name"
@@ -152,10 +152,10 @@
 
           >
             <template slot="selection" slot-scope="data">
-                            <span
-                              class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
-                                  {{ data.item.letter }}
-                             </span>
+              <span
+                class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                    {{ data.item.letter }}
+               </span>
               {{ data.item.name }}
             </template>
             <template slot="item" slot-scope="data">
@@ -385,6 +385,7 @@
   }
   .header-toolbar{
     z-index: 99;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.41), 0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06) !important;
     .text-grey{
       color:#9ba9bb;
     }
@@ -433,12 +434,12 @@
       label{
         color:$text-select;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 600;
       }
       .input-group__selections{
         color:$text-select;
         font-size: 15px;
-        font-weight: 500;
+        font-weight: 600;
         padding-left: 17px;
         .avatar{
           width:22px !important;
@@ -709,6 +710,14 @@
       &:hover{
         background: #eeeeee !important;
       }
+    }
+  }
+  .select-workspace{
+    label{
+      margin-left:45px;
+    }
+    .input-group__selections{
+      margin-left:23px;
     }
   }
 </style>

@@ -186,6 +186,7 @@
       h2.title.mt-5 {
         font-size: 22px !important;
         margin-top: 30px !important;
+        font-weight: 600;
       }
       p {
         font-size: 15px;
@@ -193,7 +194,7 @@
       }
     }
     .content-workspace-items {
-      max-width: 791px !important;
+      max-width: 833px !important;
       h2.title {
         font-size: 22px !important;
       }
@@ -224,18 +225,18 @@
         height: 100% !important;
         margin-right: 8%;
         transition-duration: 0.2s;
-        border-radius: 3px;
+        border-radius: 2px;
         &:hover{
-          transform: scaleY(1.1);
+          /*transform: scaleY(1.1);*/
           -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
           box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-          .thumb-workspace{
+          /*.thumb-workspace{
            transform: scaleY(.9090);
             margin-bottom: 8px;
-          }
-          .card__title{
+          }*/
+         /* .card__title{
             transform: scaleY(.9090);
-          }
+          }*/
         }
         .card__title{
             text-align:center;
