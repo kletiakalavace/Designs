@@ -22,7 +22,7 @@
       <v-flex xs12 sm6 lg9 offset-sm2 class="mx-auto content-workspace-items">
          <div class="content-items">
            <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-2 text-md-center border-orange">
+             <v-card lg4 class="pt-5 pb-3 text-md-center border-orange">
               <span class="thumb-workspace bg-orange mx-auto d-block">
                 M
               </span>
@@ -42,7 +42,7 @@
              </v-card>
            </v-flex>
            <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-green">
+             <v-card lg4 class="pt-5 pb-3 text-md-center border-light-green">
                <span class="thumb-workspace bg-light-green mx-auto d-block">
                 S
               </span>
@@ -62,7 +62,7 @@
              </v-card>
            </v-flex>
            <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-green">
+             <v-card lg4 class="pt-5 pb-3 text-md-center border-dark-green">
               <span class="thumb-workspace bg-dark-green mx-auto d-block">
                 S
               </span>
@@ -83,7 +83,7 @@
              </v-card>
            </v-flex>
            <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-2 text-md-center border-light-blue ">
+             <v-card lg4 class="pt-5 pb-3 text-md-center border-light-blue ">
               <span class="thumb-workspace bg-light-blue mx-auto d-block">
                 I
               </span>
@@ -104,7 +104,7 @@
              </v-card>
            </v-flex>
            <v-flex xs12 sm6 lg4 class="mr-4 block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-2 text-md-center border-dark-grey">
+             <v-card lg4 class="pt-5 pb-3 text-md-center border-dark-grey">
               <span class="thumb-workspace bg-dark-grey mx-auto d-block">
                 M
               </span>
@@ -161,7 +161,7 @@
         .breadcrumbs__item{
             text-transform:uppercase;
             color:$grey--text;
-            font-size:12px;
+            font-size:10px;
         }
         .breadcrumbs__divider{
             .icon{
@@ -209,8 +209,8 @@
         }
       }
       .thumb-workspace {
-        height: 72px;
-        width: 72px;
+        height: 70px;
+        width: 71px;
         font-size: 32px;
         color: #fff;
         border-radius: 50% !important;
@@ -240,7 +240,7 @@
         }
         .card__title{
             text-align:center;
-            margin:0 auto;
+            margin:6px auto 0 auto;
             div{
                 text-align: center;
                 margin: 0 auto;}

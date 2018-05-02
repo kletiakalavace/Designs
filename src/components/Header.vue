@@ -333,6 +333,7 @@
   }
   .select-workspaces.menu__content.menu__content--select{
     top: 13px !important;
+    box-shadow: 0 2px 2px -3px rgba(0, 0, 0, 0.14), 0 1px 4px 1px rgba(0,0,0,.14), 0 3px 4px 2px rgba(0,0,0,.12);
     .list{
       padding-top:0 !important;
       & > div{
