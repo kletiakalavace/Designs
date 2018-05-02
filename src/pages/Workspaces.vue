@@ -103,7 +103,7 @@
                </v-card-actions>-->
              </v-card>
            </v-flex>
-           <v-flex xs12 sm6 lg4 class="mr-4 block-workspace mb-5">
+           <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
              <v-card lg4 class="pt-5 pb-3 text-md-center border-dark-grey">
               <span class="thumb-workspace bg-dark-grey mx-auto d-block">
                 M
