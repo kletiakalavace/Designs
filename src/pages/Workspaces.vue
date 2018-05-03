@@ -6,7 +6,7 @@
              <v-breadcrumbs>
                   <v-icon slot="divider">play_arrow</v-icon>
                   <v-breadcrumbs-item
-                    v-for="item in items"
+                    v-for="item in breadcrumbs"
                     :key="item.text"
                     :disabled="item.disabled"
                   >
@@ -23,103 +23,26 @@
          <div class="content-items">
            <template v-for="item in items">
                <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-                 <v-card lg4 class="pt-5 pb-3 text-md-center" :class="item.class">
-                    <span class="thumb-workspace bg-orange mx-auto d-block">
-                        M
+                 <v-card
+                 lg4
+                 class="pt-5 pb-3 text-md-center"
+                 :class="item.class">
+                    <span
+                        class="thumb-workspace mx-auto d-block"
+                        :class="item.bg">
+                        {{item.letter}}
                      </span>
-                      <v-list two-line>
+                      <v-list three-line>
                        <v-card-title class="pt-2">
                           <v-list-tile-content>
                               <v-list-tile-title v-html="item.title" class="blue--text body-2 d-block mb-2"></v-list-tile-title>
-                              <v-list-tile-sub-title v-html="item.subtitle" class="grey--text body-1 d-block"></v-list-tile-sub-title>
+                              <v-list-tile-sub-title v-html="item.subtitle"  class="grey--text body-1 d-block"></v-list-tile-sub-title>
                           </v-list-tile-content>
                      </v-card-title>
                    </v-list>
                    </v-card>
                </v-flex>
            </template>
-           <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-3 text-md-center border-light-green">
-               <span class="thumb-workspace bg-light-green mx-auto d-block">
-                S
-              </span>
-               <v-card-title class="pt-2">
-                 <div>
-                   <span class="blue--text body-2 d-block mb-2">Support</span>
-                   <span class="grey--text body-1 d-block">Get support/help and request services</span>
-                 </div>
-               </v-card-title>
-              <!-- <v-card-actions
-                 class="hidden-lg-only">
-                 <v-btn
-                   flat
-                   class="mx-auto color-light-green"
-                 >Go to support</v-btn>
-               </v-card-actions>-->
-             </v-card>
-           </v-flex>
-           <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-3 text-md-center border-dark-green">
-              <span class="thumb-workspace bg-dark-green mx-auto d-block">
-                S
-              </span>
-               <v-card-title class="pt-2">
-                 <div>
-                   <span class="blue--text body-2 d-block mb-2">ServiceDesk</span>
-                   <span class="grey--text body-1 d-block">We provide the best ServiceDesk in the world</span>
-                 </div>
-               </v-card-title>
-               <!--<v-card-actions
-                 class="hidden-lg-only">
-                 <v-btn
-                   flat
-                   class="mx-auto color-dark-green">
-                   Go to servicedesk
-                 </v-btn>
-               </v-card-actions>-->
-             </v-card>
-           </v-flex>
-           <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-3 text-md-center border-light-blue ">
-              <span class="thumb-workspace bg-light-blue mx-auto d-block">
-                I
-              </span>
-               <v-card-title class="pt-2">
-                 <div>
-                   <span class="blue--text body-2 d-block mb-2">ITAM</span>
-                   <span class="grey--text body-1 d-block">Hardware- and Software Life Cycle Management</span>
-                 </div>
-               </v-card-title>
-              <!-- <v-card-actions
-                 class="hidden-lg-only">
-                 <v-btn
-                   flat
-                   class="mx-auto color-light-blue"
-                 >Go to Itam
-                 </v-btn>
-               </v-card-actions>-->
-             </v-card>
-           </v-flex>
-           <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-3 text-md-center border-dark-grey">
-              <span class="thumb-workspace bg-dark-grey mx-auto d-block">
-                M
-              </span>
-               <v-card-title class="pt-2">
-                 <div>
-                     <span class="blue--text body-2 d-block mb-2">Manager</span>
-                     <span class="grey--text body-1 d-block">Manage and control your employees and assets</span>
-                 </div>
-               </v-card-title>
-              <!-- <v-card-actions
-                 class="hidden-lg-only">
-                 <v-btn
-                   flat
-                   class="mx-auto color-dark-grey"
-                 >Go to manager</v-btn>
-               </v-card-actions>-->
-             </v-card>
-           </v-flex>
          </div>
       </v-flex>
     </o-default-layout>
@@ -130,8 +53,8 @@
   export default {
     name: "workspaces",
      data: () => ({
-          items: [
-            {
+        breadcrumbs:[
+         {
               text: 'Home',
               disabled: false
             },
@@ -143,12 +66,45 @@
               text: 'Support',
               disabled: true
             },
+        ],
+          items: [
             {
              title: 'My Services',
              class:'border-orange',
+             letter:'M',
+             bg:'bg-orange',
              subtitle: "Your services, tickets, assets, applications, files and more lorem"
-             }
-          ]
+             },
+             {
+             title: 'Support',
+             class:'border-light-green',
+             letter:'S',
+             bg:'bg-light-green',
+             subtitle: "Get support/help and request services"
+             },
+             {
+              title: 'ServiceDesk',
+              class:'border-dark-green',
+              letter:'S',
+              bg:'bg-dark-green',
+              subtitle: "We provide the best ServiceDesk in the world"
+              },
+              {
+                title: 'ITAM',
+                class:'border-light-blue',
+                letter:'I',
+                bg:'bg-light-blue',
+                subtitle: "Hardware- and Software Life Cycle Management"
+               },
+               {
+                title: 'Manager',
+                class:'border-dark-grey',
+                letter:'M',
+                bg:'bg-dark-grey',
+                subtitle: "Manage and control your employees and assets"
+               },
+          ],
+
         })
   }
 </script>
@@ -227,6 +183,17 @@
     .block-workspace {
       min-width: 244px;
       position: relative;
+      .list--three-line{
+       .list__tile__sub-title{
+           white-space: normal;
+           -webkit-line-clamp: 2;
+           -webkit-box-orient: vertical;
+           display: -webkit-box !important;
+           line-height: 22px;
+           height: 42px;
+           overflow: hidden;
+       }
+      }
       .card {
         height: 100% !important;
         margin-right: 12%;
