@@ -275,7 +275,8 @@
 <script>
   export default {
     name: "o-header",
-    data: () = > ({
+    data () {
+      return {
       seen: true,
       language: ['English', 'French', 'German', 'Swedish', 'Albanian'],
       workspace: [
@@ -294,7 +295,8 @@
         {title: 'Logout', icon: 'power_settings_new'},
       ],
       dialog: false,
-  }),
+  }
+  }
   }
 </script>
 
