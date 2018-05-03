@@ -21,26 +21,23 @@
       </v-flex>
       <v-flex xs12 sm6 lg9 offset-sm2 class="mx-auto content-workspace-items">
          <div class="content-items">
-           <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
-             <v-card lg4 class="pt-5 pb-3 text-md-center border-orange">
-              <span class="thumb-workspace bg-orange mx-auto d-block">
-                M
-              </span>
-               <v-card-title class="pt-2">
-                 <div>
-                   <span class="blue--text body-2 d-block mb-2">My services</span>
-                   <span class="grey--text body-1 d-block">Your services, tickets, assets,applications, files and more</span>
-                 </div>
-               </v-card-title>
-               <!--<v-card-actions
-                 class="hidden-lg-only">
-                 <v-btn
-                   flat
-                   class="mx-auto color-orange"
-                 >Go to my services</v-btn>
-               </v-card-actions>-->
-             </v-card>
-           </v-flex>
+           <template v-for="item in items">
+               <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
+                 <v-card lg4 class="pt-5 pb-3 text-md-center" :class="item.class">
+                    <span class="thumb-workspace bg-orange mx-auto d-block">
+                        M
+                     </span>
+                      <v-list two-line>
+                       <v-card-title class="pt-2">
+                          <v-list-tile-content>
+                              <v-list-tile-title v-html="item.title" class="blue--text body-2 d-block mb-2"></v-list-tile-title>
+                              <v-list-tile-sub-title v-html="item.subtitle" class="grey--text body-1 d-block"></v-list-tile-sub-title>
+                          </v-list-tile-content>
+                     </v-card-title>
+                   </v-list>
+                   </v-card>
+               </v-flex>
+           </template>
            <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
              <v-card lg4 class="pt-5 pb-3 text-md-center border-light-green">
                <span class="thumb-workspace bg-light-green mx-auto d-block">
@@ -145,7 +142,12 @@
             {
               text: 'Support',
               disabled: true
-            }
+            },
+            {
+             title: 'My Services',
+             class:'border-orange',
+             subtitle: "Your services, tickets, assets, applications, files and more lorem"
+             }
           ]
         })
   }
