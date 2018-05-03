@@ -386,7 +386,8 @@
   }
   .header-toolbar{
     z-index: 99;
-    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.41), 0 2px 2px 0 rgba(0, 0, 0, 0.08), 0 1px 5px 0 rgba(0, 0, 0, 0.06) !important;
+    -webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12) !important;
+    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12) !important;
     .text-grey{
       color:#9ba9bb;
     }
