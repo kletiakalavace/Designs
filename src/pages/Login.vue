@@ -231,6 +231,8 @@
       margin: auto;
       display: block;
       width: 111px;
+      margin-top: 27px;
+      margin-bottom: 22px;
     }
     .login-main {
       min-width: 410px;
@@ -248,7 +250,9 @@
     .form-content {
       padding: 25px;
       width:100%;
-      max-width: 410px;
+      min-height: 542px;
+      max-width: 442px;
+      box-shadow: 0px 10px 14px 1px rgba(0, 0, 0, 0.24) !important;
       label {
         color: $black;
         opacity: 0.38;
@@ -274,7 +278,7 @@
     }
     .alert.error-message {
       border: none !important;
-      padding: 0 20px 0 0;
+      padding: 16px 20px 0 0;
       justify-content: center;
       div {
         flex: inherit;
@@ -313,7 +317,7 @@
     }
     .primary {
       background-color: $blue-color;
-      height: 44px;
+      height: 46px;
     }
   }
 </style>
