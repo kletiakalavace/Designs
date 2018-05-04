@@ -166,7 +166,10 @@
     .login-layout {
       height: auto !important;
       flex-direction: column;
-      width:100%
+      width:100%;
+        .card__text{
+            margin-top: 24px;
+        }
     }
 
     display: -webkit-box;
