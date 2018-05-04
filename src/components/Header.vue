@@ -127,7 +127,7 @@
                 <v-list-action>
                   <v-tooltip
                     right
-                    close-delay = 3000
+                    close-delay = 500
                     content-class="tooltip-searches">
                     <v-btn icon slot="activator" class="btn-info-search">
                       <v-icon>more_vert</v-icon>

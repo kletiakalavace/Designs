@@ -19,6 +19,7 @@
                 <v-icon v-if="mini">arrow_forward</v-icon>
               </v-btn>
             </v-list-tile-action>
+            <v-list-tile-title>Menu</v-list-tile-title>
           </v-list-tile>
         </v-list>
 
