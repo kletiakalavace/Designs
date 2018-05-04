@@ -253,7 +253,7 @@
     .form-content {
       padding: 25px;
       width:100%;
-      min-height: 542px;
+      min-height: 519px;
       max-width: 442px;
       box-shadow: 0px 10px 14px 1px rgba(0, 0, 0, 0.24) !important;
       label {
