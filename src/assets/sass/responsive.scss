@@ -172,7 +172,21 @@
   .active.header-toolbar{
     z-index:9999;
   }
-
+  .workspace-container{
+    .content-workspace{
+      h2.title.mt-5.blue--text{
+        font-size: 30px !important;
+        margin-bottom: 6px;
+        margin-top: 17px !important;
+      }
+      p{
+        line-height: 23px;
+      }
+    }
+    .content-workspace-items{
+      padding: 0 32px !important;
+    }
+  }
 }
 
 @media only screen and (max-width: 435px) {
