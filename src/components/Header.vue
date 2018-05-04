@@ -1,5 +1,5 @@
 <template class="header">
-  <v-toolbar color="white"  class="header-toolbar" v-bind:class="{ active: !seen }"  height="74" fixed app>
+  <v-toolbar color="white" class="header-toolbar" v-bind:class="{ active: !seen }" height="74" fixed app>
     <v-toolbar-title>
       <img class="logo-desktop" src="../assets/img/logo_horizontal.svg">
       <img class="logo-mobile" src="../assets/img/logo_mobile.png">
@@ -8,7 +8,7 @@
       <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
         <v-icon>search</v-icon>
       </v-btn>
-      <v-layout row bg-search v-if="!seen" class="absolute-seach" >
+      <v-layout row bg-search v-if="!seen" class="absolute-seach">
         <v-flex lg8>
           <v-select
             label="Search Workspaces"
@@ -26,7 +26,7 @@
               {{ data.item.name }}
             </template>
             <template slot="item" slot-scope="data">
-              <template >
+              <template>
                 <v-list-tile-content>
                   <div class="list-content-search">
                         <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
@@ -41,7 +41,7 @@
                 <v-list-action>
                   <v-tooltip
                     right
-                    close-delay = 3000
+                    close-delay=3000
                     content-class="tooltip-searches">
                     <v-btn icon slot="activator" class="btn-info-search">
                       <v-icon>more_vert</v-icon>
@@ -55,9 +55,9 @@
           </v-select>
         </v-flex>
         <v-flex lg4>
-        <v-btn icon slot="activator" v-on:click="seen = !seen" class="left back-search">
-           <v-icon>arrow_back</v-icon>
-         </v-btn>
+          <v-btn icon slot="activator" v-on:click="seen = !seen" class="left back-search">
+            <v-icon>arrow_back</v-icon>
+          </v-btn>
           <v-select
             label="My services"
             :items="workspace"
@@ -101,6 +101,8 @@
             :items="searches"
             item-text="name"
             item-value="name"
+            v-model="e11"
+            multiple
             chips
             max-height="auto"
             autocomplete
@@ -109,10 +111,18 @@
             prepend-icon="search"
           >
             <template slot="selection" slot-scope="data">
-              {{ data.item.name }}
+              <v-chip
+                close
+                @input="data.parent.selectItem(data.item)"
+                :selected="data.selected"
+                class="chip--select-multi"
+                :key="JSON.stringify(data.item)"
+              >
+                {{ data.item.name }}
+              </v-chip>
             </template>
             <template slot="item" slot-scope="data">
-              <template >
+              <template>
                 <v-list-tile-content>
                   <div class="list-content-search">
                                 <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
@@ -142,7 +152,7 @@
         </v-flex>
         <v-flex lg4>
           <v-select
-            label= "My services"
+            label="My services"
             :items="workspace"
             item-text="name"
             item-value="name"
@@ -195,13 +205,17 @@
         <v-btn
           fab
           dark
-          smallK K class="icon-profile mr-3 mb-4 ml-4 d-inline-block">KK</v-btn>
+          smallK K class="icon-profile mr-3 mb-4 ml-4 d-inline-block">KK
+        </v-btn>
 
         <span class="name-account pl-3 pr-3 d-inline-block">
                 Kletia Kalavace
               </span>
 
-        <v-btn color="transparent" class="user-link" @click.native.stop="dialog = true"><v-icon>settings</v-icon>User Settings</v-btn>
+        <v-btn color="transparent" class="user-link" @click.native.stop="dialog = true">
+          <v-icon>settings</v-icon>
+          User Settings
+        </v-btn>
         <v-dialog
           v-model="dialog"
           max-width="290"
@@ -216,14 +230,17 @@
 
                   <v-flex xs12 sm12>
                     <v-select
+                      :items="language"
                       label="Language"
                       class="select-border select-language"
-                      :items="['English', 'French', 'German', 'Swedish','Albanian']"
+                      return-object
+                      v-model="e2"
                     ></v-select>
                   </v-flex>
                   <v-flex xs12 sm12>
                     <v-select
                       label="Start Page"
+                      return-object
                       class="select-border"
                       :items="['Last Workspace', 'Workspace', 'Bookmark', 'All Workspaces']"
                     ></v-select>
@@ -233,7 +250,8 @@
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
-              <v-btn color="color-orange darken-1" class="distance" flat="flat" @click.native="dialog = false">Cancel</v-btn>
+              <v-btn color="color-orange darken-1" class="distance" flat="flat" @click.native="dialog = false">Cancel
+              </v-btn>
               <v-btn color="color-orange darken-1" flat="flat" @click.native="dialog = false">Save</v-btn>
             </v-card-actions>
           </v-card>
@@ -244,7 +262,7 @@
           :key="i"
         >
           <v-list-tile-title>
-            <v-icon >{{ item.icon }}</v-icon>
+            <v-icon>{{ item.icon }}</v-icon>
             {{ item.title }}
           </v-list-tile-title>
         </v-list-tile>
@@ -257,391 +275,422 @@
 <script>
   export default {
     name: "o-header",
-    data:() => ({
-    seen: true,
-    workspace: [
-      { name: 'My services', letter: 'M',class:'bg-orange' },
-      { name: 'Support', letter: 'S',class:'bg-dark-green'},
-      { name: 'ServiceDesk', letter: 'S',class:'bg-light-green'},
-      { name: 'ITAM', letter: 'I',class:'bg-light-blue' },
-      { name: 'Manager', letter: 'M',class:'bg-dark-grey' },
-    ],
-    searches: [
-      {name:'Adobe Acrovat Pro',letter:'A',version:'Software Asset Desktop '},
-      {name:'Adobe Creative Cloud',letter:'A',version:'Software Asset Desktop '},
-      {name:'Fireworks',letter:'F',version:'Software Asset Desktop mobile'},
-    ],
-    items: [
-      { title: 'Logout',icon:'power_settings_new' },
-    ],
-    dialog: false,
-  }),
+    data () {
+      return {
+      seen: true,
+      language: ['English', 'French', 'German', 'Swedish', 'Albanian'],
+      workspace: [
+        {name: 'My services', letter: 'M', class: 'bg-orange'},
+        {name: 'Support', letter: 'S', class: 'bg-dark-green'},
+        {name: 'ServiceDesk', letter: 'S', class: 'bg-light-green'},
+        {name: 'ITAM', letter: 'I', class: 'bg-light-blue'},
+        {name: 'Manager', letter: 'M', class: 'bg-dark-grey'},
+      ],
+      searches: [
+        {name: 'Adobe Acrovat Pro', letter: 'A', version: 'Software Asset Desktop '},
+        {name: 'Adobe Creative Cloud', letter: 'A', version: 'Software Asset Desktop '},
+        {name: 'Fireworks', letter: 'F', version: 'Software Asset Desktop mobile'},
+      ],
+      items: [
+        {title: 'Logout', icon: 'power_settings_new'},
+      ],
+      dialog: false,
+  }
+  }
   }
 </script>
 
 <style lang="scss">
   @import '~@/assets/sass/variables.scss';
-  .absolute-seach.bg-search{
-    .input-group--select__autocomplete{
-         padding-left: 35px;
+
+  .chip__close {
+    i {
+      display: inherit !important;
     }
-      .input-group__prepend-icon{
-        display:none;
-      }
-    .back-search{
-        position: absolute;
-        left: 0;
-        color: #9ba9bb;
-        top:2px;
-     }
+  }
+
+  .absolute-seach.bg-search {
+    .input-group--select__autocomplete {
+      padding-left: 35px;
+    }
+    .input-group__prepend-icon {
+      display: none;
+    }
+    .back-search {
+      position: absolute;
+      left: 0;
+      color: #9ba9bb;
+      top: 2px;
+    }
 
   }
-  .search-mobile{
-    display:none;
-    color:$text-search;
-    i{
+
+  .search-mobile {
+    display: none;
+    color: $text-search;
+    i {
       font-size: 27px;
     }
   }
-  .thumb-workspace-header{
-    height:23px;
-    width:23px;
+
+  .thumb-workspace-header {
+    height: 23px;
+    width: 23px;
     font-size: 12px;
-    color:#fff;
+    color: #fff;
     border-radius: 50%;
     line-height: 24px;
     margin-right: 14px !important;
     margin-left: 3px !important;
     text-align: center;
   }
-  .logo-mobile{
-    display:none;
+
+  .logo-mobile {
+    display: none;
   }
-  .list-content-search{
-    width:100%;
-    .tooltip{
+
+  .list-content-search {
+    width: 100%;
+    .tooltip {
       float: right;
       margin-top: 5px;
     }
-    .medium-letter-circle{
-      line-height:39px !important;
-      font-weight:600 !important;
+    .medium-letter-circle {
+      line-height: 39px !important;
+      font-weight: 600 !important;
     }
   }
-  .menu__content.menu__content--select.select-workspaces{
+
+  .menu__content.menu__content--select.select-workspaces {
     top: 13px !important;
   }
-  .select-workspaces.menu__content.menu__content--select{
+
+  .select-workspaces.menu__content.menu__content--select {
     top: 13px !important;
-    box-shadow: 0 2px 2px -3px rgba(0, 0, 0, 0.14), 0 1px 4px 1px rgba(0,0,0,.14), 0 3px 4px 2px rgba(0,0,0,.12);
-    .list{
-      padding-top:0 !important;
-      & > div{
-        &:first-child{
+    box-shadow: 0 2px 2px -3px rgba(0, 0, 0, 0.14), 0 1px 4px 1px rgba(0, 0, 0, .14), 0 3px 4px 2px rgba(0, 0, 0, .12);
+    .list {
+      padding-top: 0 !important;
+      & > div {
+        &:first-child {
           height: 49px;
           border-bottom: 1px solid #eee;
-          margin-bottom: 10px!important;
-          .list__tile.list__tile--link{
+          margin-bottom: 10px !important;
+          .list__tile.list__tile--link {
             height: 48px !important;
           }
-          a{
+          a {
             height: 100%;
           }
 
         }
       }
-      & >div{
+      & > div {
         height: 35px;
       }
 
     }
   }
 
-
-  .list__tile.list__tile--link{
+  .list__tile.list__tile--link {
     position: relative;
     height: 35px;
-    &:hover{
+    &:hover {
       background: #eeeeee !important;
     }
-    .list__tile__content{
+    .list__tile__content {
       height: 24px !important;
     }
   }
 
-  .bg-orange{
+  .bg-orange {
     background-color: $bg-orange;
   }
-  .bg-dark-green{
+
+  .bg-dark-green {
     background-color: $bg-dark-green;
   }
-  .bg-light-green{
+
+  .bg-light-green {
     background-color: $bg-light-green;
   }
-  .bg-light-blue{
+
+  .bg-light-blue {
     background-color: $bg-light-blue;
   }
-  .bg-dark-grey{
+
+  .bg-dark-grey {
     background-color: $bg-dark-grey;
   }
-  .header-toolbar{
+
+  .header-toolbar {
     z-index: 99;
-    -webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12) !important;
-    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12) !important;
-    .text-grey{
-      color:#9ba9bb;
+    -webkit-box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 1px 0 rgba(0, 0, 0, .12) !important;
+    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 1px 0 rgba(0, 0, 0, .12) !important;
+    .text-grey {
+      color: #9ba9bb;
     }
-    .icon-profile{
-      height:46px;
-      width:46px;
+    .icon-profile {
+      height: 46px;
+      width: 46px;
       box-shadow: none;
       font-size: 18px;
     }
-    .bg-search{
-      background-color:$bg-search;
+    .bg-search {
+      background-color: $bg-search;
     }
-    .toolbar__title{
+    .toolbar__title {
       width: 130px;
       margin-top: 9px;
       display: block;
     }
   }
-  .content-general-search{
-    .bg-search{
-      .flex.lg4{
-        min-width:207px;
+
+  .content-general-search {
+    .bg-search {
+      .flex.lg4 {
+        min-width: 207px;
       }
     }
     max-width: 722px !important;
-    .search-primary{
-      label{
+    .search-primary {
+      label {
         font-size: 15px;
-        color:$grey--text;
+        color: $grey--text;
         line-height: 27px
       }
     }
-    .input-group.input-group--text-field{
+    .input-group.input-group--text-field {
       padding: 9px 15px;
-      label{
+      label {
         top: 10px;
         font-size: 15px;
-        color:$text-search;
+        color: $text-search;
         left: 52px;
       }
-      .input-group__input i{
-        color:$text-search;
+      .input-group__input i {
+        color: $text-search;
       }
     }
-    .input-group.input-group--text-field.input-group--select{
-      label{
-        color:$text-select;
+    .input-group.input-group--text-field.input-group--select {
+      label {
+        color: $text-select;
         font-size: 15px;
         font-weight: 600;
       }
-      .input-group__selections{
-        color:$text-select;
+      .input-group__selections {
+        color: $text-select;
         font-size: 15px;
         font-weight: 600;
         padding-left: 17px;
-        .avatar{
-          width:22px !important;
-          height:22px !important;
-          margin-right:10px;
+        .avatar {
+          width: 22px !important;
+          height: 22px !important;
+          margin-right: 10px;
         }
       }
     }
-    .input-group.input-group--text-field.input-group--select.search-primary{
-      label{
-        color:$grey--text;
+    .input-group.input-group--text-field.input-group--select.search-primary {
+      label {
+        color: $grey--text;
         font-weight: 400;
         font-family: "Open Sans", sans-serif;
         padding-left: 17px;
       }
     }
-    .input-group--dirty{
-      label{
+    .input-group--dirty {
+      label {
         opacity: 0 !important;
         transform: none !important;
       }
     }
-    .input-group__details{
+    .input-group__details {
       display: none;
     }
-    .input-group--focused{
-      label{
+    .input-group--focused {
+      label {
         opacity: 0 !important;
         transform: none !important;
       }
     }
 
   }
-  .menu__content--select{
-    .list__tile__content{
-      .list__tile__title{
-        color:$text-select;
+
+  .menu__content--select {
+    .list__tile__content {
+      .list__tile__title {
+        color: $text-select;
         font-size: 15px;
         font-weight: 500;
       }
     }
-    .list__tile__avatar{
+    .list__tile__avatar {
       min-width: 34px;
-      .avatar{
-        width:22px !important;
-        height:22px !important;
+      .avatar {
+        width: 22px !important;
+        height: 22px !important;
       }
     }
   }
-  .header-account-list{
-    padding:20px 0;
-    color:$blue--text;
-    .title-account{
+
+  .header-account-list {
+    padding: 20px 0;
+    color: $blue--text;
+    .title-account {
       font-size: 20px;
       font-weight: 500;
-      color:$blue--text;
+      color: $blue--text;
     }
-    .name-account{
+    .name-account {
       font-size: 18px;
       float: left;
       margin-top: 14px;
-      .btn--floating{
+      .btn--floating {
         width: 48px;
-        height:48px;
+        height: 48px;
         background-color: $bg-navigation-open;
         font-size: 18px;
         box-shadow: none;
       }
     }
-    .user-link{
+    .user-link {
       font-size: 15px;
       font-weight: 500;
       padding-left: 25px;
-      color:$blue--text;
+      color: $blue--text;
       box-shadow: none;
       text-transform: none;
       width: 100%;
       margin-left: 0;
-      .icon{
-        color:$text-search;
+      .icon {
+        color: $text-search;
         margin-right: 37px;
         margin-left: -76px;
       }
     }
-    .list__tile--link{
+    .list__tile--link {
       margin-bottom: 12px;
     }
-    .list__tile__title{
+    .list__tile__title {
       font-size: 15px;
       font-weight: 500;
-      padding-left:20px;
-      .icon{
-        color:$text-search;
+      padding-left: 20px;
+      .icon {
+        color: $text-search;
         margin-right: 34px;
       }
     }
   }
-  .dialog__content{
-    .dialog-user-settings{
-      max-width:364px !important;
-      height:364px;
-      .close-dialog{
+
+  .dialog__content {
+    .dialog-user-settings {
+      max-width: 364px !important;
+      height: 364px;
+      .headline {
+        padding: 16px 16px 22px 16px !important;
+      }
+      .close-dialog {
         position: absolute;
         right: 21px;
         top: 19px;
         background: transparent !important;
         box-shadow: none;
-        color:#b4b4b4 !important;
+        color: #b4b4b4 !important;
         width: 20px !important;
         min-width: 20px;
-        margin:0;
-        .btn__content{
-          width:20px;
-          padding:0;
-          &:before{
-            content:none;
+        margin: 0;
+        .btn__content {
+          width: 20px;
+          padding: 0;
+          &:before {
+            content: none;
           }
         }
       }
-      .card{
-        height:100% !important;
+      .card {
+        height: 100% !important;
         width: 100% !important;
       }
-      .select-border{
-        label{
-          top:-17px;
+      .select-border {
+        label {
+          top: -17px;
           font-size: 12px;
-          color:$blue--text;
+          color: $blue--text;
         }
-        .input-group__input{
+        .input-group__input {
           border-bottom: 1px solid #f1f1f1;
           border-top: 1px solid #f1f1f1;
           height: 47px;
           line-height: 47px;
-          .input-group__selections__comma{
+          .input-group__selections__comma {
             padding-left: 25px;
             font-size: 15px;
-            color:$blue--text;
+            color: $blue--text;
             font-weight: 500;
           }
         }
-        .input-group__details{
+        .input-group__details {
           display: none;
         }
       }
-      .select-border.input-group--focused, .select-border.input-group--dirty{
-        label{
+      .select-border.input-group--focused, .select-border.input-group--dirty {
+        label {
           transform: none !important;
         }
       }
-      .select-language{
-        margin-bottom:44px;
+      .select-language {
+        margin-bottom: 44px;
       }
-      .color-orange--text{
-        color:$color-orange;
+      .color-orange--text {
+        color: $color-orange;
         font-size: 14px;
         font-weight: 400;
-        .btn__content{
-          &:before{
+        .btn__content {
+          &:before {
             left: 14px;
             width: 60px !important;
-            padding:0 !important;
+            padding: 0 !important;
           }
         }
       }
-      .color-orange--text.distance{
+      .color-orange--text.distance {
         margin-right: -23px;
       }
     }
 
   }
+
   .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
     width: 722px;
     top: 62px !important;
     position: fixed;
-    .list__tile.list__tile--link{
-      height:70px;
+    .list__tile.list__tile--link {
+      height: 70px;
     }
-    .list__tile.list__tile--link .list__tile__content{
-      height:inherit !important;
+    .list__tile.list__tile--link .list__tile__content {
+      height: inherit !important;
     }
   }
-  .search-primary{
-    i{
+
+  .search-primary {
+    i {
       display: none;
     }
   }
-  .menu-user{
-    width:273px;
-    .icon-profile{
-      height:46px;
-      width:46px;
+
+  .menu-user {
+    width: 273px;
+    .icon-profile {
+      height: 46px;
+      width: 46px;
       box-shadow: none;
       font-size: 18px;
-      float:left;
+      float: left;
     }
   }
-  .select-searches{
+
+  .select-searches {
     font-family: "Open Sans", sans-serif;
-    .medium-letter-circle{
+    .medium-letter-circle {
       width: 40px;
       height: 40px;
       font-size: 16px;
@@ -650,36 +699,37 @@
       margin-right: 14px !important;
       font-weight: 500;
       float: left;
-      text-align:center;
+      text-align: center;
     }
-    .name-search{
+    .name-search {
       opacity: 0.87;
-      color:#000000;
+      color: #000000;
       font-size: 16px;
       font-weight: 600;
     }
-    .version-search{
+    .version-search {
       font-size: 14px;
       color: #000000;
       opacity: 0.54;
       font-weight: 400;
     }
-    .btn-info-search{
-      &:hover{
-        .btn__content{
-          &:before{
+    .btn-info-search {
+      &:hover {
+        .btn__content {
+          &:before {
             background: transparent;
           }
         }
       }
-      .icon.material-icons{
-        color:$icons-select;
+      .icon.material-icons {
+        color: $icons-select;
       }
     }
   }
-  .tooltip{
+
+  .tooltip {
     position: relative;
-    &__content{
+    &__content {
       background: #fff !important;
       border-radius: 2px;
       color: #FFFFFF;
@@ -690,36 +740,38 @@
       text-transform: initial;
       transition: 0.5s;
       width: 133px;
-      opacity:1 !important;
-      font-size:18px;
+      opacity: 1 !important;
+      font-size: 18px;
     }
     &[class*="-active"] {
       pointer-events: none;
     }
   }
-  .tooltip-searches{
-    padding:8px 0 8px 0;
-    a{
-      color:$text-select;
-      text-decoration:none;
-      line-height:33px;
-      width:100%;
-      display:block;
-      padding:0 25px;
+
+  .tooltip-searches {
+    padding: 8px 0 8px 0;
+    a {
+      color: $text-select;
+      text-decoration: none;
+      line-height: 33px;
+      width: 100%;
+      display: block;
+      padding: 0 25px;
       font-size: 15px;
       font-family: "Open Sans", sans-serif;
-      font-weight:600;
-      &:hover{
+      font-weight: 600;
+      &:hover {
         background: #eeeeee !important;
       }
     }
   }
-  .select-workspace{
-    label{
-      margin-left:45px;
+
+  .select-workspace {
+    label {
+      margin-left: 45px;
     }
-    .input-group__selections{
-      margin-left:23px;
+    .input-group__selections {
+      margin-left: 23px;
     }
   }
 </style>
