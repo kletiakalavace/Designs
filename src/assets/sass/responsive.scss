@@ -66,6 +66,17 @@
 
 }
 @media only screen and (max-width: 599px) {
+  .workspace-container{
+    .flex.mx-auto.content-workspace{
+      h2.title.mt-5{
+        font-size: 30px !important;
+        margin-bottom: 10px;
+      }
+    }
+    .content-workspace-items{
+      padding: 0 32px !important;
+    }
+  }
   .menu__content.menu__content--select.select-workspaces,.menu__content.menu-user{
     position:fixed;
   }
@@ -111,9 +122,23 @@
     position: absolute;
     z-index: 9999;
     top: 13px;
-    left: 9px;
-    right: 9px;
-    height: 51px !important;
+    left: 15px;
+    right: 15px;
+    height: 50px !important;
+    .search-primary.input-group.input-group--text-field.input-group--select .input-group__selections{
+        padding-left: 54px !important;
+        width:87% !important;
+    }
+
+    .select-workspace{
+      .input-group__append-icon{
+        padding-left: 0 !important;
+        padding-right: 18px;
+      }
+      .input-group__selections{
+        padding-left: 9px !important;
+      }
+    }
   }
   .desktop-navigation{
     position: absolute;
@@ -126,7 +151,7 @@
   .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
     width: 100%;
     top: 62px !important;
-    max-width: 97%;
+    max-width: 93%;
     position: fixed;
   }
   .content-general-search{
@@ -171,6 +196,10 @@
   }
   .active.header-toolbar{
     z-index:9999;
+  }
+  .select-workspace .input-group__selections {
+    margin-left: 0 !important;
+    padding-left:0 !important;
   }
 
 }

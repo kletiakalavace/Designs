@@ -211,7 +211,7 @@
     z-index: 999;
     position:fixed;
     i{
-      color: $text-search;
+      color: $menu_toggle;
       font-size: 25px;
     }
   }

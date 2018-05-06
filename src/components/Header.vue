@@ -15,6 +15,8 @@
             :items="searches"
             item-text="name"
             item-value="name"
+            v-model="e11"
+            multiple
             chips
             max-height="auto"
             autocomplete
@@ -23,10 +25,18 @@
             prepend-icon="search"
           >
             <template slot="selection" slot-scope="data">
+            <v-chip
+              close
+              @input="data.parent.selectItem(data.item)"
+              :selected="data.selected"
+              class="chip--select-multi"
+              :key="JSON.stringify(data.item)"
+            >
               {{ data.item.name }}
-            </template>
+            </v-chip>
+          </template>
+
             <template slot="item" slot-scope="data">
-              <template>
                 <v-list-tile-content>
                   <div class="list-content-search">
                         <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
@@ -51,7 +61,6 @@
                   </v-tooltip>
                 </v-list-action>
               </template>
-            </template>
           </v-select>
         </v-flex>
         <v-flex lg4>
@@ -70,7 +79,7 @@
           >
             <template slot="selection" slot-scope="data">
                 <span
-                  class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                  class="thumb-workspace-header text-md-center mx-auto d-block" :class="data.item.class">
                       {{ data.item.letter }}
                  </span>
               <div class="items-selected-search">{{ data.item.name }}</div>
@@ -125,7 +134,7 @@
               <template>
                 <v-list-tile-content>
                   <div class="list-content-search">
-                                <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange">
+                                <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-orange" >
                                            {{ data.item.letter }}
                                 </span>
                     <span class="d-inline-block">
@@ -163,7 +172,7 @@
           >
             <template slot="selection" slot-scope="data">
               <span
-                class="thumb-workspace-header text-md-center mx-auto d-block bg-orange">
+                class="thumb-workspace-header text-md-center mx-auto d-block" :class="data.item.class">
                     {{ data.item.letter }}
                </span>
               {{ data.item.name }}
