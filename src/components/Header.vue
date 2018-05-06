@@ -103,7 +103,6 @@
         </v-flex>
       </v-layout>
       <v-layout row bg-search v-else class="search-mob">
-
         <v-flex lg8>
           <v-select
             label="Search Workspaces"
@@ -286,6 +285,7 @@
     name: "o-header",
     data () {
       return {
+      isActive: false,
       seen: true,
       language: ['English', 'French', 'German', 'Swedish', 'Albanian'],
       workspace: [
@@ -319,9 +319,6 @@
   }
 
   .absolute-seach.bg-search {
-    .input-group--select__autocomplete {
-      padding-left: 35px;
-    }
     .input-group__prepend-icon {
       display: none;
     }
