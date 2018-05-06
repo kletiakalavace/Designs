@@ -459,6 +459,9 @@
     }
     max-width: 722px !important;
     .search-primary {
+      .chip--select-multi{
+        background:rgba(23, 84, 190, 0.16)!important;
+      }
       label {
         font-size: 15px;
         color: $grey--text;
@@ -802,7 +805,6 @@
         }
       }
     }
-
   }
 
 </style>
