@@ -27,7 +27,7 @@
 }
 @media only screen and (max-width: 700px){
   .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active .list__tile.list__tile--link {
-    height: 90px !important;
+    height:70px !important;
   }
 }
 @media only screen and (max-width: 750px){
@@ -38,6 +38,9 @@
   }
 }
 @media only screen and (max-width:650px) {
+  .menu__content.menu__content--select.select-workspaces{
+    left: 311px !important;
+  }
   .login-container{
     .login-list{
       text-overflow: ellipsis;

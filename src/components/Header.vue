@@ -51,7 +51,7 @@
                 <v-list-action>
                   <v-tooltip
                     right
-                    close-delay=3000
+                    close-delay=500
                     content-class="tooltip-searches">
                     <v-btn icon slot="activator" class="btn-info-search">
                       <v-icon>more_vert</v-icon>
@@ -674,6 +674,9 @@
     position: fixed;
     .list__tile.list__tile--link {
       height: 70px;
+      &:hover{
+        background: #eeeeee80 !important;
+      }
     }
     .list__tile.list__tile--link .list__tile__content {
       height: inherit !important;
@@ -783,4 +786,26 @@
       margin-left: 23px;
     }
   }
+  .select-searches{
+    .btn-info-search .icon.material-icons{
+      color: #000!important;
+      opacity: 0.54;
+    }
+  }
+  .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active{
+    .list{
+      .text--disabled{
+        &:after{
+          content:"No results";
+          display: block;
+          padding-left:15px;
+        }
+        .list__tile--disabled{
+          display: none;
+        }
+      }
+    }
+
+  }
+
 </style>
