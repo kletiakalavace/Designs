@@ -166,7 +166,10 @@
     .login-layout {
       height: auto !important;
       flex-direction: column;
-      width:100%
+      width:100%;
+        .card__text{
+            margin-top: 24px;
+        }
     }
 
     display: -webkit-box;
@@ -253,7 +256,7 @@
     .form-content {
       padding: 25px;
       width:100%;
-      min-height: 542px;
+      min-height: 519px;
       max-width: 442px;
       box-shadow: 0px 10px 14px 1px rgba(0, 0, 0, 0.24) !important;
       label {
@@ -321,7 +324,8 @@
     .primary {
       background-color: $blue-color;
       height: 46px;
-      margin-right: 0;
+      margin-right: 0 !important;
+        font-weight: 700;
     }
   }
 </style>
