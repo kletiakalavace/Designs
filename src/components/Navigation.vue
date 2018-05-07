@@ -276,11 +276,11 @@
 
       }
       &.sub-items .items-content{
-        width: 80px;
+        width: 88px;
         float: left;
       }
       &.sub-items .sub-items-content{
-        width: calc(100% - 80px);
+        width: calc(100% - 88px);
         float: left;
         background:$bg-navigation-mini;
         .list__tile__content{
@@ -290,7 +290,7 @@
     }
     .navigation-drawer--open{
       background:$bg-navigation-open;
-      min-width: 300px;
+      min-width: 388px;
     }
     .primary-navigation.navigation-drawer--open.sub-items{
       .items-content{
