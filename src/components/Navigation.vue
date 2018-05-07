@@ -196,7 +196,7 @@
         this.items.map((i) => {
           i.selected = false;
       });
-        this.mini = !this.mini;
+        this.mini = false;
         item.selected = true;
         this.subItems = (item.subItems && item.subItems.length > 0);
       }
