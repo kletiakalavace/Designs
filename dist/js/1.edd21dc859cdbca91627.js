@@ -1,2 +1,0 @@
-webpackJsonp([1],{"9gkp":function(e,t){},tquq:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={render:function(){var e=this.$createElement,t=this._self._c||e;return t("o-default-layout",[t("h3",[this._v("content here")])])},staticRenderFns:[]};var u=n("VU/8")({name:"workspace"},r,!1,function(e){n("9gkp")},null,null);t.default=u.exports}});
-//# sourceMappingURL=1.edd21dc859cdbca91627.js.map
