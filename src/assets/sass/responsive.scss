@@ -12,6 +12,13 @@
     max-width: 50%;
     position: fixed;
   }
+  .workspace-container {
+    .block-workspace{
+      .card{
+        width:inherit !important;
+      }
+    }
+  }
 }
 @media only screen and (max-width: 930px){
   .workspace-container{
