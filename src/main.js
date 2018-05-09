@@ -10,6 +10,7 @@ import Vuelidate from 'vuelidate'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
+import 'babel-polyfill';
 
 /* ============
  * Styling
