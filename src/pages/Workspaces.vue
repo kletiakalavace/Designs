@@ -291,7 +291,9 @@
       position:relative;
       z-index:1;
     }
-
+    .bg-workspaces{
+      align-self:stretch;
+    }
 
 </style>
 
