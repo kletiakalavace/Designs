@@ -310,6 +310,8 @@
         height:100%;
         position: absolute;
         right:0;
+        top: 0;
+        padding-top: 23px;
         .item-header{
           .list__tile{
             .list__tile__title{
