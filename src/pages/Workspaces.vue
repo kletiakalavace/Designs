@@ -25,7 +25,7 @@
                <v-flex xs12 sm6 lg4 class="block-workspace mb-5">
                  <v-card
                  lg4
-                 class="pt-5 pb-3 text-md-center"
+                 class="pb-3 text-md-center"
                  :class="item.class">
                     <span
                         class="thumb-workspace mx-auto d-block"
@@ -184,6 +184,7 @@
       min-width: 244px;
       position: relative;
       .list--three-line{
+          padding: 0px 0 !important;
        .list__tile__sub-title{
            white-space: normal;
            -webkit-line-clamp: 2;
@@ -201,6 +202,7 @@
         border-radius: 2px;
         min-width: 244px;
         width:244px;
+        padding-top: 41px!important;
         box-shadow: 0 2px 1px -3px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12);
         -webkit-box-shadow:0 2px 1px -3px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12);
         &:hover{
@@ -217,7 +219,7 @@
         }
         .card__title{
             text-align:center;
-            margin:6px auto 0 auto;
+            margin:6px auto -3px auto;
             div{
                 text-align: center;
                 margin: 0 auto;}
