@@ -217,6 +217,9 @@
     }
   }
   .application--wrap{
+    .primary-navigation{
+      padding-top:23px;
+    }
     .primary-navigation.navigation-drawer--mini-variant{
       .items-content{
         .list__tile{
