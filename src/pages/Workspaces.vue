@@ -291,15 +291,7 @@
       position:relative;
       z-index:1;
     }
-   .fill-height.container{
-    flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-  }
+
 
 </style>
 
