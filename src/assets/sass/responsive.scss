@@ -16,8 +16,17 @@
     .block-workspace{
       .card{
         width:inherit !important;
+       }
+      .card.border-light-green,.card.border-light-blue{
+        margin-right:0 !important;
+        margin-left: 12%;
       }
     }
+  }
+}
+@media only screen and (max-width: 970px){
+  .content-workspace-items .content-items{
+    padding: 0 44px;
   }
 }
 @media only screen and (max-width: 930px){
@@ -29,6 +38,19 @@
     .content-workspace{
       max-width:100%;
       padding: 0 24px;
+    }
+  }
+}
+@media only screen and (max-width: 727px){
+  .workspace-container{
+    .block-workspace{
+      min-width:100% !important;
+      .card{
+        width:100% !important;
+        min-width:100% !important;
+        margin-right: 0 !important;
+        margin-left:0 !important;
+      }
     }
   }
 }
@@ -232,6 +254,9 @@
     .list__tile__sub-title.grey--text{
       font-size:16px !important;
     }
+  }
+  .content-workspace-items .content-items{
+    padding: 0!important;
   }
 }
 
