@@ -41,14 +41,13 @@
       <div class="sub-items-content" v-if="subItems">
         <div  v-if="item.selected" v-for="item in items" :key="item.title">
           <v-list-tile class="item-header">
-            <v-list-tile-content>f
+            <v-list-tile-content>
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
 
           <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
             <v-list-tile-action>
-              <!--  <v-icon >{{ item.icon }}</v-icon>-->
               <span
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
@@ -93,7 +92,9 @@
             <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
               <v-list-tile>
                 <v-list-tile-action @click='handleItemClick(item)'>
-                 <img :src="item.img" height="24"/>
+                <span class="circle-icons">
+                 <img :src="item.picture" height="24"/>
+              </span>
                 </v-list-tile-action>
                 <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
                   <v-list-tile-title>{{ item.title }}</v-list-tile-title>
