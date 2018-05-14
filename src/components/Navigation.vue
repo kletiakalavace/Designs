@@ -145,10 +145,6 @@
         show:true,
         items: [
           {
-            title: 'Administration',
-            picture: require('../assets/img/administration_grey.svg'),
-          },
-          {
             title: 'Workspaces',
             picture: require('../assets/img/workspace_grey.svg'),
             subItems: [{
@@ -174,6 +170,10 @@
             }]
           },
           {
+            title: 'Shortcuts',
+            picture: require('../assets/img/shortcuts_grey.svg'),
+          },
+          {
             title: 'Processes',
             picture: require('../assets/img/Processes_grey.svg'),
             subItems: [{
@@ -195,9 +195,9 @@
             }]
           },
           {
-            title: 'Shortcut',
-            picture: require('../assets/img/shortcuts_grey.svg'),
-          }
+            title: 'Administration',
+            picture: require('../assets/img/administration_grey.svg'),
+          },
         ],
         mini: true,
         right: null
