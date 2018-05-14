@@ -51,9 +51,9 @@
               <span
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
-                                  {{subItem.letter }}<img :src="subItem.picture" height="24"/>
+                                  {{subItem.letter }}
+                  <img :src="subItem.picture" height="24"/>
               </span>
-
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
