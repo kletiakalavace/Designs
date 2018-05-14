@@ -143,7 +143,7 @@
         items: [
           {
             title: 'Administration',
-            img: '../assets/img/logo_horizontal.svg',
+            img: '../assets/img/Administration_grey.svg',
           },
           {
             title: 'Workspaces',
