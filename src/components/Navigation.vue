@@ -26,7 +26,8 @@
         <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
           <v-list-tile>
             <v-list-tile-action @click='handleItemClick(item)'>
-              <v-icon @click.native.stop="mini = !mini">{{ item.icon }}</v-icon>
+              <img @click.native.stop="mini = !mini" :src="item.img" height="24"/>
+              <!--<v-icon @click.native.stop="mini = !mini">{{ item.icon }}</v-icon>-->
             </v-list-tile-action>
             <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -38,7 +39,7 @@
       <div class="sub-items-content" v-if="subItems">
         <div  v-if="item.selected" v-for="item in items" :key="item.title">
           <v-list-tile class="item-header">
-            <v-list-tile-content>
+            <v-list-tile-content>f
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -90,7 +91,7 @@
             <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
               <v-list-tile>
                 <v-list-tile-action @click='handleItemClick(item)'>
-                  <v-icon >{{ item.icon }}</v-icon>
+                 <img :src="item.img" height="24"/>
                 </v-list-tile-action>
                 <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
                   <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -142,7 +143,7 @@
         items: [
           {
             title: 'Administration',
-            icon: 'find_in_page',
+            img: '../assets/img/logo_horizontal.svg',
           },
           {
             title: 'Workspaces',
