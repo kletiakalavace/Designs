@@ -26,9 +26,11 @@
         <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
           <v-list-tile>
             <v-list-tile-action @click='handleItemClick(item)'>
-              <img @click.native.stop="mini = !mini" :src="item.img" height="24"/>
-              <!--<v-icon @click.native.stop="mini = !mini">{{ item.icon }}</v-icon>-->
+              <span class="circle-icons" @click.native.stop="mini = !mini">
+                 <img :src="item.picture" height="24"/>
+              </span>
             </v-list-tile-action>
+
             <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
@@ -143,11 +145,11 @@
         items: [
           {
             title: 'Administration',
-            img: '../assets/img/Administration_grey.svg',
+            picture: require('../assets/img/administration_grey.svg'),
           },
           {
             title: 'Workspaces',
-            icon: 'widgets',
+            picture: require('../assets/img/workspace_grey.svg'),
             subItems: [{
               title: 'My service',
               letter: 'M',
@@ -172,15 +174,11 @@
           },
           {
             title: 'Processes',
-            icon: 'group_work'
+            picture: require('../assets/img/Processes_grey.svg'),
           },
           {
             title: 'Shortcut',
-            icon: 'screen_share'
-          },
-          {
-            title: 'Bookmarks',
-            icon: 'collections_bookmark'
+            picture: require('../assets/img/shortcuts_grey.svg'),
           }
         ],
         mini: true,
@@ -227,6 +225,7 @@
           height:65px;
           padding:0 !important;
           text-align:center;
+          margin-bottom:16px;
           &:hover{
             .icon{
               color:#fff;
@@ -258,6 +257,8 @@
       .list__tile{
         height:65px;
         padding:0 !important;
+        margin-bottom:16px;
+
         &:hover{
           .icon{
             color:#fff;
@@ -377,6 +378,15 @@
       }
 
     }
+  }
+  .circle-icons{
+    width:46px;
+    height:46px;
+    background:$circle-icon;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
 </style>
