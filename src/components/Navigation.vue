@@ -51,8 +51,9 @@
               <span
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
-                                  {{subItem.letter }}
-                             </span>
+                                  {{subItem.letter }}<img :src="subItem.picture" height="24"/>
+              </span>
+
             </v-list-tile-action>
             <v-list-tile-content>
               <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
@@ -113,7 +114,7 @@
 
               <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
                 <v-list-tile-action>
-                  <!--  <v-icon >{{ item.icon }}</v-icon>-->
+                  <img :src="subItem.picture" height="24"/>
                   <span
                     :class="subItem.class"
                     class="thumb-workspace-navigation text-md-center mx-auto d-block">
@@ -176,6 +177,23 @@
           {
             title: 'Processes',
             picture: require('../assets/img/Processes_grey.svg'),
+            subItems: [{
+              title: 'Running Processes',
+              picture: require('../assets/img/Running Processes.svg'),
+              class:'circle-running-process',
+            }, {
+              title: 'Paused Processes',
+              picture: require('../assets/img/Paused Processes.svg'),
+              class:'circle-paused-process',
+            }, {
+              title: 'Completed Processes',
+              picture: require('../assets/img/Completed Processes.svg'),
+              class:'circle-completed-process',
+            }, {
+              title: 'Stopped Processes',
+              picture: require('../assets/img/Stopped Processes.svg'),
+              class:'circle-stopped-process',
+            }]
           },
           {
             title: 'Shortcut',
@@ -352,6 +370,12 @@
         line-height: 35px;
         margin-right: 13px !important;
         text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
       }
     }
   }
@@ -388,6 +412,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  .circle-running-process{
+    background:$circle-running-process;
+  }
+  .circle-paused-process{
+    background:$circle-paused-process;
+  }
+  .circle-completed-process{
+    background:$circle-completed-process;
+  }
+  .circle-stopped-process{
+    background:$circle-stopped-process;
   }
 
 </style>
