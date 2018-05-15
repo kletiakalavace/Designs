@@ -38,7 +38,7 @@
         </div>
       </div>
 
-      <div class="sub-items-content" v-if="subItems">
+      <div class="sub-items-content subItem-visible" v-if="subItems">
         <div  v-if="item.selected" v-for="item in items" :key="item.title">
           <v-list-tile class="item-header">
             <v-list-tile-content>
@@ -46,17 +46,17 @@
             </v-list-tile-content>
           </v-list-tile>
 
-          <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
+          <v-list-tile :class="test-teti" v-for="(subItem, index) in item.subItems" :key="index">
             <v-list-tile-action>
               <span
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
-                                  {{subItem.letter }}
+                  {{subItem.letter}}
                   <img :src="subItem.picture" height="24"/>
               </span>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+              <v-list-tile-title v-html="subItem.title"></v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
         </div>
@@ -177,19 +177,19 @@
             title: 'Processes',
             picture: require('../assets/img/Processes_grey.svg'),
             subItems: [{
-              title: 'Running Processes',
+              title: 'Running Processes <span class="absolute-number">13</span>',
               picture: require('../assets/img/Running Processes.svg'),
               class:'circle-running-process',
             }, {
-              title: 'Paused Processes',
+              title: 'Paused Processes <span class="absolute-number">4</span>',
               picture: require('../assets/img/Paused Processes.svg'),
               class:'circle-paused-process',
             }, {
-              title: 'Completed Processes',
+              title: 'Completed Processes <span class="absolute-number">26</span>',
               picture: require('../assets/img/Completed Processes.svg'),
               class:'circle-completed-process',
             }, {
-              title: 'Stopped Processes',
+              title: 'Stopped Processes <span class="absolute-number">12</span>',
               picture: require('../assets/img/Stopped Processes.svg'),
               class:'circle-stopped-process',
             }]
@@ -423,6 +423,25 @@
   }
   .circle-stopped-process{
     background:$circle-stopped-process;
+  }
+  .sub-items-content.subItem-visible{
+    .list__tile__content,.list__tile__title{
+      overflow: visible;
+    }
+    .absolute-number{
+      position: absolute;
+      left: -25px;
+      bottom: -10px;
+      font-size: 12px;
+      color: #32325d !important;
+      border-radius: 50%;
+      background: #fff !important;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+      font-weight: bold;
+      line-height: 20px;
+    }
   }
 
 </style>
