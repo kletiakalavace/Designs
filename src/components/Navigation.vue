@@ -27,7 +27,8 @@
           <v-list-tile>
             <v-list-tile-action @click='handleItemClick(item)'>
               <span class="circle-icons" @click.native.stop="mini = !mini">
-                 <img :src="item.picture" height="24"/>
+                 <img v-if="!item.selected" :src="item.picture" height="24"/>
+                <img v-if="item.selected" :src="item.picturewhite" height="24"/>
               </span>
             </v-list-tile-action>
 
@@ -147,6 +148,7 @@
           {
             title: 'Workspaces',
             picture: require('../assets/img/workspace_grey.svg'),
+            picturewhite: require('../assets/img/workspace_white.svg'),
             subItems: [{
               title: 'My service',
               letter: 'M',
@@ -172,10 +174,12 @@
           {
             title: 'Shortcuts',
             picture: require('../assets/img/shortcuts_grey.svg'),
+            picturewhite: require('../assets/img/shortcuts_white.svg'),
           },
           {
             title: 'Processes',
             picture: require('../assets/img/Processes_grey.svg'),
+            picturewhite: require('../assets/img/Processes_white.svg'),
             subItems: [{
               title: 'Running Processes <span class="absolute-number">13</span>',
               picture: require('../assets/img/Running Processes.svg'),
@@ -197,6 +201,7 @@
           {
             title: 'Administration',
             picture: require('../assets/img/administration_grey.svg'),
+            picturewhite: require('../assets/img/Administration_white.svg')
           },
         ],
         mini: true,
@@ -433,9 +438,9 @@
       left: -25px;
       bottom: -10px;
       font-size: 12px;
-      color: #32325d !important;
+      color: $blue--text;
       border-radius: 50%;
-      background: #fff !important;
+      background: $white;
       width: 20px;
       height: 20px;
       text-align: center;
