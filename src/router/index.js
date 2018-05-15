@@ -23,6 +23,11 @@ export default new Router({
       component: () => import('@/pages/Workspace')
     },
     {
+      path: '/404',
+          name: '404',
+        component: () => import('@/pages/404')
+    },
+    {
       path: '/',
       name: 'Login',
       redirect: '/login'
