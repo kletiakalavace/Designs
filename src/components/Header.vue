@@ -195,7 +195,9 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <v-icon class="text-grey mr-4">fa fa-bookmark</v-icon>
+    <span class="icon-toolbar"> <img src='../assets/img/Questions.svg' height="30">
+    <img src='../assets/img/New_shortcut.svg' height="30"></span>
+
     <v-menu bottom
             center
             content-class="menu-user">
@@ -806,5 +808,10 @@
       }
     }
   }
-
+  .icon-toolbar{
+    display:inherit;
+      img{
+          margin:0 10px;
+      }
+  }
 </style>

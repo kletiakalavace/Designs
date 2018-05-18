@@ -1,4 +1,4 @@
-<template class="navigation-primary">
+<template class="navigation-primary" xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <v-navigation-drawer
     v-bind:class="{ 'sub-items': subItems }"
     stateless
@@ -24,7 +24,7 @@
         </v-list>
 
         <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
-          <v-list-tile>
+          <v-list-tile slot="item">
             <v-list-tile-action @click='handleItemClick(item)'>
               <span class="circle-icons" @click.native.stop="mini = !mini">
                  <img v-if="!item.selected" :src="item.picture" height="24"/>
@@ -47,13 +47,14 @@
             </v-list-tile-content>
           </v-list-tile>
 
-          <v-list-tile :class="test-teti" v-for="(subItem, index) in item.subItems" :key="index">
+          <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
             <v-list-tile-action>
               <span
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
                   {{subItem.letter}}
                   <img :src="subItem.picture" height="24"/>
+
               </span>
             </v-list-tile-action>
             <v-list-tile-content>
@@ -217,10 +218,11 @@
       handleItemClick: function(item) {
         this.items.map((i) => {
           i.selected = false;
+        return this.selected = item;
       });
         this.mini = false;
         item.selected = true;
-        this.subItems = (item.subItems && item.subItems.length > 0);
+        this.subItems = item.subItems;
       }
     }
   }
