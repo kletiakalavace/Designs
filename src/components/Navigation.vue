@@ -23,7 +23,7 @@
           </v-list-tile>
         </v-list>
 
-        <div v-bind:class="{ 'active': item.selected }" v-for="(item, index) in items" :key="index">
+        <div  @click="selected = item" :class="{active:selected == item}" v-for="(item, index) in items" :key="index">
           <v-list-tile slot="item">
             <v-list-tile-action @click='handleItemClick(item)'>
               <span class="circle-icons" @click.native.stop="mini = !mini">
@@ -145,6 +145,7 @@
         drawer1: false,
         subItems: false,
         show:true,
+        selected: undefined,
         items: [
           {
             title: 'Workspaces',
