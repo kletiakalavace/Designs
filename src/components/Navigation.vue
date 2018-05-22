@@ -23,7 +23,7 @@
           </v-list-tile>
         </v-list>
 
-        <div  @click="selected = item" :class="{active:selected == item}" v-for="(item, index) in items" :key="index">
+        <div  @click="selected = item"  :class="{active:selected == item}" v-for="(item, index) in items" :key="index">
           <v-list-tile slot="item">
             <v-list-tile-action @click='handleItemClick(item)'>
               <span class="circle-icons" @click.native.stop="mini = !mini">
@@ -270,6 +270,31 @@
             }
           }
         }
+      .active{
+          .list__tile{
+              height:65px;
+              padding:0 !important;
+              text-align:center;
+              margin-bottom:16px;
+              &:hover{
+                  .icon{
+                      color:#fff;
+                  }
+                  .list__tile__content{
+                      position:absolute;
+                      opacity:1;
+                      z-index:9999;
+                      background:$bg-navigation-mini;
+                      left: 79px;
+                      padding: 0px 24px 0 6px;
+                      .list__tile__title{
+                          color:$color-navigation-hover;
+                          font-weight: 600;
+                      }
+                  }
+              }
+          }
+        }
       }
     }
   }
@@ -292,18 +317,18 @@
           }
           .list__tile__content,.list__tile__action{
             background:$bg-navigation-mini;
-            height: 46px;
+           /* height: 46px;
             border-bottom-right-radius: 23px;
-            border-top-right-radius: 23px;
+            border-top-right-radius: 23px;*/
           }
           .list__tile__action{
-            border-bottom-left-radius: 23px;
+            /*border-bottom-left-radius: 23px;
             border-top-left-radius: 23px;
             margin-left: 22px;
-            height: 46px;
-            .circle-icons{
+            height: 46px;*/
+            /*.circle-icons{
               margin-left:-44px;
-            }
+            }*/
           }
 
         }
@@ -465,5 +490,38 @@
       line-height: 20px;
     }
   }
-
+  .application--wrap{
+    .primary-navigation.navigation-drawer--mini-variant{
+          .list__tile{
+              &:hover{
+                  .icon{
+                      color:#fff;
+                  }
+                  .list__tile__content,.list__tile__action{
+                      background:$bg-navigation-mini;
+                      height: 46px;
+                      border-bottom-right-radius: 23px;
+                      border-top-right-radius: 23px;
+                  }
+                  .list__tile__action{
+                      border-bottom-left-radius: 23px;
+                      border-top-left-radius: 23px;
+                      margin-left: 22px;
+                      height: 46px;
+                      .circle-icons{
+                          margin-left:-44px;
+                      }
+                  }
+              }
+          }
+        .list__tile.list__tile--avatar{
+         &:hover{
+            .list__tile__action{
+                border-radius: 0;
+                margin-left:0;
+            }
+          }
+        }
+    }
+  }
 </style>
