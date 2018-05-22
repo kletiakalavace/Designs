@@ -294,6 +294,5 @@
     .bg-workspaces{
       align-self:stretch;
     }
-
 </style>
 

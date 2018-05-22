@@ -547,4 +547,7 @@
         }
       }
   }
+  .primary-navigation.navigation-drawer--mini-variant.navigation-drawer--open{
+    justify-content: stretch;
+  }
 </style>
