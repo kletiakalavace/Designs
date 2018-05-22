@@ -262,9 +262,10 @@
               z-index:9999;
               background:$bg-navigation-mini;
               left: 79px;
-              padding: 0px 40px 0 6px;
+              padding: 0px 24px 0 6px;
               .list__tile__title{
                 color:$color-navigation-hover;
+                font-weight: 600;
               }
             }
           }
@@ -291,7 +292,20 @@
           }
           .list__tile__content,.list__tile__action{
             background:$bg-navigation-mini;
+            height: 46px;
+            border-bottom-right-radius: 23px;
+            border-top-right-radius: 23px;
           }
+          .list__tile__action{
+            border-bottom-left-radius: 23px;
+            border-top-left-radius: 23px;
+            margin-left: 22px;
+            height: 46px;
+            .circle-icons{
+              margin-left:-44px;
+            }
+          }
+
         }
         .list__tile__action{
           justify-content: center !important;
