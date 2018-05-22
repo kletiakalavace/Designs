@@ -23,16 +23,16 @@
           </v-list-tile>
         </v-list>
 
-        <div  @click="selected = item"  :class="{active:selected == item}" v-for="(item, index) in items" :key="index">
+        <div @click="selected = item"  :class="{active:selected == item}" v-for="(item, index) in items" :key="index">
           <v-list-tile slot="item">
-            <v-list-tile-action @click='handleItemClick(item)'>
+            <v-list-tile-action @click='handleItemClick(item)' v-on:mouseover="isActive=true" v-on:mouseleave="isActive=false">
               <span class="circle-icons" @click.native.stop="mini = !mini">
-                 <img v-if="!item.selected" :src="item.picture" height="24"/>
-                <img v-if="item.selected" :src="item.picturewhite" height="24"/>
+                <img class="grey-icon" v-if="!item.selected" :src="item.picture" height="24"/>
+                <img :class="{ latestActive : isActive }" class="white-icon" :src="item.picturewhite" height="24"/>
               </span>
             </v-list-tile-action>
 
-            <v-list-tile-content v-if="!subItems" @click='handleItemClick(item)'>
+            <v-list-tile-content @click='handleItemClick(item)'>
               <v-list-tile-title>{{ item.title }}</v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -145,6 +145,7 @@
         drawer1: false,
         subItems: false,
         show:true,
+        isActive:true,
         selected: undefined,
         items: [
           {
@@ -224,7 +225,11 @@
         this.mini = false;
         item.selected = true;
         this.subItems = item.subItems;
-      }
+      },
+      mouseOver: function() {
+            this.active = !this.active;
+            console.log("flag " + this.active);
+        }
     }
   }
 </script>
@@ -317,6 +322,12 @@
           }
           .list__tile__content,.list__tile__action{
             background:$bg-navigation-mini;
+            .white-icon{
+              display: block;
+            }
+            .grey-icon{
+              display:none;
+            }
            /* height: 46px;
             border-bottom-right-radius: 23px;
             border-top-right-radius: 23px;*/
@@ -366,7 +377,6 @@
       .items-content{
         background:$bg-navigation-open;
         .active{
-          background-color: $bg-navigation-mini;
           .icon{
             color:$white;
           }
@@ -523,5 +533,18 @@
           }
         }
     }
+  }
+  .white-icon{
+    display: none;
+  }
+  .active .white-icon{
+    display: block;
+  }
+  .primary-navigation.navigation-drawer--open.sub-items{
+      .active{
+        .list__tile__action{
+          background:#293244 !important;
+        }
+      }
   }
 </style>
