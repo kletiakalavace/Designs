@@ -27,8 +27,8 @@
           <v-list-tile slot="item">
             <v-list-tile-action @click='handleItemClick(item)' v-on:mouseover="isActive=true" v-on:mouseleave="isActive=false">
               <span class="circle-icons" @click.native.stop="mini = !mini">
-                <img class="grey-icon" v-if="!item.selected" :src="item.picture" height="24"/>
-                <img :class="{ latestActive : isActive }" class="white-icon" :src="item.picturewhite" height="24"/>
+                <img class="grey-icon" v-if="!item.selected" :src="item.picture" height="24" width="46"/>
+                <img :class="{ latestActive : isActive }" class="white-icon" :src="item.picturewhite" height="24" width="46"/>
               </span>
             </v-list-tile-action>
 
@@ -53,7 +53,7 @@
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
                   {{subItem.letter}}
-                  <img :src="subItem.picture" height="24"/>
+                  <img :src="subItem.picture" height="24" width="34"/>
 
               </span>
             </v-list-tile-action>
@@ -268,6 +268,7 @@
               background:$bg-navigation-mini;
               left: 79px;
               padding: 0px 24px 0 6px;
+              top: 10px;
               .list__tile__title{
                 color:$color-navigation-hover;
                 font-weight: 600;

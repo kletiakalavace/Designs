@@ -195,8 +195,8 @@
         </v-flex>
       </v-layout>
     </v-flex>
-    <span class="icon-toolbar"> <img src='../assets/img/Questions.svg' height="30">
-    <img src='../assets/img/New_shortcut.svg' height="30"></span>
+    <span class="icon-toolbar"> <img src='../assets/img/Questions.svg' height="30" width="30">
+    <img src='../assets/img/New_shortcut.svg' height="30" width="30"></span>
 
     <v-menu bottom
             center
