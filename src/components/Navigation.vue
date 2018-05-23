@@ -48,7 +48,7 @@
           </v-list-tile>
 
           <v-list-tile v-for="(subItem, index) in item.subItems" :key="index">
-            <v-list-tile-action class="icon-subitems">
+            <v-list-tile-action>
               <span
                 :class="subItem.class"
                 class="thumb-workspace-navigation text-md-center mx-auto d-block">
@@ -57,7 +57,7 @@
 
               </span>
             </v-list-tile-action>
-            <v-list-tile-content>
+            <v-list-tile-content class="icon-subitems">
               <v-list-tile-title v-html="subItem.title"></v-list-tile-title>
             </v-list-tile-content>
           </v-list-tile>
@@ -550,8 +550,7 @@
   .primary-navigation.navigation-drawer--mini-variant.navigation-drawer--open{
     justify-content: stretch;
   }
-  .list__tile__action.icon-subitems{
-    margin-right: -13px !important;
+  .list__tile__content.icon-subitems{
     margin-left: 13px !important;
   }
 </style>
