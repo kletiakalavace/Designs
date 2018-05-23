@@ -135,6 +135,9 @@
   .workspace-container {
       -ms-flex-align: initial !important;
       align-items: initial !important;
+      -webkit-box-pack: justify !important;
+      -ms-flex-pack: justify !important;
+      justify-content: space-between !important;
     .grey--text{
       color:$grey--text;
     }
