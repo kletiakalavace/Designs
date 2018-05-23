@@ -133,6 +133,8 @@
     }
   }
   .workspace-container {
+      -ms-flex-align: initial;
+      align-items: initial;
     .grey--text{
       color:$grey--text;
     }
