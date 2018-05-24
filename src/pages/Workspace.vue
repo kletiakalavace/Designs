@@ -1,5 +1,5 @@
 <template>
-  <o-default-layout>
+  <o-default-layout class="bg-support">
     <h3>content here</h3>
   </o-default-layout>
 </template>

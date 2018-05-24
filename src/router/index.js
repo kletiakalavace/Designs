@@ -18,14 +18,14 @@ export default new Router({
       component: () => import('@/pages/Workspaces')
     },
     {
-      path: '/workspace',
-      name: 'Workspace',
-      component: () => import('@/pages/Workspace')
+      path: '/workspaces/support',
+      name: 'Support',
+      component: () => import('@/pages/Support')
     },
     {
       path: '/404',
-          name: '404',
-        component: () => import('@/pages/404')
+      name: '404',
+      component: () => import('@/pages/404')
     },
     {
       path: '/',
