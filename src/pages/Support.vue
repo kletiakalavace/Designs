@@ -1,5 +1,5 @@
 <template class="support">
-    <o-default-layout>
+    <o-default-layout class="bg-support">
         <template>
             <div class="breadcrumbs-pages">
                 <v-breadcrumbs>
@@ -60,5 +60,10 @@
                 color:$blue--text;
             }
         }
+    }
+    .bg-support >.layout{
+        background-color: $bg-page;
+        position:relative;
+        z-index:1;
     }
 </style>
