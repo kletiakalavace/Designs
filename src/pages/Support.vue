@@ -1,5 +1,5 @@
 <template class="support">
-    <o-default-layout class="bg-support">
+    <o-default-layout class="bg-workspaces">
         <template>
             <div class="breadcrumbs-pages">
                 <v-breadcrumbs>
@@ -68,38 +68,7 @@
     html{
         overflow: auto;
     }
-    .breadcrumbs-pages{
-        .breadcrumbs{
-            .breadcrumbs__item{
-                text-transform:uppercase;
-                color:$grey--text;
-                font-size:10px;
-            }
-            .breadcrumbs__divider{
-                .icon{
-                    color:$grey--text;
-                    font-size:12px;
-                }
-            }
-            .breadcrumbs__item--disabled{
-                color:$blue--text;
-            }
-        }
-    }
-    .bg-support >.layout{
-        background-color: $bg-page;
-        position:relative;
-        z-index:1;
-    }
-    .thumb-workspace {
-        height: 70px;
-        width: 71px;
-        font-size: 32px;
-        color: #fff;
-        border-radius: 50% !important;
-        line-height: 72px;
-        text-align:center;
-    }
+
     .content-support {
         margin-top: 40px;
         max-width: 791px !important;
@@ -119,14 +88,16 @@
     .support-search{
         .bg-search{
             background: $white;
+            box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.24);
             border-radius: 2px;
             max-width:811px;
-            height:48px;
+            height:48px !important;
             label{
-                font-size: 15px;
-                color:#8898aa;
+                color: $grey--text;
+                font-weight: 400;
+                font-family: "Open Sans", sans-serif;
+                padding-left: 17px;
             }
-
         }
     }
 </style>

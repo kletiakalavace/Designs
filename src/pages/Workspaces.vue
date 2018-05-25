@@ -211,16 +211,8 @@
         box-shadow: 0 2px 1px -3px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12);
         -webkit-box-shadow:0 2px 1px -3px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 1px 0 rgba(0,0,0,.12);
         &:hover{
-          /*transform: scaleY(1.1);*/
           -webkit-box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
           box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-          /*.thumb-workspace{
-           transform: scaleY(.9090);
-            margin-bottom: 8px;
-          }*/
-         /* .card__title{
-            transform: scaleY(.9090);
-          }*/
         }
         .card__title{
             text-align:center;
@@ -291,11 +283,6 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
-  .bg-workspaces >.layout{
-      background-color: $bg-page;
-      position:relative;
-      z-index:1;
-    }
     .bg-workspaces{
       align-self:stretch;
     }

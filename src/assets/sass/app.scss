@@ -1,4 +1,46 @@
 @import 'fonts';
 @import 'variables';
+.breadcrumbs-pages{
+  .breadcrumbs{
+    .breadcrumbs__item{
+      text-transform:uppercase;
+      color:$grey--text;
+      font-size:10px;
+    }
+    .breadcrumbs__divider{
+      .icon{
+        color:$grey--text;
+        font-size:12px;
+      }
+    }
+    .breadcrumbs__item--disabled{
+      color:$blue--text;
+    }
+  }
+}
+.bg-workspaces >.layout{
+  background-color: $bg-page;
+  position:relative;
+  z-index:1;
+}
+.thumb-workspace {
+  height: 70px;
+  width: 71px;
+  font-size: 32px;
+  color: #fff;
+  border-radius: 50% !important;
+  line-height: 72px;
+  text-align:center;
+}
+.content-general-search{
+  .input-group.input-group--text-field.input-group--select.search-primary{
+    label {
+      color: #8898aa !important;
+      font-weight: 400;
+      font-family: "Open Sans", sans-serif;
+      padding-left: 17px;
+    }
+  }
+}
 
 /* all pages and components style */
