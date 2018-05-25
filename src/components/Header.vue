@@ -8,7 +8,7 @@
       <v-btn icon slot="activator" v-on:click="seen = !seen" class="btn-info-search search-mobile right">
         <v-icon>search</v-icon>
       </v-btn>
-      <v-layout row bg-search v-if="!seen" class="absolute-seach">
+      <v-layout row bg-search v-if="!seen" class="absolute-seach search-header">
         <v-flex lg8>
           <v-select
             label="Search Workspaces"
@@ -669,9 +669,9 @@
     }
 
   }
-
   .menu__content.menu__content--select.menu__content--autocomplete.select-searches.menuable__content__active {
     width: 722px;
+    min-width: 722px;
     top: 62px !important;
     position: fixed;
     .list__tile.list__tile--link {
@@ -702,7 +702,7 @@
     }
   }
 
-  .select-searches {
+  .select-searches,.select-searches-support{
     font-family: "Open Sans", sans-serif;
     .medium-letter-circle {
       width: 40px;
