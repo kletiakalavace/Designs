@@ -279,7 +279,7 @@
         .notification-link{
             color:$bg-light-blue;
             font-size: 14px;
-            font-weight: bold;
+            font-weight: 600;
             margin-right: 30px;
         }
         .notification-message{
@@ -303,8 +303,8 @@
              }
              .notification-bubble{
                  position: absolute;
-                 top:0;
-                 right: 0;
+                 top: -5px;
+                 right: -5px;
                  background:$blue--text;
                  font-size: 12px;
                  color:$white;
