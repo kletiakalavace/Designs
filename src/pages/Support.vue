@@ -73,10 +73,11 @@
                 :right="true"
                 v-model="showNotification"
                 :color="notificationColor"
-                class="notification-content"
+                class="notification-support"
             >
 
                 <div>
+                    <h3 class="title-notification">{{ notificationTitle }}</h3>
                     <span class="notification-message">{{ notificationText }}</span>
                     <a href="#" class="notification-link">{{ notificationLink }}</a>
                 </div>
@@ -89,6 +90,31 @@
 
             </v-snackbar>
             </v-flex>
+        <v-flex xs12 sm6 lg12>
+            <div class="content-items-support">
+                <template v-for="item in items">
+                    <v-flex xs12 sm2 class="block-support">
+                        <v-card>
+                            <span class="notification-bubble" v-if="item.notificationBubble">{{item.notificationBubble}}</span>
+                           <span
+                                   class="thumb-support mx-auto d-block"
+                                   :class="item.bg">
+                        {{item.letter}}
+                     </span>
+                        <v-list three-line>
+                            <v-card-title>
+                                <v-list-tile-content>
+                                    <v-list-tile-title v-html="item.title" class="blue--text body-2 d-block mb-2"></v-list-tile-title>
+                                    <v-list-tile-sub-title v-html="item.subtitle"  class="grey--text body-1 d-block"></v-list-tile-sub-title>
+                                </v-list-tile-content>
+                            </v-card-title>
+                        </v-list>
+                        </v-card>
+                    </v-flex>
+                </template>
+                </div>
+        </v-flex>
+
     </o-default-layout>
 </template>
 
@@ -98,8 +124,9 @@
         data: () => ({
         notificationColor: 'white',
         showNotification: true,
-        notificationText: 'Mesagge lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.',
-        notificationLink:'Link button',
+        notificationTitle:'Test Critical',
+        notificationText: 'Error error!',
+        notificationLink:'Action',
         breadcrumbs:[
             {
                 text: 'Home',
@@ -112,6 +139,35 @@
             {
                 text: 'Support',
                 disabled: true
+            },
+        ],
+        items: [
+            {
+                title: 'Guided Help',
+                letter:'H',
+                bg:'bg-light-green'
+            },
+            {
+                title: 'Create Ticket',
+                letter:'T',
+                bg:'bg-light-green'
+            },
+            {
+                title: 'Software Request',
+                letter:'S',
+                bg:'bg-light-green',
+                notificationBubble:'33'
+            },
+            {
+                title: 'Hardware Request',
+                letter:'H',
+                bg:'bg-light-green',
+                notificationBubble:'22'
+            },
+            {
+                title: 'Request Access',
+                letter:'A',
+                bg:'bg-light-green'
             },
         ],
         searches: [
@@ -194,7 +250,7 @@
         font-weight: 600;
     }
     }
-    .snack.notification-content{
+    .snack.notification-support{
         position: relative !important;
         width: 813px;
         margin:0 !important;
@@ -203,6 +259,81 @@
             margin:0 !important;
             width:100% !important;
             max-width:100% !important;
+            .snack__content{
+                div{
+                    width:100%;
+                    position:relative;
+                }
+            }
+        }
+        .title-notification{
+            font-size: 16px;
+            color:$blue--text;
+        }
+        .notification-link{
+            color:$action-link;
+            font-size: 14px;
+            font-weight: bold;
+            position: absolute;
+            right: -16px;
+            z-index: 9999;
+            top: 0;
+        }
+        .notification-message{
+            color:$grey--text;
+            font-size: 12px;
+            width:100%;
+            display: block;
         }
     }
+    .content-items-support{
+        max-width: 814px;
+        margin: 72px auto 0 auto;
+        .block-support{
+            display: inline-block;
+            position: relative;
+            margin-right: 19px;
+            max-width: 147px;
+            min-width: 147px;
+            &:last-child{
+                margin-right: 0;
+             }
+             .notification-bubble{
+                 position: absolute;
+                 top:0;
+                 right: 0;
+                 background:$blue--text;
+                 font-size: 12px;
+                 color:$white;
+                 border-radius: 50%;
+                 line-height: 27px;
+                 width: 27px;
+                 height: 27px;
+                 text-align: center;
+             }
+            .blue--text{
+                color:$blue--text;
+                text-align: center;
+                font-size: 12px !important;
+                font-weight: 600;
+            }
+            .card{
+                padding:30px 0 10px;
+                .card__title{
+                    padding:0
+                }
+            }
+        }
+        .thumb-support{
+            width:32px;
+            height:32px;
+            font-size:20px;
+            font-weight: 600;
+            border-radius: 50% !important;
+            text-align: center;
+            color:$white;
+            line-height: 29px;
+        }
+    }
+
 </style>
