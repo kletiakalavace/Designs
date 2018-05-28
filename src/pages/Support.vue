@@ -313,6 +313,8 @@
                  width: 27px;
                  height: 27px;
                  text-align: center;
+                 border-top-left-radius:  50% !important;
+                 border-top-right-radius:  50% !important;
              }
             .blue--text{
                 color:$blue--text;
@@ -333,8 +335,6 @@
             font-size:20px;
             font-weight: 600;
             border-radius: 50% !important;
-            border-top-left-radius:  50% !important;
-            border-top-right-radius:  50% !important;
             text-align: center;
             color:$white;
             line-height: 29px;
