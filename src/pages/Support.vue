@@ -275,6 +275,7 @@
             color:$action-link;
             text-transform: uppercase;
             margin-bottom: 11px;
+            font-weight: 600;
         }
         .notification-link{
             color:$bg-light-blue;
