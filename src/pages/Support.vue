@@ -80,9 +80,11 @@
                     <h3 class="title-notification">{{ notificationTitle }}</h3>
                     <span class="notification-message">{{ notificationText }}</span>
                     <a href="#" class="notification-link">{{ notificationLink }}</a>
+                    <a href="#" class="notification-link">{{ notificationBuyL }}</a>
+                    <a href="#" class="notification-link">{{ notificationBuyN }}</a>
                 </div>
                 <v-btn
-                        class="close-notification"
+                        class="close-notification close-msg-support"
                         @click.native="showNotification = false"
                 >
                     <v-icon>close</v-icon>
@@ -124,9 +126,11 @@
         data: () => ({
         notificationColor: 'white',
         showNotification: true,
-        notificationTitle:'Test Critical',
-        notificationText: 'Error error!',
-        notificationLink:'Action',
+        notificationTitle:'Nemo enim ipsam voluptatem',
+        notificationText: 'Mesagge lorem ipsum dolor sit amet, consectetur Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident adipiscing elit',
+        notificationLink:'LINK BUTTON',
+        notificationBuyL:'BUY LATER',
+        notificationBuyN:'BUY NOW',
         breadcrumbs:[
             {
                 text: 'Home',
@@ -267,21 +271,20 @@
             }
         }
         .title-notification{
-            font-size: 16px;
-            color:$blue--text;
+            font-size: 18px;
+            color:$action-link;
+            text-transform: uppercase;
+            margin-bottom: 11px;
         }
         .notification-link{
-            color:$action-link;
+            color:$bg-light-blue;
             font-size: 14px;
             font-weight: bold;
-            position: absolute;
-            right: -16px;
-            z-index: 9999;
-            top: 0;
+            margin-right: 30px;
         }
         .notification-message{
-            color:$grey--text;
-            font-size: 12px;
+            color:$blue--text;
+            font-size: 14px;
             width:100%;
             display: block;
         }
@@ -337,5 +340,9 @@
             line-height: 29px;
         }
     }
-
+    .close-msg-support{
+        position: absolute;
+        top:0;
+        right:10px;
+    }
 </style>
