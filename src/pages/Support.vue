@@ -16,7 +16,7 @@
         </template>
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-support text-md-center">
             <span class="thumb-workspace mx-auto d-block bg-light-green">S</span>
-            <h2 class="title blue--text mt-5">Support & Request</h2>
+            <h2 class="title blue--text">Support & Request</h2>
             <p class="grey--text pt-1 mb-5">Get support/help and request services</p>
         </v-flex>
 
@@ -77,6 +77,7 @@
             >
 
                 <div>
+                   <span class="red-close"><i class="material-icons">close</i></span>
                     <h3 class="title-notification">{{ notificationTitle }}</h3>
                     <span class="notification-message">{{ notificationText }}</span>
                     <a href="#" class="notification-link">{{ notificationLink }}</a>
@@ -191,7 +192,7 @@
     }
 
     .content-support {
-        margin-top: 40px;
+        margin-top: 30px;
         max-width: 791px !important;
         h2.title.mt-5 {
             font-size: 22px !important;
@@ -204,10 +205,12 @@
         }
         .blue--text{
             color:$blue--text;
+            margin-top:20px !important;
         }
     }
     .support-search.content-general-search{
         max-width: 813px !important;
+        margin-top: -14px;
         .bg-search{
             background: $white;
             box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.24);
@@ -222,7 +225,7 @@
         width: 813px;
         min-width: 813px;
         position: fixed;
-        top: 404px !important;
+        top: 353px !important;
     .list__tile.list__tile--link {
         height: 70px;
 
@@ -250,7 +253,7 @@
         box-shadow: none !important;
         background: $white;
     .icon {
-        font-size: 19px;
+        font-size: 21px;
         font-weight: 600;
     }
     }
@@ -264,6 +267,7 @@
             width:100% !important;
             max-width:100% !important;
             .snack__content{
+              padding: 14px 29px !important;
                 div{
                     width:100%;
                     position:relative;
@@ -276,6 +280,11 @@
             text-transform: uppercase;
             margin-bottom: 11px;
             font-weight: 600;
+            display: block;
+            float:left;
+            width:90%;
+            margin-left: 10px;
+            margin-top: 11px;
         }
         .notification-link{
             color:$bg-light-blue;
@@ -304,9 +313,9 @@
              }
              .notification-bubble{
                  position: absolute;
-                 top: -5px;
+                 top: -8px;
                  right: -5px;
-                 background:$blue--text;
+                 background:$bg-navigation-open;
                  font-size: 12px;
                  color:$white;
                  border-radius: 50%;
@@ -343,7 +352,22 @@
     }
     .close-msg-support{
         position: absolute;
-        top:0;
-        right:10px;
+        top: 27px;
+        right: 20px;
+    }
+    .red-close{
+      width:26px;
+      height: 26px;
+      background:$icon-red-close;
+      display: block;
+      border-radius: 50%;
+      text-align: center;
+      padding: 4px 0;
+      margin-top: 11px;
+      float: left;
+      .material-icons{
+        font-size: 21px !important;
+        line-height: 21px;
+      }
     }
 </style>
