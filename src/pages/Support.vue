@@ -77,8 +77,8 @@
             >
 
                 <div>
-                   <span class="red-close"><i class="material-icons">close</i></span>
-                    <h3 class="title-notification">{{ notificationTitle }}</h3>
+                   <span class="circle-icon-notification red-close"><i class="material-icons">close</i></span>
+                    <h3 class="title-notification action-notification">{{ notificationTitle }}</h3>
                     <span class="notification-message">{{ notificationText }}</span>
                     <a href="#" class="notification-link">{{ notificationLink }}</a>
                     <a href="#" class="notification-link">{{ notificationBuyL }}</a>
@@ -90,6 +90,62 @@
                 >
                     <v-icon>close</v-icon>
                 </v-btn>
+
+            </v-snackbar>
+            <v-snackbar
+              :auto-height="true"
+              :timeout="false"
+              :bottom="true"
+              :right="true"
+              v-model="showNotification2"
+              :color="notificationColor"
+              class="notification-support"
+              v-if="!showNotification"
+              v-else="showNotification2"
+            >
+
+              <div>
+              <span class="circle-icon-notification blue-close"><i class="material-icons">info</i></span>
+              <h3 class="title-notification information-notification">{{ notificationTitle2 }}</h3>
+              <span class="notification-message">{{ notificationText }}</span>
+              <a href="#" class="notification-link">{{ notificationLink }}</a>
+              <a href="#" class="notification-link">{{ notificationBuyL }}</a>
+              <a href="#" class="notification-link">{{ notificationBuyN }}</a>
+              </div>
+              <v-btn
+                class="close-notification close-msg-support"
+                @click.native="showNotification2 = false"
+              >
+                <v-icon>close</v-icon>
+              </v-btn>
+
+            </v-snackbar>
+            <v-snackbar
+              :auto-height="true"
+              :timeout="false"
+              :bottom="true"
+              :right="true"
+              v-model="showNotification3"
+              :color="notificationColor"
+              class="notification-support"
+              v-if="!showNotification2"
+              v-else="showNotification3"
+            >
+
+              <div>
+                <span class="circle-icon-notification orange-close"><i class="material-icons">error</i></span>
+                <h3 class="title-notification warning-notification">{{ notificationTitle3 }}</h3>
+                <span class="notification-message">{{ notificationText }}</span>
+                <a href="#" class="notification-link">{{ notificationLink }}</a>
+                <a href="#" class="notification-link">{{ notificationBuyL }}</a>
+                <a href="#" class="notification-link">{{ notificationBuyN }}</a>
+              </div>
+              <v-btn
+                class="close-notification close-msg-support"
+                @click.native="showNotification3 = false"
+              >
+                <v-icon>close</v-icon>
+              </v-btn>
 
             </v-snackbar>
             </v-flex>
@@ -127,7 +183,11 @@
         data: () => ({
         notificationColor: 'white',
         showNotification: true,
+        showNotification2: true,
+        showNotification3: true,
         notificationTitle:'Nemo enim ipsam voluptatem',
+        notificationTitle2:'Nemo enim ipsam voluptatem',
+        notificationTitle3:'Nemo enim ipsam voluptatem',
         notificationText: 'Mesagge lorem ipsum dolor sit amet, consectetur Duis aute irure dolor in reprehenderit in voluptate velit essecillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident adipiscing elit',
         notificationLink:'LINK BUTTON',
         notificationBuyL:'BUY LATER',
@@ -182,7 +242,7 @@
             {name: 'Adobe Creative Cloud', letter: 'F', version: 'Software Asset Desktop'},
             {name: 'Fireworks', letter: 'F', version: 'Software Asset Desktop mobile'},
         ],
-    })
+    }),
     }
 </script>
 <style lang="scss">
@@ -276,7 +336,6 @@
         }
         .title-notification{
             font-size: 18px;
-            color:$action-link;
             text-transform: uppercase;
             margin-bottom: 11px;
             font-weight: 600;
@@ -285,6 +344,15 @@
             width: calc(100% - 49px);
             margin-left: 10px;
             margin-top: 11px;
+        }
+        .action-notification{
+          color:$action-link;
+        }
+        .information-notification{
+          color:$icon-blue-close;
+        }
+        .warning-notification{
+          color:$icon-orange-close;
         }
         .notification-link{
             color:$bg-light-blue;
@@ -356,10 +424,9 @@
         top: 27px;
         right: 20px;
     }
-    .red-close{
+    .circle-icon-notification{
       width:26px;
       height: 26px;
-      background:$icon-red-close;
       display: block;
       border-radius: 50%;
       text-align: center;
@@ -369,6 +436,23 @@
       .material-icons{
         font-size: 21px !important;
         line-height: 20px;
+      }
+    }
+    .red-close{
+      background:$icon-red-close;
+    }
+    .blue-close{
+      .material-icons{
+        font-size: 28px !important;
+        line-height: 20px;
+        color:$icon-blue-close;
+      }
+    }
+    .orange-close{
+      .material-icons{
+        font-size: 28px !important;
+        line-height: 20px;
+        color:$icon-orange-close;
       }
     }
 </style>
