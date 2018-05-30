@@ -225,7 +225,7 @@
         width: 813px;
         min-width: 813px;
         position: fixed;
-        top: 353px !important;
+        top: 373px !important;
     .list__tile.list__tile--link {
         height: 70px;
 
