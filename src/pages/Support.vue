@@ -21,7 +21,7 @@
         </v-flex>
 
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto support-search content-general-search">
-            <v-layout row bg-search class="search-mob">
+            <v-layout row bg-search>
                 <v-flex>
                     <v-select
                             label="Looking for software? Try typing 'adobe' or 'visio'..."
@@ -93,10 +93,10 @@
 
             </v-snackbar>
             </v-flex>
-        <v-flex xs12 sm6 lg12>
+        <v-flex xs12 sm12 lg12>
             <div class="content-items-support">
                 <template v-for="item in items">
-                    <v-flex xs12 sm2 class="block-support">
+                    <v-flex xs12 sm12 class="block-support">
                         <v-card>
                             <span class="notification-bubble" v-if="item.notificationBubble">{{item.notificationBubble}}</span>
                            <span
@@ -282,7 +282,7 @@
             font-weight: 600;
             display: block;
             float:left;
-            width:90%;
+            width: calc(100% - 49px);
             margin-left: 10px;
             margin-top: 11px;
         }
@@ -297,6 +297,7 @@
             font-size: 14px;
             width:100%;
             display: block;
+            float:left;
         }
     }
     .content-items-support{
