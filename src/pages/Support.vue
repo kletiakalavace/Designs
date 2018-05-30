@@ -368,7 +368,7 @@
       float: left;
       .material-icons{
         font-size: 21px !important;
-        line-height: 21px;
+        line-height: 20px;
       }
     }
 </style>
