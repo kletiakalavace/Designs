@@ -420,7 +420,7 @@
         }
     }
     .close-msg-support{
-        position: absolute;
+        position: absolute !important;
         top: 27px;
         right: 20px;
     }
