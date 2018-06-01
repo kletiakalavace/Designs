@@ -299,10 +299,21 @@
     padding: 0!important;
   }
 }
-
+@media only screen and (max-width: 450px) {
+  .snack.notification-support{
+    .notification-link{
+      margin-right: 16px !important;
+    }
+  }
+}
 @media only screen and (max-width: 435px) {
   .login-container .login-main {
     max-width: 410px !important;
     min-width: inherit !important;
+  }
+  .snack.notification-support{
+    .notification-link{
+      width: 100%;
+    }
   }
 }
