@@ -61,6 +61,18 @@
                                         </span>
                                     </div>
                                 </v-list-tile-content>
+                                <v-list-action>
+                                    <v-tooltip
+                                            right
+                                            close-delay=500
+                                            content-class="tooltip-searches">
+                                        <v-btn icon slot="activator" class="btn-info-search">
+                                            <v-icon>more_vert</v-icon>
+                                        </v-btn>
+                                        <a href="#test">Request</a>
+                                        <a href="#">Deploy</a>
+                                    </v-tooltip>
+                                </v-list-action>
                             </template>
                         </template>
                     </v-select>
