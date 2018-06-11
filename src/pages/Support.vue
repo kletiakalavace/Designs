@@ -339,7 +339,7 @@
             width:100% !important;
             max-width:100% !important;
             .snack__content{
-              padding: 14px 29px 24px 29px !important;
+              padding: 16px 29px 25px 29px !important;
                 div{
                     width:100%;
                     position:relative;
