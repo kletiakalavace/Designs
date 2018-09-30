@@ -10,6 +10,7 @@ import Vuelidate from 'vuelidate'
 import App from './App'
 import router from './router'
 import Vuetify from 'vuetify'
+import Popover  from 'vue-js-popover'
 import 'babel-polyfill';
 
 /* ============
@@ -38,6 +39,7 @@ Vue.filter('count', count)
 Vue.config.productionTip = false;
 Vue.use(Vuetify)
 Vue.use(Vuelidate)
+Vue.use(Popover)
 Vue.use(VueMq, {
   breakpoints: {
     mobile: 599,

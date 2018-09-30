@@ -36,6 +36,7 @@
                             class="search-primary"
                             content-class="select-searches-support"
                             prepend-icon="search"
+
                     >
                         <template slot="selection" slot-scope="data">
                             <v-chip
@@ -48,8 +49,7 @@
                                 {{ data.item.name }}
                             </v-chip>
                         </template>
-                        <template slot="item" slot-scope="data">
-                            <template>
+                        <template slot="item" slot-scope="data" v-bind:class="{ active:show }">
                                 <v-list-tile-content>
                                     <div class="list-content-search">
                                         <span class="medium-letter-circle text-md-center mx-auto d-inline-block bg-light-green" >
@@ -61,20 +61,29 @@
                                         </span>
                                     </div>
                                 </v-list-tile-content>
-                                <v-list-action>
-                                    <v-tooltip
-                                            right
-                                            close-delay=500
-                                            content-class="tooltip-searches">
-                                        <v-btn icon slot="activator" class="btn-info-search">
-                                            <v-icon>more_vert</v-icon>
-                                        </v-btn>
-                                        <a href="#test">Request</a>
-                                        <a href="#">Deploy</a>
-                                    </v-tooltip>
-                                </v-list-action>
-                            </template>
+                          <v-template style="position: relative;z-index:9999;">
+                            <!--<v-btn icon  @click="show = !show" class="btn-info-search" v-popover.right-start="{ name: 'test' }">-->
+                              <!--<v-icon>more_vert</v-icon>-->
+                            <!--</v-btn>-->
+
+                            <!--<popover content-class="tooltip-searches" name="test">-->
+                              <!--<a href="#test">Request</a>-->
+                              <!--<a href="#">Deploy</a>-->
+                            <!--</popover>-->
+                            <div class="text-xs-center">
+                              <v-menu offset-y>
+                                <v-btn slot="activator" icon class="btn-info-search">
+                                  <v-icon>more_vert</v-icon>
+                                </v-btn>
+                                <v-list class="tooltip-searches">
+                                  <a href="#test">Request</a>
+                                  <a href="#">Deploy</a>
+                                </v-list>
+                              </v-menu>
+                            </div>
+                          </v-template>
                         </template>
+
                     </v-select>
                 </v-flex>
             </v-layout>
@@ -194,6 +203,7 @@
         name: "workspaces",
         data: () => ({
         notificationColor: 'white',
+          show: false,
         showNotification: true,
         showNotification2: true,
         showNotification3: true,
@@ -248,8 +258,8 @@
             },
         ],
         searches: [
-            {name: 'Adobe Acrovat Pro', letter: 'A', version: 'Software Asset Desktop '},
-            {name: 'Adobe Creative Cloud', letter: 'A', version: 'Software Asset Desktop '},
+            {name: 'Adobe Acrovat Pro', letter: 'A', version: 'Software Asset Desktop ',test:'nje'},
+            {name: 'Adobe Creative Cloud', letter: 'A', version: 'Software Asset Desktop ',test:'dy'},
             {name: 'Fireworks', letter: 'F', version: 'Software Asset Desktop mobile'},
             {name: 'Adobe Creative Cloud', letter: 'F', version: 'Software Asset Desktop'},
             {name: 'Fireworks', letter: 'F', version: 'Software Asset Desktop mobile'},
@@ -262,6 +272,18 @@
     html{
         overflow: auto;
     }
+
+   .select-searches-support{
+     .list__tile.list__tile--link.list__tile--active{
+       z-index: 9;
+     }
+   }
+   .btn.test{
+     box-shadow:none;
+     background: transparent;
+     position: absolute;
+     top:0;
+   }
 
     .content-support {
         margin-top: 30px;
