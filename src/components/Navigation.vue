@@ -550,7 +550,4 @@
   .primary-navigation.navigation-drawer--mini-variant.navigation-drawer--open{
     justify-content: stretch;
   }
-  .list__tile__content.icon-subitems{
-    margin-left: 13px !important;
-  }
 </style>

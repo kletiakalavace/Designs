@@ -95,7 +95,7 @@
                 v-model="showNotification"
                 :color="notificationColor"
                 class="notification-support"
-            >
+            >.input-group__selections
 
                 <div>
                    <span class="circle-icon-notification red-close"><i class="material-icons">close</i></span>
@@ -489,4 +489,11 @@
         color:$icon-orange-close;
       }
     }
+  .support-search{
+    .input-group.input-group--text-field.input-group--select{
+      .input-group__selections{
+         margin-top: -6px;
+      }
+    }
+  }
 </style>
