@@ -95,8 +95,7 @@
                 v-model="showNotification"
                 :color="notificationColor"
                 class="notification-support"
-            >.input-group__selections
-
+                >
                 <div>
                    <span class="circle-icon-notification red-close"><i class="material-icons">close</i></span>
                     <h3 class="title-notification action-notification">{{ notificationTitle }}</h3>
