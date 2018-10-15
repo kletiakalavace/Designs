@@ -14,12 +14,12 @@
                 </v-breadcrumbs>
             </div>
         </template>
+      <div class="center-position">
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto content-support text-md-center">
             <span class="thumb-workspace mx-auto d-block bg-light-green">S</span>
             <h2 class="title blue--text">Support & Request</h2>
             <p class="grey--text pt-1 mb-5">Get support/help and request services</p>
         </v-flex>
-
         <v-flex xs12 sm6 lg8 offset-sm2 class="mx-auto support-search content-general-search">
             <v-layout row bg-search>
                 <v-flex>
@@ -193,6 +193,7 @@
                 </template>
                 </div>
         </v-flex>
+      </div>
 
     </o-default-layout>
 </template>
@@ -271,7 +272,17 @@
     html{
         overflow: auto;
     }
-
+   .center-position{
+     display: block;
+     margin: 0 auto;
+     position: absolute;
+     vertical-align: middle;
+     top: 50%;
+     left: 50%;
+     webkit-transform: translateX(-50%) translatey(-50%);
+     -moz-transform: translateX(-50%) translatey(-50%);
+     transform: translateX(-50%) translateY(-50%);
+   }
    .select-searches-support{
      .list__tile.list__tile--link.list__tile--active{
        z-index: 9;
